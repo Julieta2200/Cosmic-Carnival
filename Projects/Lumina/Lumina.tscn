@@ -1,17 +1,32 @@
-[gd_scene load_steps=11 format=3 uid="uid://bs0vamppxcys5"]
+[gd_scene load_steps=15 format=3 uid="uid://bs0vamppxcys5"]
 
 [ext_resource type="Script" path="res://Projects/Lumina/Lumina.gd" id="1_2ie5q"]
 [ext_resource type="Texture2D" uid="uid://udoyio75q0g3" path="res://Assets/Characters/Lumina/Base.png" id="2_0krf4"]
 [ext_resource type="Texture2D" uid="uid://cm8me8a6l8ggu" path="res://Assets/Characters/Lumina/shadow.png" id="2_6i7er"]
+[ext_resource type="Texture2D" uid="uid://dmnmxwqtjmhja" path="res://Assets/Characters/Lumina/Back_Talk1.png" id="3_coi88"]
 [ext_resource type="Texture2D" uid="uid://b7ywwwdst3ant" path="res://Assets/Characters/Lumina/Back_Walk_1.png" id="3_f2yb2"]
+[ext_resource type="Texture2D" uid="uid://d3xf1qivh1ah5" path="res://Assets/Characters/Lumina/Back_Talk2.png" id="4_e78e0"]
 [ext_resource type="Texture2D" uid="uid://dvgx3psjyvenc" path="res://Assets/Characters/Lumina/Back_Base.png" id="4_luo13"]
 [ext_resource type="Texture2D" uid="uid://cpkonxevjegir" path="res://Assets/Characters/Lumina/Back_Walk_2.png" id="5_xrg6y"]
 [ext_resource type="Texture2D" uid="uid://b2tw2eqcwtf7u" path="res://Assets/Characters/Lumina/idle.png" id="7_cesm8"]
 [ext_resource type="Texture2D" uid="uid://cqshpyfm7qj31" path="res://Assets/Characters/Lumina/Walk1.png" id="8_tai1y"]
 [ext_resource type="Texture2D" uid="uid://cocjwjrhexjvu" path="res://Assets/Characters/Lumina/Walk2.png" id="9_aedyr"]
+[ext_resource type="Texture2D" uid="uid://dt11ss52x3ji3" path="res://Assets/Characters/Lumina/Talk1.png" id="10_72lod"]
+[ext_resource type="Texture2D" uid="uid://dt4yfbsoqcsf4" path="res://Assets/Characters/Lumina/Talk2.png" id="11_xsnu4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ka8j6"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_coi88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e78e0")
+}],
+"loop": true,
+"name": &"back_talk",
+"speed": 1.5
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_f2yb2")
@@ -48,6 +63,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("10_72lod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_xsnu4")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("8_tai1y")
 }, {
 "duration": 1.0,
@@ -76,5 +102,5 @@ texture = ExtResource("2_6i7er")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ka8j6")
-animation = &"walk"
+animation = &"idle"
 autoplay = "idle"
