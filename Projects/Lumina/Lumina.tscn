@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://udoyio75q0g3" path="res://Assets/Characters/Lumina/Base.png" id="2_0krf4"]
 
 [node name="Lumina" type="CharacterBody2D"]
+scale = Vector2(4, 4)
 script = ExtResource("1_2ie5q")
-speed = 600
+speed = 148
 
 [node name="sprite" type="Sprite2D" parent="."]
-scale = Vector2(16, 16)
 texture = ExtResource("2_0krf4")
