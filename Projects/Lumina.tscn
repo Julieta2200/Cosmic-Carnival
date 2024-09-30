@@ -5,7 +5,7 @@
 
 [node name="Lumina" type="CharacterBody2D"]
 script = ExtResource("1_xf6dp")
-speed = 500
+speed = 600
 
 [node name="sprite" type="Sprite2D" parent="."]
 scale = Vector2(16, 16)

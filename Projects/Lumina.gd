@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var speed : int
+@export var speed : int 
 
 func _physics_process(_delta):
 	move()
