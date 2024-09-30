@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs0vamppxcys5"]
+
+[ext_resource type="Script" path="res://Projects/Lumina.gd" id="1_xf6dp"]
+[ext_resource type="Texture2D" uid="uid://udoyio75q0g3" path="res://Assets/Characters/Lumina/Base.png" id="2_1g1uf"]
+
+[node name="Lumina" type="CharacterBody2D"]
+script = ExtResource("1_xf6dp")
+speed = 500
+
+[node name="sprite" type="Sprite2D" parent="."]
+scale = Vector2(16, 16)
+texture = ExtResource("2_1g1uf")
