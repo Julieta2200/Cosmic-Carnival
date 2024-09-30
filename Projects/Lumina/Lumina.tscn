@@ -1,12 +1,80 @@
-[gd_scene load_steps=3 format=3 uid="uid://bs0vamppxcys5"]
+[gd_scene load_steps=11 format=3 uid="uid://bs0vamppxcys5"]
 
 [ext_resource type="Script" path="res://Projects/Lumina/Lumina.gd" id="1_2ie5q"]
 [ext_resource type="Texture2D" uid="uid://udoyio75q0g3" path="res://Assets/Characters/Lumina/Base.png" id="2_0krf4"]
+[ext_resource type="Texture2D" uid="uid://cm8me8a6l8ggu" path="res://Assets/Characters/Lumina/shadow.png" id="2_6i7er"]
+[ext_resource type="Texture2D" uid="uid://b7ywwwdst3ant" path="res://Assets/Characters/Lumina/Back_Walk_1.png" id="3_f2yb2"]
+[ext_resource type="Texture2D" uid="uid://dvgx3psjyvenc" path="res://Assets/Characters/Lumina/Back_Base.png" id="4_luo13"]
+[ext_resource type="Texture2D" uid="uid://cpkonxevjegir" path="res://Assets/Characters/Lumina/Back_Walk_2.png" id="5_xrg6y"]
+[ext_resource type="Texture2D" uid="uid://b2tw2eqcwtf7u" path="res://Assets/Characters/Lumina/idle.png" id="7_cesm8"]
+[ext_resource type="Texture2D" uid="uid://cqshpyfm7qj31" path="res://Assets/Characters/Lumina/Walk1.png" id="8_tai1y"]
+[ext_resource type="Texture2D" uid="uid://cocjwjrhexjvu" path="res://Assets/Characters/Lumina/Walk2.png" id="9_aedyr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ka8j6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_f2yb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_luo13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xrg6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_luo13")
+}],
+"loop": true,
+"name": &"back_walk",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0krf4")
+}, {
+"duration": 0.3,
+"texture": ExtResource("7_cesm8")
+}, {
+"duration": 0.3,
+"texture": ExtResource("2_0krf4")
+}, {
+"duration": 0.3,
+"texture": ExtResource("7_cesm8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_tai1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0krf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_aedyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0krf4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
 
 [node name="Lumina" type="CharacterBody2D"]
+position = Vector2(176, 175)
 scale = Vector2(4, 4)
 script = ExtResource("1_2ie5q")
 speed = 148
 
-[node name="sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_0krf4")
+[node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(0.75, 7)
+texture = ExtResource("2_6i7er")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ka8j6")
+animation = &"walk"
+autoplay = "idle"
