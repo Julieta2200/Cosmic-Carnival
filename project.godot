@@ -14,11 +14,15 @@ config/name="Cosmic Carnival"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+TicketManager="*res://Projects/Singletones/TicketManager.gd"
+
 [display]
 
+window/size/viewport_width=1024
 window/size/viewport_height=896
 window/stretch/mode="viewport"
-window/size/viewport_width=1024
 
 [input]
 
