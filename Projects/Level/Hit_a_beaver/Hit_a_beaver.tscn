@@ -2,17 +2,14 @@
 
 [ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Hit_a_beaver.gd" id="1_7b3k5"]
 [ext_resource type="Texture2D" uid="uid://bitedgc3p6x1i" path="res://Assets/Characters/Details/board.png" id="2_xsstp"]
-[ext_resource type="Texture2D" uid="uid://bos02si7p85ts" path="res://Assets/Characters/Details/hammer.png" id="3_7o7ej"]
+[ext_resource type="PackedScene" uid="uid://bocslnbv4sk6n" path="res://Projects/Level/Hit_a_beaver/Hammer/Hammer.tscn" id="3_tgkmh"]
 
 [node name="Hit_a_beaver" type="Node2D"]
 script = ExtResource("1_7b3k5")
-hammer_speed = 10
 
 [node name="Board" type="Sprite2D" parent="."]
 position = Vector2(514, 427)
 scale = Vector2(4, 4)
 texture = ExtResource("2_xsstp")
 
-[node name="Hammer" type="Sprite2D" parent="."]
-position = Vector2(263, 186)
-texture = ExtResource("3_7o7ej")
+[node name="Hammer" parent="." instance=ExtResource("3_tgkmh")]
