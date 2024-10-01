@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://lvw1mf1g0x1w"]
+
+[ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Hit_a_beaver.gd" id="1_7b3k5"]
+[ext_resource type="Texture2D" uid="uid://bitedgc3p6x1i" path="res://Assets/Characters/Details/board.png" id="2_xsstp"]
+[ext_resource type="PackedScene" uid="uid://bocslnbv4sk6n" path="res://Projects/Level/Hit_a_beaver/Hammer/Hammer.tscn" id="3_tgkmh"]
+
+[node name="Hit_a_beaver" type="Node2D"]
+script = ExtResource("1_7b3k5")
+
+[node name="Board" type="Sprite2D" parent="."]
+position = Vector2(514, 427)
+scale = Vector2(4, 4)
+texture = ExtResource("2_xsstp")
+
+[node name="Hammer" parent="." instance=ExtResource("3_tgkmh")]
