@@ -96,7 +96,7 @@ scale = Vector2(4, 4)
 script = ExtResource("1_2ie5q")
 speed = 148
 
-[node name="shadow" type="Sprite2D" parent="."]
+[node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(0.75, 7)
 texture = ExtResource("2_6i7er")
 
