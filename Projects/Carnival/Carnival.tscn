@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://c56daij5umhuf"]
+[gd_scene load_steps=2 format=3 uid="uid://c56daij5umhuf"]
+
+[ext_resource type="Script" path="res://Projects/Carnival/Carnival.gd" id="1_enqbp"]
 
 [node name="Carnival" type="Node2D"]
+script = ExtResource("1_enqbp")

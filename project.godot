@@ -16,7 +16,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-TicketManager="*res://Projects/Singletones/TicketManager.gd"
+SaveManager="*res://Projects/Singletones/SaveManager.gd"
+TicketManager="*res://Projects/Singletones/ticket_manager.tscn"
 
 [display]
 
