@@ -1,45 +1,67 @@
-[gd_scene load_steps=4 format=3 uid="uid://urchyhwhui73"]
+[gd_scene load_steps=5 format=3 uid="uid://urchyhwhui73"]
 
 [ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Hit_a_beaver.gd" id="1_7b3k5"]
 [ext_resource type="Texture2D" uid="uid://bitedgc3p6x1i" path="res://Details/board.png" id="2_mn88a"]
 [ext_resource type="PackedScene" uid="uid://bocslnbv4sk6n" path="res://Projects/Level/Hit_a_beaver/Hammer/Hammer.tscn" id="3_tgkmh"]
+[ext_resource type="PackedScene" uid="uid://p0mkygu0vy1w" path="res://Projects/Level/Hit_a_beaver/Enemy/Enemy.tscn" id="4_pxqtr"]
 
 [node name="Hit_a_beaver" type="Node2D"]
 script = ExtResource("1_7b3k5")
 count = 5
-exit_time = 3.0
-stay_time = 1.0
+appear_time = 5.0
 
 [node name="Board" type="Sprite2D" parent="."]
 position = Vector2(514, 427)
 scale = Vector2(4, 4)
 texture = ExtResource("2_mn88a")
 
-[node name="Marker2D" type="Marker2D" parent="Board"]
-position = Vector2(-64, -59.75)
+[node name="Enemy" parent="Board" instance=ExtResource("4_pxqtr")]
+visible = false
+scale = Vector2(0.3, 0.3)
 
-[node name="Marker2D2" type="Marker2D" parent="Board"]
-position = Vector2(4.75, -59.75)
+[node name="Enemy2" parent="Board" instance=ExtResource("4_pxqtr")]
+visible = false
+position = Vector2(0, -60)
+scale = Vector2(0.3, 0.3)
 
-[node name="Marker2D3" type="Marker2D" parent="Board"]
-position = Vector2(61.75, -59.75)
+[node name="Enemy3" parent="Board" instance=ExtResource("4_pxqtr")]
+visible = false
+position = Vector2(0, 57.5)
+scale = Vector2(0.3, 0.3)
 
-[node name="Marker2D4" type="Marker2D" parent="Board"]
-position = Vector2(61.75, 0.5)
+[node name="Enemy4" parent="Board" instance=ExtResource("4_pxqtr")]
+visible = false
+position = Vector2(-61, 0)
+scale = Vector2(0.3, 0.3)
 
-[node name="Marker2D5" type="Marker2D" parent="Board"]
-position = Vector2(1, 0.5)
+[node name="Enemy5" parent="Board" instance=ExtResource("4_pxqtr")]
+visible = false
+position = Vector2(-61, -60)
+scale = Vector2(0.3, 0.3)
 
-[node name="Marker2D6" type="Marker2D" parent="Board"]
-position = Vector2(-64, 0.5)
+[node name="Enemy6" parent="Board" instance=ExtResource("4_pxqtr")]
+visible = false
+position = Vector2(-61, 57.5)
+scale = Vector2(0.3, 0.3)
 
-[node name="Marker2D7" type="Marker2D" parent="Board"]
-position = Vector2(60.75, 58)
+[node name="Enemy7" parent="Board" instance=ExtResource("4_pxqtr")]
+visible = false
+position = Vector2(60.75, 0)
+scale = Vector2(0.3, 0.3)
 
-[node name="Marker2D8" type="Marker2D" parent="Board"]
-position = Vector2(0, 58)
+[node name="Enemy8" parent="Board" instance=ExtResource("4_pxqtr")]
+visible = false
+position = Vector2(60.75, -60)
+scale = Vector2(0.3, 0.3)
 
-[node name="Marker2D9" type="Marker2D" parent="Board"]
-position = Vector2(-65, 58)
+[node name="Enemy9" parent="Board" instance=ExtResource("4_pxqtr")]
+visible = false
+position = Vector2(60.75, 57.5)
+scale = Vector2(0.3, 0.3)
 
 [node name="Hammer" parent="." instance=ExtResource("3_tgkmh")]
+
+[node name="Enemy_appear_timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Enemy_appear_timer" to="." method="_on_timer_timeout"]
