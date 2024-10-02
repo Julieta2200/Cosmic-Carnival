@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt3hc48tjlf64"]
+
+[ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Beaver/Beaver.gd" id="1_lfqn4"]
+[ext_resource type="Texture2D" uid="uid://7d2ytl70igs1" path="res://Details/enemy.png" id="2_20kjt"]
+
+[node name="Beaver" type="Node2D"]
+script = ExtResource("1_lfqn4")
+stay_time = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_20kjt")
+
+[node name="Disappear_timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="draw" from="." to="." method="_on_draw"]
+[connection signal="timeout" from="Disappear_timer" to="." method="_on_disappear_timer_timeout"]

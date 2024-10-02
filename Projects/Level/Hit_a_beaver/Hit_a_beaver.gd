@@ -9,8 +9,8 @@ extends Node2D
 
 
 func _ready():
-	$Enemy_appear_timer.wait_time = appear_time
-	$Enemy_appear_timer.start()
+	$Beaver_appear_timer.wait_time = appear_time
+	$Beaver_appear_timer.start()
 
 func enemy_appear():
 	if count > 0:
@@ -19,9 +19,9 @@ func enemy_appear():
 		enemy.show()
 		count -= 1
 	
-func _on_timer_timeout():
+func _on_beaver_appear_timer_timeout():
 	enemy_appear()
 
 
-func _on_enemy_hidden():
-	$Enemy_appear_timer.start()
+func _on_beaver_hidden():
+	$Beaver_appear_timer.start()
