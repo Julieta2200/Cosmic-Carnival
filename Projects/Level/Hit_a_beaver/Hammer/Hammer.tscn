@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bocslnbv4sk6n"]
 
 [ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Hammer/Hammer.gd" id="1_hqt31"]
-[ext_resource type="Texture2D" uid="uid://bos02si7p85ts" path="res://Assets/Characters/Details/hammer.png" id="2_5qgg7"]
+[ext_resource type="Texture2D" uid="uid://bos02si7p85ts" path="res://Details/hammer.png" id="2_ewpex"]
 
 [node name="Hammer" type="Node2D"]
 script = ExtResource("1_hqt31")
 speed = 10
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_5qgg7")
+texture = ExtResource("2_ewpex")
