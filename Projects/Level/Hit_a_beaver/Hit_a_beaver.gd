@@ -22,3 +22,6 @@ func enemy_appear():
 func _on_timer_timeout():
 	enemy_appear()
 
+
+func _on_enemy_hidden():
+	$Enemy_appear_timer.start()
