@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bocslnbv4sk6n"]
+[gd_scene load_steps=4 format=3 uid="uid://bocslnbv4sk6n"]
 
 [ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Hammer/Hammer.gd" id="1_hqt31"]
 [ext_resource type="Texture2D" uid="uid://bos02si7p85ts" path="res://Details/hammer.png" id="2_ewpex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8loca"]
+size = Vector2(122, 120)
 
 [node name="Hammer" type="Node2D"]
 script = ExtResource("1_hqt31")
@@ -9,3 +12,12 @@ speed = 10
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_ewpex")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-24, -13)
+shape = SubResource("RectangleShape2D_8loca")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
