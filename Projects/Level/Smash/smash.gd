@@ -3,11 +3,6 @@ class_name Smash extends Node2D
 enum Actions {A, B, X, Y}
 
 var smash_button_scene = preload("res://Projects/Level/Smash/smash_button/smash_button.tscn")
-
-var button_queue: Array[SmashButton]
-@onready var button_placeholders: Array[Marker2D] = [
-	$"buttons/1", $"buttons/2", $"buttons/3"
-]
 @export var combo_timeout: int
 
 var combo_multiplier: int :
@@ -25,12 +20,33 @@ var score: int :
 			score = 0
 		%score.text = str(score)
 
+var button_1: SmashButton : 
+	set(b):
+		button_1 = b
+		button_1.global_position = $"buttons/1".global_position
+
+var button_2: SmashButton : 
+	set(b):
+		button_2 = b
+		button_2.global_position = $"buttons/2".global_position
+
+var button_3: SmashButton : 
+	set(b):
+		button_3 = b
+		button_3.global_position = $"buttons/3".global_position
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	add_button()
-	add_button()
-	add_button()
+	var sb: SmashButton = smash_button_scene.instantiate()
+	add_child(sb)
+	button_1 = sb
+	sb = smash_button_scene.instantiate()
+	add_child(sb)
+	button_2 = sb
+	sb = smash_button_scene.instantiate()
+	add_child(sb)
+	button_3 = sb
 	score = 0
 	combo_multiplier = 1
 
@@ -47,32 +63,21 @@ func _process(_delta):
 		action_pressed(Actions.Y)
 
 func action_pressed(a: Actions):
-	if a == button_queue[0].value:
-		remove_button()
+	if a == button_1.value:
+		add_button()
 		score += 10 * combo_multiplier
 		combo_multiplier += 1
 	else:
 		score -= 20
 		combo_multiplier = 1
 
-func remove_button():
-	var btn = button_queue[0]
-	button_queue.remove_at(0)
-	btn.queue_free()
-	add_button()
-
 func add_button():
 	var sb: SmashButton = smash_button_scene.instantiate()
-	button_queue.append(sb)
-	place_buttons()
-
-func place_buttons():
-	for i in 3:
-		if button_queue.size() > i:
-			button_queue[i].global_position = button_placeholders[i].global_position
-			if button_queue[i].get_parent() == null:
-				add_child(button_queue[i])
-
+	add_child(sb)
+	button_1.queue_free()
+	button_1 = button_2
+	button_2 = button_3
+	button_3 = sb
 
 func _on_combo_timer_timeout():
 	combo_multiplier = 1
