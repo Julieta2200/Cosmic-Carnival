@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bymhjj0l4ybj6"]
+
+[ext_resource type="Texture2D" uid="uid://udoyio75q0g3" path="res://Assets/Characters/Lumina/Base.png" id="1_c1m8c"]
+[ext_resource type="Script" path="res://Projects/Level/Balance/acrobat/acrobat.gd" id="1_i2sh4"]
+
+[node name="acrobat" type="Node2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_i2sh4")
+rotation_speed = 1.5
+move_multiplier = 4
+gravitation_speed = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_c1m8c")

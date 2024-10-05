@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvyg40yf3iwtx"]
+
+[ext_resource type="Script" path="res://Projects/Level/Balance/balance.gd" id="1_0lv33"]
+[ext_resource type="PackedScene" uid="uid://bymhjj0l4ybj6" path="res://Projects/Level/Balance/acrobat/acrobat.tscn" id="2_20em4"]
+
+[node name="balance" type="Node2D"]
+script = ExtResource("1_0lv33")
+
+[node name="acrobat" parent="." instance=ExtResource("2_20em4")]
+position = Vector2(502, 487)
