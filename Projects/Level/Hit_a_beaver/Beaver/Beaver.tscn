@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt3hc48tjlf64"]
+
+[ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Beaver/Beaver.gd" id="1_lfqn4"]
+[ext_resource type="Texture2D" uid="uid://7d2ytl70igs1" path="res://Details/enemy.png" id="2_20kjt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3c5oq"]
+radius = 49.4773
+
+[node name="Beaver" type="Node2D"]
+script = ExtResource("1_lfqn4")
+stay_time = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_20kjt")
+
+[node name="Disappear_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 10)
+shape = SubResource("CircleShape2D_3c5oq")
+
+[connection signal="draw" from="." to="." method="_on_draw"]
+[connection signal="timeout" from="Disappear_timer" to="." method="_on_disappear_timer_timeout"]
