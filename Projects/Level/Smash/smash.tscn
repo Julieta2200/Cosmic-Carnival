@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvrg88m6gc5j8"]
+
+[ext_resource type="Script" path="res://Projects/Level/Smash/smash.gd" id="1_d7xek"]
+
+[node name="smash" type="Node2D"]
+script = ExtResource("1_d7xek")
+combo_timeout = 2
+
+[node name="buttons" type="Node2D" parent="."]
+
+[node name="1" type="Marker2D" parent="buttons"]
+position = Vector2(258, 723)
+
+[node name="2" type="Marker2D" parent="buttons"]
+position = Vector2(558, 723)
+
+[node name="3" type="Marker2D" parent="buttons"]
+position = Vector2(858, 723)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="score" type="Label" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 455.0
+offset_top = 282.0
+offset_right = 495.0
+offset_bottom = 305.0
+theme_override_font_sizes/font_size = 100
+text = "0"
+
+[node name="combo_multiplier" type="Label" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 348.0
+offset_top = 196.0
+offset_right = 405.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 100
+text = "0"
+
+[node name="combo_timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="timeout" from="combo_timer" to="." method="_on_combo_timer_timeout"]
