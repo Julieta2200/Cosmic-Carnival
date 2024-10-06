@@ -1,4 +1,4 @@
-class_name Beaver extends Node2D
+class_name Bomb extends Node2D
 
 @export var stay_time : float
 
