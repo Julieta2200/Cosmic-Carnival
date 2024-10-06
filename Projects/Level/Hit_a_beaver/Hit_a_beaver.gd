@@ -4,33 +4,44 @@ extends Node2D
 @export var appear_time : float
 @export var probability : float
 
-@onready var board = $Board
+@onready var beavers = $Board/Beavers
+@onready var bombs = $Board/Bombs
 @onready var hammer = $Hammer
-var beaver
+var enemy
 
 func _ready():
-	$Beaver_appear_timer.wait_time = appear_time
-	$Beaver_appear_timer.start()
+	$Appear_timer.wait_time = appear_time
+	$Appear_timer.start()
 
 func enemy_appear():
-	if count > 0:
-		var beaver_index = randi_range(0, board.get_child_count() - 1)
-		beaver = board.get_child(beaver_index)
-		beaver.show()
-		count -= 1
+	var rand = randf()
+	if rand > (probability / 100):
+		enemy_show(beavers)
+	else:
+		enemy_show(bombs)
 	
-func _on_beaver_appear_timer_timeout():
-	enemy_appear()
-
-
-func _on_beaver_hidden():
-	$Beaver_appear_timer.start()
+func enemy_show(enemies):
+	var enemy_index = randi_range(0, enemies.get_child_count() - 1)
+	enemy = enemies.get_child(enemy_index)
+	enemy.show()
+	
+func _on_enemy_hidden():
+	$Appear_timer.start()
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("space"):
 		hit()
 		
 func hit():
-	if $Hammer.on_beaver:
-		beaver.hide()
-		print("hit")
+	if hammer.on_enemy:
+		if enemy is Beaver:
+			enemy.hide()
+			print("beaver")
+		elif enemy is Bomb:
+			print("bomb")
+		hammer.on_enemy = false
+
+func _on_appear_timer_timeout():
+	if count > 0:
+		enemy_appear()
+		count -= 1
