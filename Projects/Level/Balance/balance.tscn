@@ -8,3 +8,4 @@ script = ExtResource("1_0lv33")
 
 [node name="acrobat" parent="." instance=ExtResource("2_20em4")]
 position = Vector2(502, 487)
+initial_gravitation_speed = 0.5
