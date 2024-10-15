@@ -5,10 +5,10 @@ class_name Acrobat extends Node2D
 @export var move_multiplier: int
 @export var gravitation_speed: float
 
-var steps_number: float :
+var distance: float :
 	set(s):
-		steps_number = s
-		$"../steps_number".text = str(int(steps_number))
+		distance = s
+		$"../steps_number".text = str(int(distance))
 
 func _physics_process(delta):
 	gravitation()
@@ -22,7 +22,7 @@ func gravitation():
 	
 	if Input.is_action_pressed("A"):
 		total_rotation *= move_multiplier
-		steps_number += 0.1
+		distance += 0.1
 
 	if Input.is_action_pressed("left"):
 		total_rotation -= rotation_speed 
