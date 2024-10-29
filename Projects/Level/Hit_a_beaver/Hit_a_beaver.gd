@@ -4,8 +4,8 @@ extends Node2D
 @export var appear_time : float
 @export var probability : float
 
-@onready var beavers = $Board/Beavers
-@onready var bombs = $Board/Bombs
+@onready var beavers = $Beavers
+@onready var bombs = $Bombs
 @onready var hammer = $Hammer
 var enemy
 
@@ -34,12 +34,18 @@ func _physics_process(delta):
 		
 func hit():
 	if hammer.on_enemy:
+		if hammer.position.x > enemy.position.x:
+			hammer.animation.play("hit_left")
+		else:
+			hammer.animation.play("hit_right")
 		if enemy is Beaver:
 			enemy.hide()
 			print("beaver")
 		elif enemy is Bomb:
 			print("bomb")
 		hammer.on_enemy = false
+	else:
+		hammer.animation.play("hit_left")
 
 func _on_appear_timer_timeout():
 	if count > 0:
