@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3fw77bhw3c5t"]
+
+[ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Bomb/bomb.gd" id="1_vi44q"]
+[ext_resource type="Texture2D" uid="uid://cnot3plt7kdws" path="res://Details/Hit_a_beaver/Monsters/Monster 2.png" id="2_ld5n5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_huy6o"]
+radius = 17.0
+height = 34.0
+
+[node name="Monster_2" type="Node2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_vi44q")
+stay_time = 3.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4, -6.25)
+texture = ExtResource("2_ld5n5")
+
+[node name="Disappear_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(-3.25, -5.75)
+shape = SubResource("CapsuleShape2D_huy6o")
+
+[connection signal="draw" from="." to="." method="_on_draw" flags=18]
+[connection signal="timeout" from="Disappear_timer" to="." method="_on_disappear_timer_timeout" flags=18]

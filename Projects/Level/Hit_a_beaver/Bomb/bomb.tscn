@@ -10,7 +10,7 @@ height = 34.0
 [node name="Bomb" type="Node2D"]
 scale = Vector2(4, 4)
 script = ExtResource("1_d28hk")
-stay_time = 3.0
+stay_time = 1.5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-4, -6.25)

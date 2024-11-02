@@ -1,4 +1,4 @@
-class_name Beaver extends Node2D
+class_name Monster extends Node
 
 @export var stay_time : float
 
@@ -8,4 +8,4 @@ func _on_draw():
 	$Area2D.get_node("CollisionShape2D").disabled = false
 
 func _on_disappear_timer_timeout():
-	hide()
+	$".".hide()

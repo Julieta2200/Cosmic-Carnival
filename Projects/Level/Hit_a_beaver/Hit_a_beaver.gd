@@ -7,10 +7,10 @@ extends Node2D
 @onready var beavers = $Beavers
 @onready var bombs = $Bombs
 @onready var hammer = $Hammer
+var time = 0
 var enemy
 
 func _ready():
-	$Appear_timer.wait_time = appear_time
 	$Appear_timer.start()
 
 func enemy_appear():
@@ -38,16 +38,18 @@ func hit():
 			hammer.animation.play("hit_left")
 		else:
 			hammer.animation.play("hit_right")
-		if enemy is Beaver:
+		if $Beavers.get_children().has(enemy):
 			enemy.hide()
-			print("beaver")
+			$CanvasLayer/hit_a_beaver_ui.get_score(1)
 		elif enemy is Bomb:
-			print("bomb")
+			enemy.hide()
+			$CanvasLayer/hit_a_beaver_ui.get_score(-1)
 		hammer.on_enemy = false
 	else:
-		hammer.animation.play("hit_left")
+		hammer.animation.play("hit_right")
 
 func _on_appear_timer_timeout():
+	$Appear_timer.wait_time = appear_time
 	if count > 0:
 		enemy_appear()
 		count -= 1
