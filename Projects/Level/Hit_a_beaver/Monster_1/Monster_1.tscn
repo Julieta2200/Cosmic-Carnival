@@ -4,12 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://dfilx1a6cd2d5" path="res://Details/Hit_a_beaver/Monsters/Monster 1.png" id="2_ds0xv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qfoov"]
-radius = 13.5
-height = 34.0
+radius = 12.5
+height = 29.5
 
-[node name="Beaver" type="Node2D"]
+[node name="Monster_1" type="Node2D"]
 scale = Vector2(4, 4)
 script = ExtResource("1_o31sd")
+stay_time = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ds0xv")
@@ -21,6 +22,7 @@ one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 visible = false
+position = Vector2(0, -1.5)
 shape = SubResource("CapsuleShape2D_qfoov")
 
 [connection signal="draw" from="." to="." method="_on_draw"]
