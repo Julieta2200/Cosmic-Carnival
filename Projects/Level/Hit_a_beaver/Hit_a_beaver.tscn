@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://lvw1mf1g0x1w"]
+[gd_scene load_steps=11 format=3 uid="uid://lvw1mf1g0x1w"]
 
 [ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Hit_a_beaver.gd" id="1_7b3k5"]
 [ext_resource type="Texture2D" uid="uid://dpcxaum5c6rmh" path="res://Details/Hit_a_beaver/Background.png" id="2_wc4ic"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://b3fw77bhw3c5t" path="res://Projects/Level/Hit_a_beaver/Monster_2/monster_2.tscn" id="8_i32ei"]
 [ext_resource type="PackedScene" uid="uid://c1ajlj61ek3qj" path="res://Projects/Level/Hit_a_beaver/Monster_3/monster_3.tscn" id="9_4rnad"]
 [ext_resource type="PackedScene" uid="uid://dd1ms0342jnn1" path="res://Projects/Level/Hit_a_beaver/ui/hit_a_beaver_ui.tscn" id="9_wr2ai"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_si6fh"]
+size = Vector2(1121.56, 25.375)
 
 [node name="Hit_a_beaver" type="Node2D"]
 script = ExtResource("1_7b3k5")
@@ -106,6 +109,28 @@ one_shot = true
 
 [node name="Hammer" parent="." instance=ExtResource("3_tgkmh")]
 position = Vector2(438, 400)
+
+[node name="walls" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls"]
+position = Vector2(524, -118)
+shape = SubResource("RectangleShape2D_si6fh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls"]
+position = Vector2(1103, 421)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_si6fh")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="walls"]
+position = Vector2(525, 969)
+shape = SubResource("RectangleShape2D_si6fh")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="walls"]
+position = Vector2(-54, 420)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_si6fh")
 
 [connection signal="hidden" from="Monsters_1/Monster_1" to="." method="_on_monster_hidden"]
 [connection signal="hidden" from="Monsters_1/Monster_2" to="." method="_on_monster_hidden"]

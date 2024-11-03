@@ -6,9 +6,8 @@ extends Node2D
 @onready var monsters_1 = $Monsters_1
 @onready var monsters_2 = $Monsters_2
 @onready var monsters_3 = $Monsters_3
-
 @onready var hammer = $Hammer
-var time = 0
+
 var enemy
 
 func _ready():
