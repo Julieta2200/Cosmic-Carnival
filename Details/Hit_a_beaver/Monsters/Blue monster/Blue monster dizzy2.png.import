@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfilx1a6cd2d5"
-path="res://.godot/imported/Monster 1.png-26e7d81c0c10d4475416b223cb536965.ctex"
+uid="uid://c6h3v0v0niemb"
+path="res://.godot/imported/Blue monster dizzy2.png-95e6e3061a8048ae7e60256ba2f7b405.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Details/Hit_a_beaver/Monsters/Monster 1.png"
-dest_files=["res://.godot/imported/Monster 1.png-26e7d81c0c10d4475416b223cb536965.ctex"]
+source_file="res://Details/Hit_a_beaver/Monsters/Blue monster/Blue monster dizzy2.png"
+dest_files=["res://.godot/imported/Blue monster dizzy2.png-95e6e3061a8048ae7e60256ba2f7b405.ctex"]
 
 [params]
 

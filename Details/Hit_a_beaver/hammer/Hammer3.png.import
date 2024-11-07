@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pdpbl3v287w1"
-path="res://.godot/imported/Hammer.png-3f61657877a9e45af7687456f8de673b.ctex"
+uid="uid://cjtqv6mwxrr1p"
+path="res://.godot/imported/Hammer3.png-f042ddf287d480282bbbc0018219363f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Details/Hit_a_beaver/Hammer.png"
-dest_files=["res://.godot/imported/Hammer.png-3f61657877a9e45af7687456f8de673b.ctex"]
+source_file="res://Details/Hit_a_beaver/hammer/Hammer3.png"
+dest_files=["res://.godot/imported/Hammer3.png-f042ddf287d480282bbbc0018219363f.ctex"]
 
 [params]
 

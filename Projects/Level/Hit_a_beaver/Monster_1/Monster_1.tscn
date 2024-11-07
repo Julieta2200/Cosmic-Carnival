@@ -1,7 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://bt3hc48tjlf64"]
+[gd_scene load_steps=8 format=3 uid="uid://bt3hc48tjlf64"]
 
 [ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Monster.gd" id="1_o31sd"]
-[ext_resource type="Texture2D" uid="uid://dfilx1a6cd2d5" path="res://Details/Hit_a_beaver/Monsters/Monster 1.png" id="2_ds0xv"]
+[ext_resource type="Texture2D" uid="uid://brdvrnmo8qcyn" path="res://Details/Hit_a_beaver/Monsters/Blue monster/Blue monster idle (1).png" id="2_74ae7"]
+[ext_resource type="Texture2D" uid="uid://d023gm4iwyam1" path="res://Details/Hit_a_beaver/Monsters/Blue monster/Blue monster dizzy1.png" id="3_4x7m7"]
+[ext_resource type="Texture2D" uid="uid://c6h3v0v0niemb" path="res://Details/Hit_a_beaver/Monsters/Blue monster/Blue monster dizzy2.png" id="4_214mp"]
+[ext_resource type="Texture2D" uid="uid://boh36qanxo1pg" path="res://Details/Hit_a_beaver/Monsters/Blue monster/Blue monster idle(2).png" id="5_tgr4k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nojem"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_74ae7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4x7m7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_214mp")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_74ae7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tgr4k")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qfoov"]
 radius = 12.5
@@ -10,10 +41,13 @@ height = 29.5
 [node name="Monster_1" type="Node2D"]
 scale = Vector2(4, 4)
 script = ExtResource("1_o31sd")
-stay_time = 1.0
+stay_time = 4.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ds0xv")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nojem")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.234315
 
 [node name="Disappear_timer" type="Timer" parent="."]
 one_shot = true
@@ -21,9 +55,9 @@ one_shot = true
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2(0, -1.5)
 shape = SubResource("CapsuleShape2D_qfoov")
 
 [connection signal="draw" from="." to="." method="_on_draw"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Disappear_timer" to="." method="_on_disappear_timer_timeout"]

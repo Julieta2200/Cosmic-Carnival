@@ -1,7 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1ajlj61ek3qj"]
+[gd_scene load_steps=8 format=3 uid="uid://c1ajlj61ek3qj"]
 
-[ext_resource type="Texture2D" uid="uid://cjv0v72yu2sgc" path="res://Details/Hit_a_beaver/Monsters/Monster 3.png" id="1_0pq5d"]
 [ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Monster.gd" id="1_flt11"]
+[ext_resource type="Texture2D" uid="uid://bma2quwu68yxt" path="res://Details/Hit_a_beaver/Monsters/Pink Monster/Pink monster idle(1).png" id="2_ga5ds"]
+[ext_resource type="Texture2D" uid="uid://qtgsgbuktbcd" path="res://Details/Hit_a_beaver/Monsters/Pink Monster/Pink monster dizzy(1).png" id="3_twy0s"]
+[ext_resource type="Texture2D" uid="uid://bxj5hod07s665" path="res://Details/Hit_a_beaver/Monsters/Pink Monster/Pink monster dizzy(2).png" id="4_umrbw"]
+[ext_resource type="Texture2D" uid="uid://eaei1vxh55kd" path="res://Details/Hit_a_beaver/Monsters/Pink Monster/Pink monster idle(2).png" id="5_pxtvb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j5xkm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ga5ds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_twy0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_umrbw")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ga5ds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pxtvb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_huy6o"]
 radius = 14.5
@@ -9,10 +40,12 @@ radius = 14.5
 [node name="Monster_3" type="Node2D"]
 scale = Vector2(4, 4)
 script = ExtResource("1_flt11")
-stay_time = 3.0
+stay_time = 6.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_0pq5d")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j5xkm")
+animation = &"hit"
+autoplay = "idle"
 
 [node name="Disappear_timer" type="Timer" parent="."]
 one_shot = true
@@ -24,4 +57,5 @@ position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_huy6o")
 
 [connection signal="draw" from="." to="." method="_on_draw"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Disappear_timer" to="." method="_on_disappear_timer_timeout"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8wn5b51tjikl"
-path="res://.godot/imported/Game Machine.png-8008d555d60b9440c12d51090d4cd9d0.ctex"
+uid="uid://bqb42twobtk2o"
+path="res://.godot/imported/Hammer1.png-23743dd3c6dc18c770d473b4059f0119.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Details/Hit_a_beaver/Game Machine.png"
-dest_files=["res://.godot/imported/Game Machine.png-8008d555d60b9440c12d51090d4cd9d0.ctex"]
+source_file="res://Details/Hit_a_beaver/hammer/Hammer1.png"
+dest_files=["res://.godot/imported/Hammer1.png-23743dd3c6dc18c770d473b4059f0119.ctex"]
 
 [params]
 

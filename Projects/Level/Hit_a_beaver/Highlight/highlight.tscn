@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmnmrrxboew07"]
+
+[ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Highlight/highlight.gd" id="1_bbs2f"]
+[ext_resource type="Texture2D" uid="uid://cx04xwtyv4u7h" path="res://Details/Hit_a_beaver/highlight.png" id="1_ejcjt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oyump"]
+radius = 16.0
+height = 60.0
+
+[node name="Highlight" type="Node2D"]
+script = ExtResource("1_bbs2f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ejcjt")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_oyump")
+
+[connection signal="monster_in_area" from="." to="." method="_on_monster_in_area"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

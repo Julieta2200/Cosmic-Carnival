@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8wn5b51tjikl"
-path="res://.godot/imported/Game Machine.png-8008d555d60b9440c12d51090d4cd9d0.ctex"
+uid="uid://c7p3mbj8k1adn"
+path="res://.godot/imported/Orange monster idle(2).png-b323b3a7ccffb401dfd95a827386c188.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Details/Hit_a_beaver/Game Machine.png"
-dest_files=["res://.godot/imported/Game Machine.png-8008d555d60b9440c12d51090d4cd9d0.ctex"]
+source_file="res://Details/Hit_a_beaver/Monsters/Orange monster/Orange monster idle(2).png"
+dest_files=["res://.godot/imported/Orange monster idle(2).png-b323b3a7ccffb401dfd95a827386c188.ctex"]
 
 [params]
 

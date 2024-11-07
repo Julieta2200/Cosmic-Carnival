@@ -1,7 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bocslnbv4sk6n"]
+[gd_scene load_steps=7 format=3 uid="uid://bocslnbv4sk6n"]
 
 [ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Hammer/Hammer.gd" id="1_hqt31"]
-[ext_resource type="Texture2D" uid="uid://pdpbl3v287w1" path="res://Details/Hit_a_beaver/Hammer.png" id="2_3qb72"]
+[ext_resource type="Texture2D" uid="uid://bqb42twobtk2o" path="res://Details/Hit_a_beaver/hammer/Hammer1.png" id="2_sicsf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n827c"]
+size = Vector2(10.1352, 20)
 
 [sub_resource type="Animation" id="Animation_7ii6y"]
 length = 0.001
@@ -18,25 +21,9 @@ tracks/0/keys = {
 "values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_pxp2f"]
-resource_name = "hit"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
 [sub_resource type="Animation" id="Animation_g6el1"]
-resource_name = "hit_left"
-length = 0.4
+resource_name = "hit"
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -44,69 +31,35 @@ tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, -0.785398, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_0btn8"]
-resource_name = "hit_right"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.785398, 0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hxhcp"]
 _data = {
 "RESET": SubResource("Animation_7ii6y"),
-"hit": SubResource("Animation_pxp2f"),
-"hit_left": SubResource("Animation_g6el1"),
-"hit_right": SubResource("Animation_0btn8")
+"hit": SubResource("Animation_g6el1")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uxaas"]
-radius = 19.0
-height = 74.0
-
-[node name="Hammer" type="CharacterBody2D"]
-scale = Vector2(4, 4)
-collision_layer = 2
-collision_mask = 5
+[node name="Hammer" type="Node2D"]
+scale = Vector2(3, 3)
 script = ExtResource("1_hqt31")
 speed = 10
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_3qb72")
+texture = ExtResource("2_sicsf")
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D"]
-visible = false
-position = Vector2(-24, -13)
-polygon = PackedVector2Array(-1.75, -15.75, -10.25, -5.5, -10, 3, -2.75, 12.5, 4, 12.75, 4, -15.75)
-
-[node name="CollisionShape2D3" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2(25, -15.5)
-rotation = 3.14159
-polygon = PackedVector2Array(-1.75, -15.75, -10.25, -5.5, -10, 3, -2.75, 12.5, 4, 12.75, 4, -15.75)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.41667, -1.41667)
+rotation = 0.785398
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_n827c")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_hxhcp")
 }
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -14.25)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_uxaas")
