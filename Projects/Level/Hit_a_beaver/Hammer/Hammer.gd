@@ -19,7 +19,7 @@ func move():
 func _physics_process(_delta):
 	move()
 
-	
+
 func hit_monster():
 	selected_circle.monster_in_area.emit()
 	return selected_circle.hit

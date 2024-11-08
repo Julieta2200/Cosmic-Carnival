@@ -35,9 +35,9 @@ func hit():
 	if hammer.hit_monster() && monster != null:
 		hammer.animation.play("hit")
 		if monsters_1.get_children().has(monster) || monsters_2.get_children().has(monster):
-			$CanvasLayer/hit_a_beaver_ui.set_score(1)
+			$CanvasLayer/hit_a_beaver_ui.score += 1
 		elif monsters_3.get_children().has(monster):
-			$CanvasLayer/hit_a_beaver_ui.set_score(-1)
+			$CanvasLayer/hit_a_beaver_ui.score -= 1
 		monster.animation()
 	hammer.selected_circle.hit = false
 
