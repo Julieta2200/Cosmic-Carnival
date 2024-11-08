@@ -32,7 +32,7 @@ func _physics_process(_delta):
 		hit()
 
 func hit():
-	if hammer.hit_monster() && monster != null:
+	if hammer.hit_monster(): 
 		hammer.animation.play("hit")
 		if monsters_1.get_children().has(monster) || monsters_2.get_children().has(monster):
 			$CanvasLayer/hit_a_beaver_ui.score += 1
