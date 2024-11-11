@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brdvrnmo8qcyn"
-path="res://.godot/imported/Blue monster idle (1).png-97231a9b38279a2ac563c03e3bca0a26.ctex"
+uid="uid://uhhnoa6plmue"
+path="res://.godot/imported/Green_Hammer2.png-9d77f656d6c921f29d9723acd256a275.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Details/Hit_a_beaver/Monsters/Blue monster/Blue monster idle (1).png"
-dest_files=["res://.godot/imported/Blue monster idle (1).png-97231a9b38279a2ac563c03e3bca0a26.ctex"]
+source_file="res://Details/Hit_a_beaver/hammer/Green/Green_Hammer2.png"
+dest_files=["res://.godot/imported/Green_Hammer2.png-9d77f656d6c921f29d9723acd256a275.ctex"]
 
 [params]
 

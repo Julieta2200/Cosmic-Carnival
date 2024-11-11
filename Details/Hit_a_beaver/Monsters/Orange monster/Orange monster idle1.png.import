@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjtqv6mwxrr1p"
-path="res://.godot/imported/Hammer3.png-f042ddf287d480282bbbc0018219363f.ctex"
+uid="uid://dmnj1ltf1dpub"
+path="res://.godot/imported/Orange monster idle1.png-df0c1ea6f821e4508a7d80d6a1b191b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Details/Hit_a_beaver/hammer/Hammer3.png"
-dest_files=["res://.godot/imported/Hammer3.png-f042ddf287d480282bbbc0018219363f.ctex"]
+source_file="res://Details/Hit_a_beaver/Monsters/Orange monster/Orange monster idle1.png"
+dest_files=["res://.godot/imported/Orange monster idle1.png-df0c1ea6f821e4508a7d80d6a1b191b8.ctex"]
 
 [params]
 

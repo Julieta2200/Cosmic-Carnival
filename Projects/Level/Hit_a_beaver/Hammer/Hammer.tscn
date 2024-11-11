@@ -1,64 +1,41 @@
-[gd_scene load_steps=7 format=3 uid="uid://bocslnbv4sk6n"]
+[gd_scene load_steps=6 format=3 uid="uid://bocslnbv4sk6n"]
 
 [ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Hammer/Hammer.gd" id="1_hqt31"]
-[ext_resource type="Texture2D" uid="uid://bqb42twobtk2o" path="res://Details/Hit_a_beaver/hammer/Hammer1.png" id="2_sicsf"]
+[ext_resource type="Texture2D" uid="uid://dp5id3n23ca02" path="res://Details/Hit_a_beaver/hammer/Green/Green_Hammer1.png" id="2_bos2u"]
+[ext_resource type="Texture2D" uid="uid://uhhnoa6plmue" path="res://Details/Hit_a_beaver/hammer/Green/Green_Hammer2.png" id="3_1ft40"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n827c"]
-size = Vector2(10.1352, 20)
+size = Vector2(10.1352, 26.8701)
 
-[sub_resource type="Animation" id="Animation_7ii6y"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_g6el1"]
-resource_name = "hit"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, -0.785398, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hxhcp"]
-_data = {
-"RESET": SubResource("Animation_7ii6y"),
-"hit": SubResource("Animation_g6el1")
-}
+[sub_resource type="SpriteFrames" id="SpriteFrames_meaxn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bos2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1ft40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bos2u")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 7.0
+}]
 
 [node name="Hammer" type="Node2D"]
 scale = Vector2(3, 3)
 script = ExtResource("1_hqt31")
 speed = 10
 
-[node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_sicsf")
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1.41667, -1.41667)
+position = Vector2(-1.5, -4.83333)
 rotation = 0.785398
 shape = SubResource("RectangleShape2D_n827c")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_hxhcp")
-}
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_meaxn")
+animation = &"hit"

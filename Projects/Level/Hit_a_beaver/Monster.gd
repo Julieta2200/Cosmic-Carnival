@@ -5,7 +5,7 @@ class_name Monster extends Node
 
 func _on_draw():
 	$Disappear_timer.wait_time = stay_time
-	$AnimatedSprite2D.play("idle")
+	$idle_animated.play("idle")
 	$Disappear_timer.start()
 	$Area2D.get_node("CollisionShape2D").disabled = false
 	
@@ -14,7 +14,12 @@ func _on_disappear_timer_timeout():
 	$".".hide()
 
 func animation():
-	$AnimatedSprite2D.play("hit")
+	$hit_animated.visible = true
+	$idle_animated.visible = false
+	$hit_animated.play("hit")
 
-func _on_animated_sprite_2d_animation_finished():
+
+func _on_hit_animated_animation_finished():
+	$hit_animated.visible = false
+	$idle_animated.visible = true
 	$".".hide()

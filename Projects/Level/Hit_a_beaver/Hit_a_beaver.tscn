@@ -62,67 +62,67 @@ scale = Vector2(4, 4)
 
 [node name="Monster_1" parent="Monsters_1" instance=ExtResource("3_l1oqw")]
 visible = false
-position = Vector2(190, 600)
+position = Vector2(190, 592)
 
 [node name="Monster_2" parent="Monsters_1" instance=ExtResource("3_l1oqw")]
 visible = false
-position = Vector2(514, 600)
+position = Vector2(514, 592)
 
 [node name="Monster_3" parent="Monsters_1" instance=ExtResource("3_l1oqw")]
 visible = false
-position = Vector2(834, 600)
+position = Vector2(834, 592)
 
 [node name="Monster_4" parent="Monsters_1" instance=ExtResource("3_l1oqw")]
 visible = false
-position = Vector2(350, 776)
+position = Vector2(350, 768)
 
 [node name="Monster_5" parent="Monsters_1" instance=ExtResource("3_l1oqw")]
 visible = false
-position = Vector2(670, 776)
+position = Vector2(670, 768)
 
 [node name="Monsters_2" type="Node2D" parent="."]
 
 [node name="Monster_1" parent="Monsters_2" instance=ExtResource("8_i32ei")]
 visible = false
-position = Vector2(190, 592)
+position = Vector2(188, 584)
 
 [node name="Monster_2" parent="Monsters_2" instance=ExtResource("8_i32ei")]
 visible = false
-position = Vector2(514, 592)
+position = Vector2(512, 584)
 
 [node name="Monster_3" parent="Monsters_2" instance=ExtResource("8_i32ei")]
 visible = false
-position = Vector2(834, 592)
+position = Vector2(832, 584)
 
 [node name="Monster_4" parent="Monsters_2" instance=ExtResource("8_i32ei")]
 visible = false
-position = Vector2(350, 768)
+position = Vector2(348, 760)
 
 [node name="Monster_5" parent="Monsters_2" instance=ExtResource("8_i32ei")]
 visible = false
-position = Vector2(670, 768)
+position = Vector2(668, 760)
 
 [node name="Monsters_3" type="Node2D" parent="."]
 
 [node name="Monster_1" parent="Monsters_3" instance=ExtResource("9_4rnad")]
 visible = false
-position = Vector2(190, 600)
+position = Vector2(188, 602)
 
 [node name="Monster_2" parent="Monsters_3" instance=ExtResource("9_4rnad")]
 visible = false
-position = Vector2(514, 600)
+position = Vector2(512, 602)
 
 [node name="Monster_3" parent="Monsters_3" instance=ExtResource("9_4rnad")]
 visible = false
-position = Vector2(834, 600)
+position = Vector2(832, 602)
 
 [node name="Monster_4" parent="Monsters_3" instance=ExtResource("9_4rnad")]
 visible = false
-position = Vector2(350, 776)
+position = Vector2(348, 778)
 
 [node name="Monster_5" parent="Monsters_3" instance=ExtResource("9_4rnad")]
 visible = false
-position = Vector2(670, 776)
+position = Vector2(668, 778)
 
 [node name="Appear_timer" type="Timer" parent="."]
 wait_time = 5.0
