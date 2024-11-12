@@ -1,31 +1,33 @@
 extends Control
 
+var hammer: String
+
+var time: int :
+	set(t):
+		time = t
+		if time < 1000:
+			set_number($tables/time/numbers/units,$tables/time/numbers/tens,$tables/time/numbers/hundreds,time)
+
 var score: int :
 	set(s):
 		score = s
 		if score < 0:
 			score += 1
 		elif score < 1000 :
-			set_number($tables/score/numbers/units,$tables/score/numbers/tens,$tables/score/numbers/hundreds,score)
-			
-var time: int :
-	set(t):
-		time = t
-		if time < 1000:
-			set_number($tables/time/numbers/units,$tables/time/numbers/tens,$tables/time/numbers/hundreds,time)
-		
-
-var numbers = ["res://Details/Hit_a_beaver/Numbers/0.png","res://Details/Hit_a_beaver/Numbers/1.png",
-				"res://Details/Hit_a_beaver/Numbers/2.png","res://Details/Hit_a_beaver/Numbers/3.png",
-				"res://Details/Hit_a_beaver/Numbers/4.png","res://Details/Hit_a_beaver/Numbers/5.png",
-				"res://Details/Hit_a_beaver/Numbers/6.png","res://Details/Hit_a_beaver/Numbers/7.png",
-				"res://Details/Hit_a_beaver/Numbers/8.png","res://Details/Hit_a_beaver/Numbers/9.png"]
+			if hammer == "1":
+				set_number($"hammers/1/scores/units",$"hammers/1/scores/tens",$"hammers/1/scores/hundreds",score)
+			elif hammer == "2":
+				set_number($"hammers/2/scores/units",$"hammers/2/scores/tens",$"hammers/2/scores/hundreds",score)
+			elif hammer == "3":
+				set_number($"hammers/3/scores/units",$"hammers/3/scores/tens",$"hammers/3/scores/hundreds",score)
+			elif hammer == "4":
+				set_number($"hammers/4/scores/units",$"hammers/4/scores/tens",$"hammers/4/scores/hundreds",score)
 
 
 func set_number(units,tens,hundreds,i):
-	units.texture = load(numbers[i % 10])
-	tens.texture = load(numbers[(i / 10) % 10])
-	hundreds.texture = load(numbers[(i / 100) % 10])
+	units.text = str(i % 10)
+	tens.text = str((i / 10) % 10)
+	hundreds.text = str((i / 100) % 10)
 
 func _on_timer_timeout():
 	time += 1

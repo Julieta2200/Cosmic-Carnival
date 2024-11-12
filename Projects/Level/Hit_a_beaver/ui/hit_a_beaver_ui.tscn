@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd1ms0342jnn1"]
+[gd_scene load_steps=9 format=3 uid="uid://dd1ms0342jnn1"]
 
 [ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/ui/hit_a_beaver_ui.gd" id="1_5xrk8"]
-[ext_resource type="Texture2D" uid="uid://cwiapbb6e4avr" path="res://Details/Hit_a_beaver/Table.png" id="1_gn2l3"]
 [ext_resource type="FontFile" uid="uid://dxl2upmlmfr51" path="res://Assets/Fonts/8-bit-fortress (1).ttf" id="2_6dcgv"]
-[ext_resource type="Texture2D" uid="uid://bv16cy1r8d5o6" path="res://Details/Hit_a_beaver/Numbers/0.png" id="4_n8rh2"]
+[ext_resource type="Texture2D" uid="uid://k2dmlxkusthf" path="res://Details/Hit_a_beaver/UI/Cell.png" id="2_y5xho"]
+[ext_resource type="Texture2D" uid="uid://dqya478r8iteh" path="res://Details/Hit_a_beaver/UI/Mini hammer/Mini hammer1.png" id="4_rn2hc"]
+[ext_resource type="Texture2D" uid="uid://f2vc6w0r0tr1" path="res://Details/Hit_a_beaver/UI/Game name.png" id="5_87xom"]
+[ext_resource type="Texture2D" uid="uid://bd6tb72vpkpfc" path="res://Details/Hit_a_beaver/UI/Mini hammer/Mini hammer2.png" id="5_jvidp"]
+[ext_resource type="Texture2D" uid="uid://3hq3ug5dj1v4" path="res://Details/Hit_a_beaver/UI/Mini hammer/Mini hammer3.png" id="6_4xi4x"]
+[ext_resource type="Texture2D" uid="uid://jjv30rn7hwjj" path="res://Details/Hit_a_beaver/UI/Mini hammer/Mini hammer4.png" id="7_vbb8j"]
 
 [node name="hit_a_beaver_ui" type="Control"]
 layout_mode = 3
@@ -13,6 +17,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5xrk8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -467.0
+offset_top = 130.0
+offset_right = -233.0
+offset_bottom = 171.0
+grow_horizontal = 2
+scale = Vector2(4, 4)
+texture = ExtResource("5_87xom")
 
 [node name="tables" type="Control" parent="."]
 layout_mode = 1
@@ -25,23 +42,29 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="time" type="TextureRect" parent="tables"]
-layout_mode = 0
-offset_left = 160.0
-offset_top = 140.0
-offset_right = 202.0
-offset_bottom = 158.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 472.0
+offset_top = 70.0
+offset_right = 506.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(4, 4)
-texture = ExtResource("1_gn2l3")
+texture = ExtResource("2_y5xho")
 stretch_mode = 2
 
 [node name="Label" type="Label" parent="tables/time"]
 layout_mode = 0
-offset_left = 2.00001
-offset_top = -8.0
-offset_right = 112.0
-offset_bottom = 11.0
+offset_left = -1.49998
+offset_top = -7.5
+offset_right = 108.5
+offset_bottom = 14.5
 scale = Vector2(0.35, 0.35)
-theme_override_colors/font_color = Color(0.768627, 0.517647, 1, 1)
 theme_override_fonts/font = ExtResource("2_6dcgv")
 theme_override_font_sizes/font_size = 14
 text = "Time"
@@ -50,144 +73,306 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="numbers" type="Control" parent="tables/time"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="hundreds" type="TextureRect" parent="tables/time/numbers"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 14.0
-offset_bottom = 17.0
-texture = ExtResource("4_n8rh2")
-
-[node name="tens" type="TextureRect" parent="tables/time/numbers"]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 1.0
-offset_right = 28.0
-offset_bottom = 17.0
-texture = ExtResource("4_n8rh2")
-
-[node name="units" type="TextureRect" parent="tables/time/numbers"]
-layout_mode = 0
-offset_left = 28.5
-offset_top = 1.0
-offset_right = 41.5
-offset_bottom = 17.0
-texture = ExtResource("4_n8rh2")
-
-[node name="high_score" type="TextureRect" parent="tables"]
-layout_mode = 0
-offset_left = 420.0
-offset_top = 70.0
-offset_right = 462.0
-offset_bottom = 88.0
-scale = Vector2(4, 4)
-texture = ExtResource("1_gn2l3")
-stretch_mode = 2
-
-[node name="Label" type="Label" parent="tables/high_score"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = -8.0
-offset_right = 112.0
-offset_bottom = 11.0
-scale = Vector2(0.35, 0.35)
-theme_override_colors/font_color = Color(0.768627, 0.517647, 1, 1)
-theme_override_fonts/font = ExtResource("2_6dcgv")
-theme_override_font_sizes/font_size = 14
-text = "High score"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="numbers" type="Control" parent="tables/high_score"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 34.0
+offset_bottom = 13.0
 
-[node name="hundreds" type="TextureRect" parent="tables/high_score/numbers"]
+[node name="hundreds" type="Label" parent="tables/time/numbers"]
 layout_mode = 0
 offset_left = 1.0
-offset_top = 1.0
-offset_right = 14.0
-offset_bottom = 17.0
-texture = ExtResource("4_n8rh2")
-
-[node name="tens" type="TextureRect" parent="tables/high_score/numbers"]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 1.0
-offset_right = 28.0
-offset_bottom = 17.0
-texture = ExtResource("4_n8rh2")
-
-[node name="units" type="TextureRect" parent="tables/high_score/numbers"]
-layout_mode = 0
-offset_left = 28.5
-offset_top = 1.0
-offset_right = 41.5
-offset_bottom = 17.0
-texture = ExtResource("4_n8rh2")
-
-[node name="score" type="TextureRect" parent="tables"]
-layout_mode = 0
-offset_left = 700.0
-offset_top = 140.0
-offset_right = 742.0
-offset_bottom = 158.0
-scale = Vector2(4, 4)
-texture = ExtResource("1_gn2l3")
-stretch_mode = 2
-
-[node name="Label" type="Label" parent="tables/score"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = -8.0
-offset_right = 112.0
-offset_bottom = 11.0
-scale = Vector2(0.35, 0.35)
-theme_override_colors/font_color = Color(0.768627, 0.517647, 1, 1)
+offset_top = -1.75
+offset_right = 18.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
 theme_override_fonts/font = ExtResource("2_6dcgv")
 theme_override_font_sizes/font_size = 14
-text = "score"
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="numbers" type="Control" parent="tables/score"]
-layout_mode = 3
-anchors_preset = 0
+[node name="tens" type="Label" parent="tables/time/numbers"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -1.75
+offset_right = 29.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("2_6dcgv")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="units" type="Label" parent="tables/time/numbers"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = -1.75
 offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="hundreds" type="TextureRect" parent="tables/score/numbers"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 14.0
-offset_bottom = 17.0
-texture = ExtResource("4_n8rh2")
-
-[node name="tens" type="TextureRect" parent="tables/score/numbers"]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 1.0
-offset_right = 28.0
-offset_bottom = 17.0
-texture = ExtResource("4_n8rh2")
-
-[node name="units" type="TextureRect" parent="tables/score/numbers"]
-layout_mode = 0
-offset_left = 28.5
-offset_top = 1.0
-offset_right = 41.5
-offset_bottom = 17.0
-texture = ExtResource("4_n8rh2")
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("2_6dcgv")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="hammers" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="1" type="TextureRect" parent="hammers"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 380.0
+offset_right = 122.0
+offset_bottom = 393.0
+scale = Vector2(4, 4)
+texture = ExtResource("2_y5xho")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="hammers/1"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -18.5
+offset_right = 26.0
+offset_bottom = -1.5
+texture = ExtResource("4_rn2hc")
+
+[node name="scores" type="Control" parent="hammers/1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 34.0
+offset_bottom = 13.0
+
+[node name="hundreds" type="Label" parent="hammers/1/scores"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.75
+offset_right = 18.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("2_6dcgv")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="tens" type="Label" parent="hammers/1/scores"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -1.75
+offset_right = 29.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("2_6dcgv")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="units" type="Label" parent="hammers/1/scores"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = -1.75
+offset_right = 40.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("2_6dcgv")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="2" type="TextureRect" parent="hammers"]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 380.0
+offset_right = 362.0
+offset_bottom = 393.0
+scale = Vector2(4, 4)
+texture = ExtResource("2_y5xho")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="hammers/2"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -18.5
+offset_right = 26.0
+offset_bottom = -1.5
+texture = ExtResource("5_jvidp")
+
+[node name="scores" type="Control" parent="hammers/2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 34.0
+offset_bottom = 13.0
+
+[node name="hundreds" type="Label" parent="hammers/2/scores"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.75
+offset_right = 18.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("2_6dcgv")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="tens" type="Label" parent="hammers/2/scores"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -1.75
+offset_right = 29.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("2_6dcgv")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="units" type="Label" parent="hammers/2/scores"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = -1.75
+offset_right = 40.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("2_6dcgv")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3" type="TextureRect" parent="hammers"]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 380.0
+offset_right = 602.0
+offset_bottom = 393.0
+scale = Vector2(4, 4)
+texture = ExtResource("2_y5xho")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="hammers/3"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -18.5
+offset_right = 26.0
+offset_bottom = -1.5
+texture = ExtResource("6_4xi4x")
+
+[node name="scores" type="Control" parent="hammers/3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 34.0
+offset_bottom = 13.0
+
+[node name="hundreds" type="Label" parent="hammers/3/scores"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.75
+offset_right = 18.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("2_6dcgv")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="tens" type="Label" parent="hammers/3/scores"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -1.75
+offset_right = 29.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("2_6dcgv")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="units" type="Label" parent="hammers/3/scores"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = -1.75
+offset_right = 40.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("2_6dcgv")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="4" type="TextureRect" parent="hammers"]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 380.0
+offset_right = 842.0
+offset_bottom = 393.0
+scale = Vector2(4, 4)
+texture = ExtResource("2_y5xho")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="hammers/4"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -18.5
+offset_right = 26.0
+offset_bottom = -1.5
+texture = ExtResource("7_vbb8j")
+
+[node name="scores" type="Control" parent="hammers/4"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 34.0
+offset_bottom = 13.0
+
+[node name="hundreds" type="Label" parent="hammers/4/scores"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.75
+offset_right = 18.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("2_6dcgv")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="tens" type="Label" parent="hammers/4/scores"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -1.75
+offset_right = 29.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("2_6dcgv")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="units" type="Label" parent="hammers/4/scores"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = -1.75
+offset_right = 40.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("2_6dcgv")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

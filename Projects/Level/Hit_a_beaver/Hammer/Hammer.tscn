@@ -39,3 +39,9 @@ shape = SubResource("RectangleShape2D_n827c")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_meaxn")
 animation = &"hit"
+
+[node name="animation_timer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+
+[connection signal="timeout" from="animation_timer" to="." method="_on_animation_timer_timeout"]

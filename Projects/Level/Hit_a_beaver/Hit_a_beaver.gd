@@ -5,7 +5,7 @@ extends Node2D
 @onready var monsters_1 = $Monsters_1
 @onready var monsters_2 = $Monsters_2
 @onready var monsters_3 = $Monsters_3
-@onready var circles = $Circles_highlight
+@onready var circles = $Circles
 @onready var hammer = $Hammer
 
 var appear_time : float
@@ -46,9 +46,8 @@ func hit():
 		if circles.get_child(i).visible:
 			for j in monsters.keys():
 				if j == i:
+					$CanvasLayer/hit_a_beaver_ui.hammer = "2"
 					var monster = monsters[j]
-					monsters.erase(j)
-					hammer.animation.play("hit")
 					if monsters_1.get_children().has(monster):
 						$CanvasLayer/hit_a_beaver_ui.score += 1
 					elif monsters_2.get_children().has(monster):
@@ -56,6 +55,7 @@ func hit():
 					elif monsters_3.get_children().has(monster):
 						$CanvasLayer/hit_a_beaver_ui.score -= 1
 					monster.animation()
+					hammer.animation()
 					return
 
 func _on_appear_timer_timeout():

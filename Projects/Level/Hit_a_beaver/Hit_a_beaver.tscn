@@ -21,6 +21,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("2_wc4ic")
 
 [node name="GameName" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(512, 300)
 scale = Vector2(4, 4)
 texture = ExtResource("3_nhdq8")
@@ -30,29 +31,29 @@ position = Vector2(512, 448)
 scale = Vector2(4, 4)
 texture = ExtResource("4_k5lvd")
 
-[node name="Circles_highlight" type="Node2D" parent="."]
+[node name="Circles" type="Node2D" parent="."]
 
-[node name="Highlight" parent="Circles_highlight" instance=ExtResource("5_skva1")]
+[node name="Highlight" parent="Circles" instance=ExtResource("5_skva1")]
 visible = false
 position = Vector2(188, 610)
 scale = Vector2(4, 4)
 
-[node name="Highlight2" parent="Circles_highlight" instance=ExtResource("5_skva1")]
+[node name="Highlight2" parent="Circles" instance=ExtResource("5_skva1")]
 visible = false
 position = Vector2(512, 610)
 scale = Vector2(4, 4)
 
-[node name="Highlight3" parent="Circles_highlight" instance=ExtResource("5_skva1")]
+[node name="Highlight3" parent="Circles" instance=ExtResource("5_skva1")]
 visible = false
 position = Vector2(832, 610)
 scale = Vector2(4, 4)
 
-[node name="Highlight4" parent="Circles_highlight" instance=ExtResource("5_skva1")]
+[node name="Highlight4" parent="Circles" instance=ExtResource("5_skva1")]
 visible = false
 position = Vector2(348, 786)
 scale = Vector2(4, 4)
 
-[node name="Highlight5" parent="Circles_highlight" instance=ExtResource("5_skva1")]
+[node name="Highlight5" parent="Circles" instance=ExtResource("5_skva1")]
 visible = false
 position = Vector2(668, 786)
 scale = Vector2(4, 4)

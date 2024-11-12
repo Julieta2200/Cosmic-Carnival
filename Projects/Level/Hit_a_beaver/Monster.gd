@@ -1,6 +1,7 @@
 class_name Monster extends Node
 
 @export var stay_time : float
+@onready var disappear_timer = $Disappear_timer
 
 
 func _on_draw():
@@ -23,4 +24,5 @@ func animation():
 func _on_hit_animated_animation_finished():
 	$hit_animated.visible = false
 	$idle_animated.visible = true
+	$"../..".monster_delete(self)
 	$".".hide()
