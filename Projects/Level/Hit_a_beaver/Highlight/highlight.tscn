@@ -20,6 +20,5 @@ visible = false
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_oyump")
 
-[connection signal="monster_in_area" from="." to="." method="_on_monster_in_area"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

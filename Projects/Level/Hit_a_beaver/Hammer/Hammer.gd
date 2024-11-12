@@ -3,8 +3,6 @@ extends Node2D
 @export var speed : int
 @onready var animation = $AnimatedSprite2D
 
-
-var selected_circle
 var screen_bounds
 
 func _ready():
@@ -19,7 +17,3 @@ func move():
 
 func _physics_process(_delta):
 	move()
-
-func hit_monster():
-	selected_circle.monster_in_area.emit()
-	return selected_circle.hit

@@ -11,6 +11,7 @@ func _on_draw():
 	
 
 func _on_disappear_timer_timeout():
+	$"../..".monster_delete(self)
 	$".".hide()
 
 func animation():
