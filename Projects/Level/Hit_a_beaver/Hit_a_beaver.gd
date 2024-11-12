@@ -31,9 +31,8 @@ func enemy_show(enemies):
 	while monsters.size() < 5:
 		var i = randi_range(0, enemies.get_child_count() - 1)
 		if !monsters.has(i):
-			var monster = enemies.get_child(i)
-			monsters[i] = monster
-			monster.show()
+			monsters[i] = enemies.get_child(i)
+			monsters[i].show()
 			break
 			
 func monster_delete(monster):
@@ -48,15 +47,15 @@ func hit():
 			for j in monsters.keys():
 				if j == i:
 					var monster = monsters[j]
+					monsters.erase(j)
 					hammer.animation.play("hit")
 					if monsters_1.get_children().has(monster):
 						$CanvasLayer/hit_a_beaver_ui.score += 1
-					if monsters_2.get_children().has(monster):
+					elif monsters_2.get_children().has(monster):
 						$CanvasLayer/hit_a_beaver_ui.score += 3
 					elif monsters_3.get_children().has(monster):
 						$CanvasLayer/hit_a_beaver_ui.score -= 1
 					monster.animation()
-					monsters.erase(j)
 					return
 
 func _on_appear_timer_timeout():
