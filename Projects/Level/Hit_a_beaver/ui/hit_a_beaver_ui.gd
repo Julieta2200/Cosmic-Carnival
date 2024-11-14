@@ -6,7 +6,7 @@ var time: int :
 	set(t):
 		time = t
 		if time < 1000:
-			set_number($tables/time/numbers/units,$tables/time/numbers/tens,$tables/time/numbers/hundreds,time)
+			set_number($time/numbers/units,$time/numbers/tens,$time/numbers/hundreds,time)
 
 var score: int :
 	set(s):

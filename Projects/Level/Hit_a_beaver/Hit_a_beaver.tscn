@@ -134,6 +134,7 @@ position = Vector2(668, 778)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="hit_a_beaver_ui" parent="CanvasLayer" instance=ExtResource("9_wr2ai")]
+size_flags_horizontal = 0
 
 [node name="Hammer" parent="." instance=ExtResource("3_tgkmh")]
 position = Vector2(525, 549)

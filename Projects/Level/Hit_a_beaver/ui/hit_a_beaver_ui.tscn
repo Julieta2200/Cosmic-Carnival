@@ -31,34 +31,24 @@ grow_horizontal = 2
 scale = Vector2(4, 4)
 texture = ExtResource("5_87xom")
 
-[node name="tables" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1024.0
-offset_bottom = -896.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="time" type="TextureRect" parent="tables"]
+[node name="time" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 472.0
-offset_top = 70.0
-offset_right = 506.0
-offset_bottom = 83.0
+offset_left = -40.0
+offset_top = -378.0
+offset_right = -6.0
+offset_bottom = -365.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(4, 4)
 texture = ExtResource("2_y5xho")
 stretch_mode = 2
 
-[node name="Label" type="Label" parent="tables/time"]
+[node name="Label" type="Label" parent="time"]
 layout_mode = 0
 offset_left = -1.49998
 offset_top = -7.5
@@ -72,13 +62,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="numbers" type="Control" parent="tables/time"]
+[node name="numbers" type="Control" parent="time"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 34.0
 offset_bottom = 13.0
 
-[node name="hundreds" type="Label" parent="tables/time/numbers"]
+[node name="hundreds" type="Label" parent="time/numbers"]
 layout_mode = 0
 offset_left = 1.0
 offset_top = -1.75
@@ -91,7 +81,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="tens" type="Label" parent="tables/time/numbers"]
+[node name="tens" type="Label" parent="time/numbers"]
 layout_mode = 0
 offset_left = 12.0
 offset_top = -1.75
@@ -104,7 +94,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="units" type="Label" parent="tables/time/numbers"]
+[node name="units" type="Label" parent="time/numbers"]
 layout_mode = 0
 offset_left = 23.0
 offset_top = -1.75
