@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://lvw1mf1g0x1w"]
 
 [ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Hit_a_beaver.gd" id="1_7b3k5"]
-[ext_resource type="Texture2D" uid="uid://dpcxaum5c6rmh" path="res://Details/Hit_a_beaver/Background.png" id="2_wc4ic"]
-[ext_resource type="PackedScene" uid="uid://bt3hc48tjlf64" path="res://Projects/Level/Hit_a_beaver/Monster_1/Monster_1.tscn" id="3_l1oqw"]
+[ext_resource type="Texture2D" uid="uid://dpcxaum5c6rmh" path="res://Assets/Details/Hit_a_beaver/Background.png" id="2_423ru"]
+[ext_resource type="Texture2D" uid="uid://c8wn5b51tjikl" path="res://Assets/Details/Hit_a_beaver/Game Machine.png" id="3_8fp38"]
+[ext_resource type="PackedScene" uid="uid://bt3hc48tjlf64" path="res://Projects/Level/Hit_a_beaver/Monsters/Monster_1/Monster_1.tscn" id="3_l1oqw"]
 [ext_resource type="PackedScene" uid="uid://bocslnbv4sk6n" path="res://Projects/Level/Hit_a_beaver/Hammer/Hammer.tscn" id="3_tgkmh"]
-[ext_resource type="Texture2D" uid="uid://c8wn5b51tjikl" path="res://Details/Hit_a_beaver/Game Machine.png" id="4_k5lvd"]
 [ext_resource type="PackedScene" uid="uid://dmnmrrxboew07" path="res://Projects/Level/Hit_a_beaver/Highlight/highlight.tscn" id="5_skva1"]
-[ext_resource type="PackedScene" uid="uid://b3fw77bhw3c5t" path="res://Projects/Level/Hit_a_beaver/Monster_2/monster_2.tscn" id="8_i32ei"]
-[ext_resource type="PackedScene" uid="uid://c1ajlj61ek3qj" path="res://Projects/Level/Hit_a_beaver/Monster_3/monster_3.tscn" id="9_4rnad"]
+[ext_resource type="PackedScene" uid="uid://b3fw77bhw3c5t" path="res://Projects/Level/Hit_a_beaver/Monsters/Monster_2/monster_2.tscn" id="8_i32ei"]
+[ext_resource type="PackedScene" uid="uid://dau6i4q68tq0k" path="res://Projects/Level/Hit_a_beaver/Monsters/Monster_3/monster_3.tscn" id="9_4rnad"]
 [ext_resource type="PackedScene" uid="uid://dd1ms0342jnn1" path="res://Projects/Level/Hit_a_beaver/ui/hit_a_beaver_ui.tscn" id="9_wr2ai"]
 
 [node name="Hit_a_beaver" type="Node2D"]
@@ -22,12 +22,12 @@ count = 100
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(512, 448)
 scale = Vector2(4, 4)
-texture = ExtResource("2_wc4ic")
+texture = ExtResource("2_423ru")
 
 [node name="Board" type="Sprite2D" parent="."]
 position = Vector2(512, 448)
 scale = Vector2(4, 4)
-texture = ExtResource("4_k5lvd")
+texture = ExtResource("3_8fp38")
 
 [node name="Circles" type="Node2D" parent="."]
 

@@ -1,0 +1,164 @@
+[gd_scene load_steps=20 format=3 uid="uid://b3fw77bhw3c5t"]
+
+[ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Monsters/Monster.gd" id="1_dtm6m"]
+[ext_resource type="Texture2D" uid="uid://dyf8xur0nnanf" path="res://Assets/Details/Hit_a_beaver/Monsters/Orange monster/Appear.png" id="2_hh3lr"]
+[ext_resource type="Texture2D" uid="uid://ds5ef2nhfi77a" path="res://Assets/Details/Hit_a_beaver/Monsters/Orange monster/Idle/Orange monster idle1.png" id="3_iu5pk"]
+[ext_resource type="Texture2D" uid="uid://c0jafbhpgbsx7" path="res://Assets/Details/Hit_a_beaver/Monsters/Orange monster/Idle/Orange monster idle2.png" id="4_esmer"]
+[ext_resource type="Texture2D" uid="uid://d2irv2mmcskks" path="res://Assets/Details/Hit_a_beaver/Monsters/Orange monster/Dizzy/Orange monster dizzy1.png" id="5_c2xn7"]
+[ext_resource type="Texture2D" uid="uid://ewlqpey7bd1l" path="res://Assets/Details/Hit_a_beaver/Monsters/Orange monster/Dizzy/Orange monster dizzy2.png" id="6_kxgl5"]
+[ext_resource type="Texture2D" uid="uid://v6i1pe18uaic" path="res://Assets/Details/Hit_a_beaver/Monsters/Orange monster/Disappear/Disappear1.png" id="7_7jhrp"]
+[ext_resource type="Texture2D" uid="uid://dq21ctffwqxcm" path="res://Assets/Details/Hit_a_beaver/Monsters/Orange monster/Disappear/Disappear2.png" id="8_hx54s"]
+[ext_resource type="Texture2D" uid="uid://bmhwer4y4oxcc" path="res://Assets/Details/Hit_a_beaver/Monsters/Orange monster/Disappear/Disappear3.png" id="9_mayih"]
+[ext_resource type="Texture2D" uid="uid://clyy3u8ithkwx" path="res://Assets/Details/Hit_a_beaver/Monsters/Orange monster/Disappear/Disappear4.png" id="10_4ruwk"]
+[ext_resource type="Texture2D" uid="uid://wna7pvc28j7w" path="res://Assets/Details/Hit_a_beaver/Monsters/Orange monster/Disappear/Disappear5.png" id="11_arf5a"]
+[ext_resource type="Texture2D" uid="uid://b2476tb5o114h" path="res://Assets/Details/Hit_a_beaver/Monsters/Orange monster/Disappear/Disappear6.png" id="12_2eegc"]
+[ext_resource type="Texture2D" uid="uid://c0nwnmbq81xmo" path="res://Assets/Details/Hit_a_beaver/Monsters/Orange monster/Disappear/Disappear7.png" id="13_xmgne"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2edd0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hh3lr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_iu5pk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hh3lr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_iu5pk")
+}],
+"loop": false,
+"name": &"appear",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vrrc1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_iu5pk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_esmer")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kqk0q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_c2xn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kxgl5")
+}],
+"loop": false,
+"name": &"dizzy",
+"speed": 4.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7681k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_7jhrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hx54s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mayih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4ruwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_arf5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2eegc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_xmgne")
+}],
+"loop": false,
+"name": &"disappear",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_whn1d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_iu5pk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hh3lr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_iu5pk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hh3lr")
+}],
+"loop": false,
+"name": &"disappear",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_huy6o"]
+radius = 14.0
+
+[node name="Monster_2" type="Node2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_dtm6m")
+stay_time = 3.0
+
+[node name="appear_animated" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_2edd0")
+animation = &"appear"
+
+[node name="idle_animated" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_vrrc1")
+animation = &"idle"
+
+[node name="dizzy_animated" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0.5, 4)
+sprite_frames = SubResource("SpriteFrames_kqk0q")
+animation = &"dizzy"
+
+[node name="disappear_animated" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0.5, -3.5)
+sprite_frames = SubResource("SpriteFrames_7681k")
+animation = &"disappear"
+
+[node name="disappear_animated2" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_whn1d")
+animation = &"disappear"
+
+[node name="Disappear_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_huy6o")
+
+[connection signal="draw" from="." to="." method="_on_draw" flags=18]
+[connection signal="animation_finished" from="appear_animated" to="." method="_on_appear_animated_animation_finished"]
+[connection signal="animation_finished" from="dizzy_animated" to="." method="_on_dizzy_animated_animation_finished"]
+[connection signal="animation_finished" from="disappear_animated" to="." method="_on_disappear_animated_animation_finished"]
+[connection signal="animation_finished" from="disappear_animated2" to="." method="_on_disappear_animated_2_animation_finished"]
+[connection signal="timeout" from="Disappear_timer" to="." method="_on_disappear_timer_timeout" flags=18]

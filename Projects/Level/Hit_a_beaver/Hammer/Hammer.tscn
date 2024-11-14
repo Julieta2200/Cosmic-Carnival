@@ -1,17 +1,17 @@
 [gd_scene load_steps=6 format=3 uid="uid://bocslnbv4sk6n"]
 
 [ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Hammer/Hammer.gd" id="1_hqt31"]
-[ext_resource type="Texture2D" uid="uid://dp5id3n23ca02" path="res://Details/Hit_a_beaver/hammer/Green/Green_Hammer1.png" id="2_bos2u"]
-[ext_resource type="Texture2D" uid="uid://uhhnoa6plmue" path="res://Details/Hit_a_beaver/hammer/Green/Green_Hammer2.png" id="3_1ft40"]
+[ext_resource type="Texture2D" uid="uid://uhhnoa6plmue" path="res://Assets/Details/Hit_a_beaver/hammer/Green/Green_Hammer2.png" id="2_kc7w8"]
+[ext_resource type="Texture2D" uid="uid://dp5id3n23ca02" path="res://Assets/Details/Hit_a_beaver/hammer/Green/Green_Hammer1.png" id="3_83bd7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_meaxn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_1ft40")
+"texture": ExtResource("2_kc7w8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_bos2u")
+"texture": ExtResource("3_83bd7")
 }],
 "loop": false,
 "name": &"hit",
@@ -19,7 +19,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_bos2u")
+"texture": ExtResource("3_83bd7")
 }],
 "loop": false,
 "name": &"idle",
