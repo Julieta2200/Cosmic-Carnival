@@ -30,6 +30,7 @@ offset_bottom = 171.0
 grow_horizontal = 2
 scale = Vector2(4, 4)
 texture = ExtResource("5_87xom")
+stretch_mode = 2
 
 [node name="time" type="TextureRect" parent="."]
 layout_mode = 1

@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://lvw1mf1g0x1w"]
+[gd_scene load_steps=10 format=3 uid="uid://lvw1mf1g0x1w"]
 
 [ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Hit_a_beaver.gd" id="1_7b3k5"]
 [ext_resource type="Texture2D" uid="uid://dpcxaum5c6rmh" path="res://Details/Hit_a_beaver/Background.png" id="2_wc4ic"]
 [ext_resource type="PackedScene" uid="uid://bt3hc48tjlf64" path="res://Projects/Level/Hit_a_beaver/Monster_1/Monster_1.tscn" id="3_l1oqw"]
-[ext_resource type="Texture2D" uid="uid://cu1h7si8bikud" path="res://Details/Hit_a_beaver/Game name.png" id="3_nhdq8"]
 [ext_resource type="PackedScene" uid="uid://bocslnbv4sk6n" path="res://Projects/Level/Hit_a_beaver/Hammer/Hammer.tscn" id="3_tgkmh"]
 [ext_resource type="Texture2D" uid="uid://c8wn5b51tjikl" path="res://Details/Hit_a_beaver/Game Machine.png" id="4_k5lvd"]
 [ext_resource type="PackedScene" uid="uid://dmnmrrxboew07" path="res://Projects/Level/Hit_a_beaver/Highlight/highlight.tscn" id="5_skva1"]
@@ -24,12 +23,6 @@ count = 100
 position = Vector2(512, 448)
 scale = Vector2(4, 4)
 texture = ExtResource("2_wc4ic")
-
-[node name="GameName" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(512, 300)
-scale = Vector2(4, 4)
-texture = ExtResource("3_nhdq8")
 
 [node name="Board" type="Sprite2D" parent="."]
 position = Vector2(512, 448)
@@ -134,7 +127,6 @@ position = Vector2(668, 778)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="hit_a_beaver_ui" parent="CanvasLayer" instance=ExtResource("9_wr2ai")]
-size_flags_horizontal = 0
 
 [node name="Hammer" parent="." instance=ExtResource("3_tgkmh")]
 position = Vector2(525, 549)
