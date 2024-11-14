@@ -18,7 +18,4 @@ func _physics_process(_delta):
 	move()
 
 func animation():
-	$animation_timer.start()
-
-func _on_animation_timer_timeout():
 	$AnimatedSprite2D.play("hit")

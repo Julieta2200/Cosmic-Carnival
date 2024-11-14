@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eaei1vxh55kd"
-path="res://.godot/imported/Pink monster idle(2).png-c97509b54a95c495fa2f38d3b4ac1d99.ctex"
+uid="uid://c0nwnmbq81xmo"
+path="res://.godot/imported/Disappear7.png-9cd3bdd0d4d83a93b1a8ba4b123ee6af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Details/Hit_a_beaver/Monsters/Pink Monster/Pink monster idle(2).png"
-dest_files=["res://.godot/imported/Pink monster idle(2).png-c97509b54a95c495fa2f38d3b4ac1d99.ctex"]
+source_file="res://Details/Hit_a_beaver/Monsters/Orange monster/Disappear/Disappear7.png"
+dest_files=["res://.godot/imported/Disappear7.png-9cd3bdd0d4d83a93b1a8ba4b123ee6af.ctex"]
 
 [params]
 

@@ -13,7 +13,12 @@
 
 [node name="Hit_a_beaver" type="Node2D"]
 script = ExtResource("1_7b3k5")
-count = 50
+monster_probabilities = {
+"blue": 80,
+"orange": 10,
+"pink": 10
+}
+count = 100
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(512, 448)

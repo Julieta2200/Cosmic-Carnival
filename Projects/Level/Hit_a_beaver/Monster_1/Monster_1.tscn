@@ -1,19 +1,47 @@
-[gd_scene load_steps=9 format=3 uid="uid://bt3hc48tjlf64"]
+[gd_scene load_steps=20 format=3 uid="uid://bt3hc48tjlf64"]
 
 [ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Monster.gd" id="1_o31sd"]
-[ext_resource type="Texture2D" uid="uid://b7bv1l6qh3ttd" path="res://Details/Hit_a_beaver/Monsters/Blue monster/Blue monster idle1.png" id="2_cdw1j"]
-[ext_resource type="Texture2D" uid="uid://d023gm4iwyam1" path="res://Details/Hit_a_beaver/Monsters/Blue monster/Blue monster dizzy1.png" id="3_4x7m7"]
-[ext_resource type="Texture2D" uid="uid://c6h3v0v0niemb" path="res://Details/Hit_a_beaver/Monsters/Blue monster/Blue monster dizzy2.png" id="4_214mp"]
-[ext_resource type="Texture2D" uid="uid://bcuwkxq6clb2s" path="res://Details/Hit_a_beaver/Monsters/Blue monster/Blue monster idle2.png" id="5_xqmfh"]
+[ext_resource type="Texture2D" uid="uid://kqo6bpk8dlqj" path="res://Details/Hit_a_beaver/Monsters/Blue monster/Appear.png" id="2_rxr4o"]
+[ext_resource type="Texture2D" uid="uid://bg07c3xtr68c6" path="res://Details/Hit_a_beaver/Monsters/Blue monster/Idle/Blue monster idle1.png" id="3_6vlw6"]
+[ext_resource type="Texture2D" uid="uid://b2b31a61uphwm" path="res://Details/Hit_a_beaver/Monsters/Blue monster/Idle/Blue monster idle2.png" id="4_1ifao"]
+[ext_resource type="Texture2D" uid="uid://c5c46fws68wsv" path="res://Details/Hit_a_beaver/Monsters/Blue monster/Dizzy/Blue monster dizzy1.png" id="5_yxa4v"]
+[ext_resource type="Texture2D" uid="uid://r4gmu0jh1tn5" path="res://Details/Hit_a_beaver/Monsters/Blue monster/Dizzy/Blue monster dizzy2.png" id="6_f0jr7"]
+[ext_resource type="Texture2D" uid="uid://cr5brktitakmx" path="res://Details/Hit_a_beaver/Monsters/Blue monster/Disappear/Disappear1.png" id="7_g0b24"]
+[ext_resource type="Texture2D" uid="uid://cqisr6bwiedam" path="res://Details/Hit_a_beaver/Monsters/Blue monster/Disappear/Disappear2.png" id="8_7sxup"]
+[ext_resource type="Texture2D" uid="uid://bcy2sjerv6xt5" path="res://Details/Hit_a_beaver/Monsters/Blue monster/Disappear/Disappear3.png" id="9_12lx3"]
+[ext_resource type="Texture2D" uid="uid://dwrtasafj05u1" path="res://Details/Hit_a_beaver/Monsters/Blue monster/Disappear/Disappear4.png" id="10_t40or"]
+[ext_resource type="Texture2D" uid="uid://dp1k7uwpti2n2" path="res://Details/Hit_a_beaver/Monsters/Blue monster/Disappear/Disappear5.png" id="11_2p8or"]
+[ext_resource type="Texture2D" uid="uid://cu3afo8uqifpy" path="res://Details/Hit_a_beaver/Monsters/Blue monster/Disappear/Disappear6.png" id="12_delnr"]
+[ext_resource type="Texture2D" uid="uid://c1iadhhwu6euu" path="res://Details/Hit_a_beaver/Monsters/Blue monster/Disappear/Disappear7.png" id="13_i2q3y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mpig3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rxr4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6vlw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rxr4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6vlw6")
+}],
+"loop": false,
+"name": &"appear",
+"speed": 12.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nojem"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_cdw1j")
+"texture": ExtResource("3_6vlw6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_xqmfh")
+"texture": ExtResource("4_1ifao")
 }],
 "loop": true,
 "name": &"idle",
@@ -24,14 +52,63 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_4x7m7")
+"texture": ExtResource("5_yxa4v")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_214mp")
+"texture": ExtResource("6_f0jr7")
 }],
 "loop": false,
-"name": &"hit",
+"name": &"dizzy",
 "speed": 4.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gm47e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_g0b24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7sxup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_12lx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_t40or")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2p8or")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_delnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_i2q3y")
+}],
+"loop": false,
+"name": &"disappear",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ma0dj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6vlw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rxr4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6vlw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rxr4o")
+}],
+"loop": false,
+"name": &"disappear",
+"speed": 12.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qfoov"]
@@ -41,18 +118,33 @@ height = 29.5
 [node name="Monster_1" type="Node2D"]
 scale = Vector2(4, 4)
 script = ExtResource("1_o31sd")
-stay_time = 4.0
+stay_time = 3.0
+
+[node name="appear_animated" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mpig3")
+animation = &"appear"
 
 [node name="idle_animated" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_nojem")
 animation = &"idle"
-autoplay = "idle"
 
-[node name="hit_animated" type="AnimatedSprite2D" parent="."]
+[node name="dizzy_animated" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(-1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_dyr46")
-animation = &"hit"
+animation = &"dizzy"
+
+[node name="disappear_animated" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_gm47e")
+animation = &"disappear"
+
+[node name="disappear_animated2" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_ma0dj")
+animation = &"disappear"
 
 [node name="Disappear_timer" type="Timer" parent="."]
 one_shot = true
@@ -65,5 +157,8 @@ position = Vector2(0, -1.5)
 shape = SubResource("CapsuleShape2D_qfoov")
 
 [connection signal="draw" from="." to="." method="_on_draw"]
-[connection signal="animation_finished" from="hit_animated" to="." method="_on_hit_animated_animation_finished"]
+[connection signal="animation_finished" from="appear_animated" to="." method="_on_appear_animated_animation_finished"]
+[connection signal="animation_finished" from="dizzy_animated" to="." method="_on_dizzy_animated_animation_finished"]
+[connection signal="animation_finished" from="disappear_animated" to="." method="_on_disappear_animated_animation_finished"]
+[connection signal="animation_finished" from="disappear_animated2" to="." method="_on_disappear_animated_2_animation_finished"]
 [connection signal="timeout" from="Disappear_timer" to="." method="_on_disappear_timer_timeout"]

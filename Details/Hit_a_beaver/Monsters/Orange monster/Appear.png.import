@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfswmk76l64di"
-path="res://.godot/imported/Orange monster dizzy2.png-91f2ae5b57caaf0ec2cd03493110c0be.ctex"
+uid="uid://dyf8xur0nnanf"
+path="res://.godot/imported/Appear.png-7432787b0e95832771031c3973cde268.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Details/Hit_a_beaver/Monsters/Orange monster/Orange monster dizzy2.png"
-dest_files=["res://.godot/imported/Orange monster dizzy2.png-91f2ae5b57caaf0ec2cd03493110c0be.ctex"]
+source_file="res://Details/Hit_a_beaver/Monsters/Orange monster/Appear.png"
+dest_files=["res://.godot/imported/Appear.png-7432787b0e95832771031c3973cde268.ctex"]
 
 [params]
 

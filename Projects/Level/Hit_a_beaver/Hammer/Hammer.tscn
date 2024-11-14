@@ -4,15 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://dp5id3n23ca02" path="res://Details/Hit_a_beaver/hammer/Green/Green_Hammer1.png" id="2_bos2u"]
 [ext_resource type="Texture2D" uid="uid://uhhnoa6plmue" path="res://Details/Hit_a_beaver/hammer/Green/Green_Hammer2.png" id="3_1ft40"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n827c"]
-size = Vector2(10.1352, 26.8701)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_meaxn"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_bos2u")
-}, {
 "duration": 1.0,
 "texture": ExtResource("3_1ft40")
 }, {
@@ -21,13 +15,29 @@ animations = [{
 }],
 "loop": false,
 "name": &"hit",
-"speed": 7.0
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bos2u")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n827c"]
+size = Vector2(10.1352, 26.8701)
 
 [node name="Hammer" type="Node2D"]
 scale = Vector2(3, 3)
 script = ExtResource("1_hqt31")
 speed = 10
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_meaxn")
+animation = &"hit"
+autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -35,13 +45,3 @@ speed = 10
 position = Vector2(-1.5, -4.83333)
 rotation = 0.785398
 shape = SubResource("RectangleShape2D_n827c")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_meaxn")
-animation = &"hit"
-
-[node name="animation_timer" type="Timer" parent="."]
-wait_time = 0.15
-one_shot = true
-
-[connection signal="timeout" from="animation_timer" to="." method="_on_animation_timer_timeout"]
