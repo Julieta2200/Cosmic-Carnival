@@ -22,16 +22,11 @@ func move():
 		position.y = clamp(position.y, 0, screen_bounds.size.y)
 
 func hit():
-	if circle != null && circle.monster != null && !circle.monster.delete:
-			var monster = circle.monster
+	if circle != null:
+		var monster = circle.monster
+		if monster != null && !monster.delete:
 			$"../CanvasLayer/ui".hammer = type
-			match monster.type:
-				"blue":
-					$"../CanvasLayer/ui".score += 1
-				"orange":
-					$"../CanvasLayer/ui".score += 3
-				"pink":
-					$"../CanvasLayer/ui".score -= 1
+			$"../CanvasLayer/ui".score += monster.score
 			monster.dizzy_animation()
 			animation()
 

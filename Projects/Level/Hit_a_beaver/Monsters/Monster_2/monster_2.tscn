@@ -118,7 +118,7 @@ radius = 14.0
 scale = Vector2(4, 4)
 script = ExtResource("1_dtm6m")
 stay_time = 3.0
-type = "orange"
+score = 3
 
 [node name="appear_animated" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.5, -2)

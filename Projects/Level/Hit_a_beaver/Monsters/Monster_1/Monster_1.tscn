@@ -119,7 +119,7 @@ height = 29.5
 scale = Vector2(4, 4)
 script = ExtResource("1_7rrc7")
 stay_time = 4.0
-type = "blue"
+score = 1
 
 [node name="appear_animated" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mpig3")

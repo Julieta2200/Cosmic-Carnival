@@ -1,7 +1,7 @@
 class_name Monster extends Node
 
 @export var stay_time : float
-@export var type : String
+@export var score : int
 
 var delete : bool = true
 

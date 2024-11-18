@@ -27,7 +27,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n827c"]
-size = Vector2(10.1352, 26.8701)
+size = Vector2(7.30677, 21.9203)
 
 [node name="Hammer_2" type="Node2D"]
 scale = Vector2(3, 3)
@@ -41,9 +41,10 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-0.333333, -0.333333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1.5, -4.83333)
+position = Vector2(-1.33333, -4.83333)
 rotation = 0.785398
 shape = SubResource("RectangleShape2D_n827c")
 
