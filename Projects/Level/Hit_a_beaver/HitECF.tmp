@@ -47,29 +47,28 @@ position = Vector2(668, 786)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ui" parent="CanvasLayer" instance=ExtResource("9_wr2ai")]
+[node name="hit_a_beaver_ui" parent="CanvasLayer" instance=ExtResource("9_wr2ai")]
 
-[node name="Points" type="Node2D" parent="."]
+[node name="points" type="Node2D" parent="."]
 
-[node name="point" type="Marker2D" parent="Points"]
+[node name="point" type="Marker2D" parent="points"]
 position = Vector2(190, 592)
 
-[node name="point2" type="Marker2D" parent="Points"]
+[node name="point2" type="Marker2D" parent="points"]
 position = Vector2(514, 592)
 
-[node name="point3" type="Marker2D" parent="Points"]
+[node name="point3" type="Marker2D" parent="points"]
 position = Vector2(834, 592)
 
-[node name="point4" type="Marker2D" parent="Points"]
+[node name="point4" type="Marker2D" parent="points"]
 position = Vector2(350, 768)
 
-[node name="point5" type="Marker2D" parent="Points"]
+[node name="point5" type="Marker2D" parent="points"]
 position = Vector2(670, 768)
 
-[node name="Monsters" type="Node2D" parent="."]
+[node name="monsters" type="Node2D" parent="."]
 
-[node name="Hammer_2" parent="." instance=ExtResource("3_tgkmh")]
-position = Vector2(592, 491)
-type = ""
+[node name="Hammer" parent="." instance=ExtResource("3_tgkmh")]
+position = Vector2(525, 549)
 
 [connection signal="timeout" from="Monster_create_timer" to="." method="_on_monster_create_timer_timeout"]

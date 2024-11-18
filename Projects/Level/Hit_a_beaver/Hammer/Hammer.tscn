@@ -29,10 +29,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n827c"]
 size = Vector2(10.1352, 26.8701)
 
-[node name="Hammer" type="Node2D"]
+[node name="Hammer_2" type="Node2D"]
 scale = Vector2(3, 3)
 script = ExtResource("1_hqt31")
 speed = 10
+type = "2"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_meaxn")

@@ -112,37 +112,41 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_huy6o"]
-radius = 14.5
+radius = 15.5
+height = 31.0
 
 [node name="Monster_3" type="Node2D"]
 scale = Vector2(4, 4)
 script = ExtResource("1_gxupl")
-stay_time = 3.5
+stay_time = 6.0
+type = "pink"
 
 [node name="appear_animated" type="AnimatedSprite2D" parent="."]
-visible = false
+position = Vector2(-0.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_lb04t")
 animation = &"appear"
 
 [node name="idle_animated" type="AnimatedSprite2D" parent="."]
 visible = false
+position = Vector2(-0.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_13m7k")
 animation = &"idle"
 
 [node name="dizzy_animated" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(0.5, 0)
+position = Vector2(0, 2.5)
 sprite_frames = SubResource("SpriteFrames_ak2l5")
 animation = &"dizzy"
 
 [node name="disappear_animated" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(1, -8.5)
+position = Vector2(0.5, -6)
 sprite_frames = SubResource("SpriteFrames_b825t")
 animation = &"disappear"
 
 [node name="disappear_animated2" type="AnimatedSprite2D" parent="."]
 visible = false
+position = Vector2(-0.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_ghsvv")
 animation = &"disappear"
 
@@ -152,11 +156,9 @@ one_shot = true
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
-position = Vector2(0, 1)
+position = Vector2(0, 2.5)
 shape = SubResource("CapsuleShape2D_huy6o")
 
-[connection signal="draw" from="." to="." method="_on_draw"]
 [connection signal="animation_finished" from="appear_animated" to="." method="_on_appear_animated_animation_finished"]
 [connection signal="animation_finished" from="dizzy_animated" to="." method="_on_dizzy_animated_animation_finished"]
 [connection signal="animation_finished" from="disappear_animated" to="." method="_on_disappear_animated_animation_finished"]

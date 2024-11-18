@@ -118,7 +118,8 @@ height = 29.5
 [node name="Monster_1" type="Node2D"]
 scale = Vector2(4, 4)
 script = ExtResource("1_7rrc7")
-stay_time = 3.0
+stay_time = 5.0
+type = "blue"
 
 [node name="appear_animated" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mpig3")
@@ -156,7 +157,6 @@ visible = false
 position = Vector2(0, -1.5)
 shape = SubResource("CapsuleShape2D_qfoov")
 
-[connection signal="draw" from="." to="." method="_on_draw"]
 [connection signal="animation_finished" from="appear_animated" to="." method="_on_appear_animated_animation_finished"]
 [connection signal="animation_finished" from="dizzy_animated" to="." method="_on_dizzy_animated_animation_finished"]
 [connection signal="animation_finished" from="disappear_animated" to="." method="_on_disappear_animated_animation_finished"]

@@ -117,32 +117,35 @@ radius = 14.0
 [node name="Monster_2" type="Node2D"]
 scale = Vector2(4, 4)
 script = ExtResource("1_dtm6m")
-stay_time = 3.0
+stay_time = 6.0
+type = "orange"
 
 [node name="appear_animated" type="AnimatedSprite2D" parent="."]
-visible = false
+position = Vector2(-0.5, -2)
 sprite_frames = SubResource("SpriteFrames_2edd0")
 animation = &"appear"
 
 [node name="idle_animated" type="AnimatedSprite2D" parent="."]
 visible = false
+position = Vector2(-0.5, -2)
 sprite_frames = SubResource("SpriteFrames_vrrc1")
 animation = &"idle"
 
 [node name="dizzy_animated" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(0.5, 4)
+position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_kqk0q")
 animation = &"dizzy"
 
 [node name="disappear_animated" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(0.5, -3.5)
+position = Vector2(0, -5.5)
 sprite_frames = SubResource("SpriteFrames_7681k")
 animation = &"disappear"
 
 [node name="disappear_animated2" type="AnimatedSprite2D" parent="."]
 visible = false
+position = Vector2(-0.5, -2)
 sprite_frames = SubResource("SpriteFrames_whn1d")
 animation = &"disappear"
 
@@ -153,10 +156,9 @@ one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 visible = false
-position = Vector2(0, 2)
+position = Vector2(0.25, 3.25)
 shape = SubResource("CapsuleShape2D_huy6o")
 
-[connection signal="draw" from="." to="." method="_on_draw" flags=18]
 [connection signal="animation_finished" from="appear_animated" to="." method="_on_appear_animated_animation_finished"]
 [connection signal="animation_finished" from="dizzy_animated" to="." method="_on_dizzy_animated_animation_finished"]
 [connection signal="animation_finished" from="disappear_animated" to="." method="_on_disappear_animated_animation_finished"]

@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://3hq3ug5dj1v4" path="res://Assets/Details/Hit_a_beaver/UI/Mini hammer/Mini hammer3.png" id="7_o2kpm"]
 [ext_resource type="Texture2D" uid="uid://jjv30rn7hwjj" path="res://Assets/Details/Hit_a_beaver/UI/Mini hammer/Mini hammer4.png" id="8_cdolm"]
 
-[node name="hit_a_beaver_ui" type="Control"]
+[node name="ui" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
