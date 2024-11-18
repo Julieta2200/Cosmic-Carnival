@@ -46,3 +46,6 @@ autoplay = "idle"
 position = Vector2(-1.5, -4.83333)
 rotation = 0.785398
 shape = SubResource("RectangleShape2D_n827c")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

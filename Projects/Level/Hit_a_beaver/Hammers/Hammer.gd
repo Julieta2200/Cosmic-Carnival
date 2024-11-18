@@ -3,7 +3,7 @@ class_name Hammer extends Node2D
 @export var speed : int
 @export var type : String
 
-var circles : Array
+var circle
 var screen_bounds
 
 func _ready():
@@ -22,21 +22,26 @@ func move():
 		position.y = clamp(position.y, 0, screen_bounds.size.y)
 
 func hit():
-	circles = $"../Circles".get_children()
-	for i in circles.size():
-		if circles[i].active && circles[i].monster != null && !circles[i].monster.delete:
-				var monster = circles[i].monster
-				$"../CanvasLayer/ui".hammer = type
-				match monster.type:
-					"blue":
-						$"../CanvasLayer/ui".score += 1
-					"orange":
-						$"../CanvasLayer/ui".score += 3
-					"pink":
-						$"../CanvasLayer/ui".score -= 1
-				monster.dizzy_animation()
-				animation()
-				break
+	if circle != null && circle.monster != null && !circle.monster.delete:
+			var monster = circle.monster
+			$"../CanvasLayer/ui".hammer = type
+			match monster.type:
+				"blue":
+					$"../CanvasLayer/ui".score += 1
+				"orange":
+					$"../CanvasLayer/ui".score += 3
+				"pink":
+					$"../CanvasLayer/ui".score -= 1
+			monster.dizzy_animation()
+			animation()
+
+func _on_area_2d_area_entered(area):
+	if area.get_parent() is Circle:
+		circle = area.get_parent()
+
+func _on_area_2d_area_exited(area):
+	if area.get_parent() is Circle:
+		circle = null
 
 func animation():
 	$AnimatedSprite2D.play("hit")
