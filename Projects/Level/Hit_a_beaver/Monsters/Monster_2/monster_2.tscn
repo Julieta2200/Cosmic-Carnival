@@ -117,7 +117,7 @@ radius = 14.0
 [node name="Monster_2" type="Node2D"]
 scale = Vector2(4, 4)
 script = ExtResource("1_dtm6m")
-stay_time = 6.0
+stay_time = 3.0
 type = "orange"
 
 [node name="appear_animated" type="AnimatedSprite2D" parent="."]

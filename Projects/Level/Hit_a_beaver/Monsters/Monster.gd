@@ -3,13 +3,12 @@ class_name Monster extends Node
 @export var stay_time : float
 @export var type : String
 
-var delete : bool 
+var delete : bool = true
 
 func _ready():
 	$Disappear_timer.wait_time = stay_time
 
 func create():
-	delete = false
 	$Disappear_timer.start()
 	$appear_animated.visible = true
 	$appear_animated.play("appear")
@@ -28,11 +27,13 @@ func dizzy_animation():
 	$dizzy_animated.play("dizzy")
 
 func _on_appear_animated_animation_finished():
+	delete = false
 	$appear_animated.visible = false
 	$idle_animated.visible = true
 	$idle_animated.play("idle")
 
 func _on_dizzy_animated_animation_finished():
+	$idle_animated.visible = false
 	$dizzy_animated.visible = false
 	$disappear_animated.visible = true
 	$disappear_animated.play("disappear")
