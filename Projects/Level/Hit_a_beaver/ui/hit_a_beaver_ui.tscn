@@ -63,13 +63,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="numbers" type="Control" parent="time"]
+[node name="number" type="Control" parent="time"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 34.0
 offset_bottom = 13.0
 
-[node name="hundreds" type="Label" parent="time/numbers"]
+[node name="hundreds" type="Label" parent="time/number"]
 layout_mode = 0
 offset_left = 1.0
 offset_top = -1.75
@@ -82,7 +82,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="tens" type="Label" parent="time/numbers"]
+[node name="tens" type="Label" parent="time/number"]
 layout_mode = 0
 offset_left = 12.0
 offset_top = -1.75
@@ -95,7 +95,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="units" type="Label" parent="time/numbers"]
+[node name="units" type="Label" parent="time/number"]
 layout_mode = 0
 offset_left = 23.0
 offset_top = -1.75
@@ -132,13 +132,13 @@ offset_right = 26.0
 offset_bottom = -1.5
 texture = ExtResource("5_ldolm")
 
-[node name="scores" type="Control" parent="hammers/1"]
+[node name="score" type="Control" parent="hammers/1"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 34.0
 offset_bottom = 13.0
 
-[node name="hundreds" type="Label" parent="hammers/1/scores"]
+[node name="hundreds" type="Label" parent="hammers/1/score"]
 layout_mode = 0
 offset_left = 1.0
 offset_top = -1.75
@@ -151,7 +151,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="tens" type="Label" parent="hammers/1/scores"]
+[node name="tens" type="Label" parent="hammers/1/score"]
 layout_mode = 0
 offset_left = 12.0
 offset_top = -1.75
@@ -164,7 +164,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="units" type="Label" parent="hammers/1/scores"]
+[node name="units" type="Label" parent="hammers/1/score"]
 layout_mode = 0
 offset_left = 23.0
 offset_top = -1.75
@@ -195,13 +195,13 @@ offset_right = 26.0
 offset_bottom = -1.5
 texture = ExtResource("6_7bs0i")
 
-[node name="scores" type="Control" parent="hammers/2"]
+[node name="score" type="Control" parent="hammers/2"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 34.0
 offset_bottom = 13.0
 
-[node name="hundreds" type="Label" parent="hammers/2/scores"]
+[node name="hundreds" type="Label" parent="hammers/2/score"]
 layout_mode = 0
 offset_left = 1.0
 offset_top = -1.75
@@ -214,7 +214,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="tens" type="Label" parent="hammers/2/scores"]
+[node name="tens" type="Label" parent="hammers/2/score"]
 layout_mode = 0
 offset_left = 12.0
 offset_top = -1.75
@@ -227,7 +227,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="units" type="Label" parent="hammers/2/scores"]
+[node name="units" type="Label" parent="hammers/2/score"]
 layout_mode = 0
 offset_left = 23.0
 offset_top = -1.75
@@ -258,13 +258,13 @@ offset_right = 26.0
 offset_bottom = -1.5
 texture = ExtResource("7_o2kpm")
 
-[node name="scores" type="Control" parent="hammers/3"]
+[node name="score" type="Control" parent="hammers/3"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 34.0
 offset_bottom = 13.0
 
-[node name="hundreds" type="Label" parent="hammers/3/scores"]
+[node name="hundreds" type="Label" parent="hammers/3/score"]
 layout_mode = 0
 offset_left = 1.0
 offset_top = -1.75
@@ -277,7 +277,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="tens" type="Label" parent="hammers/3/scores"]
+[node name="tens" type="Label" parent="hammers/3/score"]
 layout_mode = 0
 offset_left = 12.0
 offset_top = -1.75
@@ -290,7 +290,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="units" type="Label" parent="hammers/3/scores"]
+[node name="units" type="Label" parent="hammers/3/score"]
 layout_mode = 0
 offset_left = 23.0
 offset_top = -1.75
@@ -321,13 +321,13 @@ offset_right = 26.0
 offset_bottom = -1.5
 texture = ExtResource("8_cdolm")
 
-[node name="scores" type="Control" parent="hammers/4"]
+[node name="score" type="Control" parent="hammers/4"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 34.0
 offset_bottom = 13.0
 
-[node name="hundreds" type="Label" parent="hammers/4/scores"]
+[node name="hundreds" type="Label" parent="hammers/4/score"]
 layout_mode = 0
 offset_left = 1.0
 offset_top = -1.75
@@ -340,7 +340,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="tens" type="Label" parent="hammers/4/scores"]
+[node name="tens" type="Label" parent="hammers/4/score"]
 layout_mode = 0
 offset_left = 12.0
 offset_top = -1.75
@@ -353,7 +353,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="units" type="Label" parent="hammers/4/scores"]
+[node name="units" type="Label" parent="hammers/4/score"]
 layout_mode = 0
 offset_left = 23.0
 offset_top = -1.75

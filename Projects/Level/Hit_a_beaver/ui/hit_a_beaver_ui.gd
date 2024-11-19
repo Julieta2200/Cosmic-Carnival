@@ -1,12 +1,12 @@
 extends Control
 
-var hammer: String
+var selected_score :Control
 
 var time: int :
 	set(t):
 		time = t
 		if time < 1000:
-			set_number($time/numbers/units,$time/numbers/tens,$time/numbers/hundreds,time)
+			set_number($time/number/units,$time/number/tens,$time/number/hundreds,time)
 
 var score: int :
 	set(s):
@@ -14,14 +14,7 @@ var score: int :
 		if score < 0:
 			score += 1
 		elif score < 1000 :
-			if hammer == "1":
-				set_number($"hammers/1/scores/units",$"hammers/1/scores/tens",$"hammers/1/scores/hundreds",score)
-			elif hammer == "2":
-				set_number($"hammers/2/scores/units",$"hammers/2/scores/tens",$"hammers/2/scores/hundreds",score)
-			elif hammer == "3":
-				set_number($"hammers/3/scores/units",$"hammers/3/scores/tens",$"hammers/3/scores/hundreds",score)
-			elif hammer == "4":
-				set_number($"hammers/4/scores/units",$"hammers/4/scores/tens",$"hammers/4/scores/hundreds",score)
+			set_number(selected_score.get_child(2),selected_score.get_child(1),selected_score.get_child(0),score)
 
 
 func set_number(units,tens,hundreds,i):

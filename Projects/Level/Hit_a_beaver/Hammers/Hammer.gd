@@ -1,7 +1,7 @@
 class_name Hammer extends Node2D
 
 @export var speed : int
-@export var type : String
+@export var score : Control
 
 var circle
 var screen_bounds
@@ -25,7 +25,7 @@ func hit():
 	if circle != null:
 		var monster = circle.monster
 		if monster != null && !monster.delete:
-			$"../CanvasLayer/ui".hammer = type
+			$"../CanvasLayer/ui".selected_score = score
 			$"../CanvasLayer/ui".score += monster.score
 			monster.dizzy_animation()
 			animation()

@@ -68,7 +68,10 @@ position = Vector2(670, 768)
 
 [node name="Monsters" type="Node2D" parent="."]
 
-[node name="Hammer_2" parent="." instance=ExtResource("3_tgkmh")]
+[node name="Hammer_2" parent="." node_paths=PackedStringArray("score") instance=ExtResource("3_tgkmh")]
 position = Vector2(505, 503)
+score = NodePath("../CanvasLayer/ui/hammers/2/score")
 
 [connection signal="timeout" from="Monster_create_timer" to="." method="_on_monster_create_timer_timeout"]
+
+[editable path="CanvasLayer/ui"]
