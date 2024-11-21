@@ -11,5 +11,3 @@ func _on_area_2d_area_entered(area):
 func _on_area_2d_area_exited(area):
 	if area.get_parent() is Hammer:
 		$Highlight.visible = false
-	elif  area.get_parent() is Monster:
-		monster == null
