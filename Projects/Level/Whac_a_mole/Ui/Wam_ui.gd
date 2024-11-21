@@ -4,7 +4,7 @@ var time: int :
 	set(t):
 		time = t
 		if time < 1000:
-			set_number($time/number,time)
+			set_number($Time/Number,time)
 
 
 func set_number(score,i):
