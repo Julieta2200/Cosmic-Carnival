@@ -12,7 +12,7 @@ var score_num: int :
 		if score_num < 0:
 			score_num += 1
 		elif score_num < 1000 :
-			%ui.set_number(score,score_num)
+			%Ui.set_number(score,score_num)
 
 var screen_bounds : Rect2
 var circle : Node2D
