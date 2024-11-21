@@ -6,28 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dt8fp4pt1lc5g" path="res://Assets/Details/Hit_a_beaver/hammer/Red/Red_Hammer2.png" id="4_8nqup"]
 [ext_resource type="Texture2D" uid="uid://nrqvdlr1nxpn" path="res://Assets/Details/Hit_a_beaver/hammer/Red/Red_Hammer1.png" id="5_1o1vs"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_meaxn"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_x3bic")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_kiaee")
-}],
-"loop": false,
-"name": &"hit",
-"speed": 6.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_kiaee")
-}],
-"loop": false,
-"name": &"idle",
-"speed": 5.0
-}]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_g8pm7"]
 animations = [{
 "frames": [{
@@ -50,23 +28,45 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_meaxn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x3bic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kiaee")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_kiaee")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n827c"]
 size = Vector2(7.30677, 21.9203)
 
-[node name="Hammer_2" type="Node2D"]
+[node name="Hammer" type="Node2D"]
 scale = Vector2(3, 3)
 script = ExtResource("1_gyerk")
 speed = 10
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Hammer_1AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
-sprite_frames = SubResource("SpriteFrames_meaxn")
+sprite_frames = SubResource("SpriteFrames_g8pm7")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+[node name="Hammer_2AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
-sprite_frames = SubResource("SpriteFrames_g8pm7")
+sprite_frames = SubResource("SpriteFrames_meaxn")
 animation = &"idle"
 autoplay = "idle"
 
