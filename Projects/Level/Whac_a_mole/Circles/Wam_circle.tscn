@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmnmrrxboew07"]
 
-[ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Circles/Circle.gd" id="1_gk0cq"]
+[ext_resource type="Script" path="res://Projects/Level/Whac_a_mole/Circles/Wam_circle.gd" id="1_gk0cq"]
 [ext_resource type="Texture2D" uid="uid://cx04xwtyv4u7h" path="res://Assets/Details/Hit_a_beaver/highlight.png" id="2_22dvl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oyump"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dd1ms0342jnn1"]
 
-[ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/UI/hit_a_beaver_ui.gd" id="1_4xphb"]
+[ext_resource type="Script" path="res://Projects/Level/Whac_a_mole/Ui/Wam_ui.gd" id="1_gku45"]
 [ext_resource type="Texture2D" uid="uid://f2vc6w0r0tr1" path="res://Assets/Details/Hit_a_beaver/UI/Game name.png" id="2_qhn0e"]
 [ext_resource type="Texture2D" uid="uid://k2dmlxkusthf" path="res://Assets/Details/Hit_a_beaver/UI/Cell.png" id="3_4b3re"]
 [ext_resource type="FontFile" uid="uid://dxl2upmlmfr51" path="res://Assets/Fonts/8-bit-fortress (1).ttf" id="4_ohtxn"]
@@ -16,7 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_4xphb")
+script = ExtResource("1_gku45")
 
 [node name="game_name" type="TextureRect" parent="."]
 layout_mode = 1

@@ -1,8 +1,8 @@
 extends Node2D
 
-@onready var monster_1 = preload("res://Projects/Level/Hit_a_beaver/Monsters/Monster_1/Monster_1.tscn")
-@onready var monster_2 = preload("res://Projects/Level/Hit_a_beaver/Monsters/Monster_2/monster_2.tscn")
-@onready var monster_3 = preload("res://Projects/Level/Hit_a_beaver/Monsters/Monster_3/monster_3.tscn")
+@onready var monster_1 = preload("res://Projects/Level/Whac_a_mole/Monsters/Monster_1/Wam_monster_1.tscn")
+@onready var monster_2 = preload("res://Projects/Level/Whac_a_mole/Monsters/Monster_2/Wam_monster_2.tscn")
+@onready var monster_3 = preload("res://Projects/Level/Whac_a_mole/Monsters/Monster_3/Wam_monster_3.tscn")
 
 @export var monster_probabilities : Dictionary = {"blue": 0,"orange": 0,"pink": 0}
 @export var monster_count : int
@@ -19,7 +19,7 @@ func _ready():
 func select_monster():
 	var random_number = randf_range(0, 100)
 	var cumulative_probability = 0
-	
+
 	for i in monster_probabilities.keys():
 		cumulative_probability += monster_probabilities[i]
 		if random_number <= cumulative_probability:
@@ -43,7 +43,7 @@ func spawn_monster(monster_type):
 			$Monsters.add_child(monster)
 			monster.create()
 			break
-	
+
 func monster_delete(monster):
 	for i in monsters.keys():
 		if monsters[i] == monster:

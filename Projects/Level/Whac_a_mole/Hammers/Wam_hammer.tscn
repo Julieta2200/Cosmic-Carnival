@@ -1,19 +1,19 @@
 [gd_scene load_steps=9 format=3 uid="uid://bocslnbv4sk6n"]
 
-[ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Hammers/Hammer.gd" id="1_gyerk"]
-[ext_resource type="Texture2D" uid="uid://uhhnoa6plmue" path="res://Assets/Details/Hit_a_beaver/hammer/Green/Green_Hammer2.png" id="2_x3bic"]
-[ext_resource type="Texture2D" uid="uid://dp5id3n23ca02" path="res://Assets/Details/Hit_a_beaver/hammer/Green/Green_Hammer1.png" id="3_kiaee"]
-[ext_resource type="Texture2D" uid="uid://dt8fp4pt1lc5g" path="res://Assets/Details/Hit_a_beaver/hammer/Red/Red_Hammer2.png" id="4_8nqup"]
-[ext_resource type="Texture2D" uid="uid://nrqvdlr1nxpn" path="res://Assets/Details/Hit_a_beaver/hammer/Red/Red_Hammer1.png" id="5_1o1vs"]
+[ext_resource type="Script" path="res://Projects/Level/Whac_a_mole/Hammers/Wam_hammer.gd" id="1_xrqja"]
+[ext_resource type="Texture2D" uid="uid://dt8fp4pt1lc5g" path="res://Assets/Details/Hit_a_beaver/hammer/Red/Red_Hammer2.png" id="2_ggyel"]
+[ext_resource type="Texture2D" uid="uid://nrqvdlr1nxpn" path="res://Assets/Details/Hit_a_beaver/hammer/Red/Red_Hammer1.png" id="3_bkbd7"]
+[ext_resource type="Texture2D" uid="uid://uhhnoa6plmue" path="res://Assets/Details/Hit_a_beaver/hammer/Green/Green_Hammer2.png" id="4_orvsv"]
+[ext_resource type="Texture2D" uid="uid://dp5id3n23ca02" path="res://Assets/Details/Hit_a_beaver/hammer/Green/Green_Hammer1.png" id="5_4jjkt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g8pm7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_8nqup")
+"texture": ExtResource("2_ggyel")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_1o1vs")
+"texture": ExtResource("3_bkbd7")
 }],
 "loop": false,
 "name": &"hit",
@@ -21,7 +21,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_1o1vs")
+"texture": ExtResource("3_bkbd7")
 }],
 "loop": false,
 "name": &"idle",
@@ -32,10 +32,10 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_x3bic")
+"texture": ExtResource("4_orvsv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_kiaee")
+"texture": ExtResource("5_4jjkt")
 }],
 "loop": false,
 "name": &"hit",
@@ -43,7 +43,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_kiaee")
+"texture": ExtResource("5_4jjkt")
 }],
 "loop": false,
 "name": &"idle",
@@ -55,7 +55,7 @@ size = Vector2(7.30677, 21.9203)
 
 [node name="Hammer" type="Node2D"]
 scale = Vector2(3, 3)
-script = ExtResource("1_gyerk")
+script = ExtResource("1_xrqja")
 speed = 10
 
 [node name="Hammer_1_animated_sprite" type="AnimatedSprite2D" parent="."]

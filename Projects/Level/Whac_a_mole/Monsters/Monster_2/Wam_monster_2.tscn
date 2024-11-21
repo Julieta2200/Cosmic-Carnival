@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://b3fw77bhw3c5t"]
 
-[ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Monsters/Monster.gd" id="1_dtm6m"]
+[ext_resource type="Script" path="res://Projects/Level/Whac_a_mole/Monsters/Wam_monster.gd" id="1_dtm6m"]
 [ext_resource type="Texture2D" uid="uid://dyf8xur0nnanf" path="res://Assets/Details/Hit_a_beaver/Monsters/Orange monster/Appear.png" id="2_hh3lr"]
 [ext_resource type="Texture2D" uid="uid://ds5ef2nhfi77a" path="res://Assets/Details/Hit_a_beaver/Monsters/Orange monster/Idle/Orange monster idle1.png" id="3_iu5pk"]
 [ext_resource type="Texture2D" uid="uid://c0jafbhpgbsx7" path="res://Assets/Details/Hit_a_beaver/Monsters/Orange monster/Idle/Orange monster idle2.png" id="4_esmer"]
