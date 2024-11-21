@@ -58,13 +58,13 @@ scale = Vector2(3, 3)
 script = ExtResource("1_gyerk")
 speed = 10
 
-[node name="Hammer_1AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Hammer_1_animated_sprite" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_g8pm7")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="Hammer_2AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Hammer_2_animated_sprite" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_meaxn")
 animation = &"idle"
