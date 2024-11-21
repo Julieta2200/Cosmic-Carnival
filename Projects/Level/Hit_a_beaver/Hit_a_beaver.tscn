@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Hit_a_beaver.gd" id="1_7b3k5"]
 [ext_resource type="Texture2D" uid="uid://dpcxaum5c6rmh" path="res://Assets/Details/Hit_a_beaver/Background.png" id="2_423ru"]
 [ext_resource type="Texture2D" uid="uid://c8wn5b51tjikl" path="res://Assets/Details/Hit_a_beaver/Game Machine.png" id="3_8fp38"]
-[ext_resource type="PackedScene" uid="uid://bocslnbv4sk6n" path="res://Projects/Level/Hit_a_beaver/Hammers/Hammer_2.tscn" id="3_tgkmh"]
+[ext_resource type="PackedScene" uid="uid://bocslnbv4sk6n" path="res://Projects/Level/Hit_a_beaver/Hammers/Hammer.tscn" id="3_tgkmh"]
 [ext_resource type="PackedScene" uid="uid://dmnmrrxboew07" path="res://Projects/Level/Hit_a_beaver/Circles/Circle.tscn" id="5_skva1"]
-[ext_resource type="PackedScene" uid="uid://dd1ms0342jnn1" path="res://Projects/Level/Hit_a_beaver/ui/hit_a_beaver_ui.tscn" id="9_wr2ai"]
+[ext_resource type="PackedScene" uid="uid://dd1ms0342jnn1" path="res://Projects/Level/Hit_a_beaver/UI/hit_a_beaver_ui.tscn" id="9_wr2ai"]
 
 [node name="Hit_a_beaver" type="Node2D"]
 script = ExtResource("1_7b3k5")
@@ -70,10 +70,20 @@ position = Vector2(670, 768)
 
 [node name="Monsters" type="Node2D" parent="."]
 
-[node name="Hammer_2" parent="." node_paths=PackedStringArray("score") instance=ExtResource("3_tgkmh")]
+[node name="Hammer_1" parent="." node_paths=PackedStringArray("score", "animated_sprite") instance=ExtResource("3_tgkmh")]
+position = Vector2(179, 502)
+score = NodePath("../CanvasLayer/ui/hammers/1/score")
+player_number = "1"
+animated_sprite = NodePath("AnimatedSprite2D2")
+
+[node name="Hammer_2" parent="." node_paths=PackedStringArray("score", "animated_sprite") instance=ExtResource("3_tgkmh")]
 position = Vector2(505, 503)
 score = NodePath("../CanvasLayer/ui/hammers/2/score")
+player_number = "2"
+animated_sprite = NodePath("AnimatedSprite2D")
 
 [connection signal="timeout" from="Monster_create_timer" to="." method="_on_monster_create_timer_timeout"]
 
 [editable path="CanvasLayer/ui"]
+[editable path="Hammer_1"]
+[editable path="Hammer_2"]

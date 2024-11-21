@@ -2,6 +2,8 @@ class_name Hammer extends Node2D
 
 @export var speed : int
 @export var score : Control
+@export var player_number : String
+@export var animated_sprite : AnimatedSprite2D
 
 var score_num: int :
 	set(s):
@@ -9,21 +11,22 @@ var score_num: int :
 		if score_num < 0:
 			score_num += 1
 		elif score_num < 1000 :
-			%ui.set_number(score.get_child(2),score.get_child(1),score.get_child(0),score_num)
+			%ui.set_number(score,score_num)
 
-var circle
-var screen_bounds
+var screen_bounds : Rect2
+var circle : Node2D
 
 func _ready():
+	animated_sprite.visible = true
 	screen_bounds = get_viewport_rect()
 
 func _physics_process(_delta):
 	move()
-	if Input.is_action_just_pressed("space"):
+	if Input.is_action_just_pressed("player_"+ player_number + "_hit"):
 		hit()
 
 func move():
-	var direction = Input.get_vector("left", "right", "up", "down").normalized()
+	var direction = Input.get_vector("player_"+ player_number + "_left", "player_"+ player_number + "_right", "player_"+ player_number + "_up", "player_"+ player_number + "_down").normalized()
 	position += direction * speed
 	if not screen_bounds.has_point(position):
 		position.x = clamp(position.x, 0, screen_bounds.size.x)
@@ -46,4 +49,4 @@ func _on_area_2d_area_exited(area):
 		circle = null
 
 func animation():
-	$AnimatedSprite2D.play("hit")
+	animated_sprite.play("hit")

@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bocslnbv4sk6n"]
+[gd_scene load_steps=9 format=3 uid="uid://bocslnbv4sk6n"]
 
 [ext_resource type="Script" path="res://Projects/Level/Hit_a_beaver/Hammers/Hammer.gd" id="1_gyerk"]
 [ext_resource type="Texture2D" uid="uid://uhhnoa6plmue" path="res://Assets/Details/Hit_a_beaver/hammer/Green/Green_Hammer2.png" id="2_x3bic"]
 [ext_resource type="Texture2D" uid="uid://dp5id3n23ca02" path="res://Assets/Details/Hit_a_beaver/hammer/Green/Green_Hammer1.png" id="3_kiaee"]
+[ext_resource type="Texture2D" uid="uid://dt8fp4pt1lc5g" path="res://Assets/Details/Hit_a_beaver/hammer/Red/Red_Hammer2.png" id="4_8nqup"]
+[ext_resource type="Texture2D" uid="uid://nrqvdlr1nxpn" path="res://Assets/Details/Hit_a_beaver/hammer/Red/Red_Hammer1.png" id="5_1o1vs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_meaxn"]
 animations = [{
@@ -26,6 +28,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_g8pm7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8nqup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1o1vs")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1o1vs")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 6.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n827c"]
 size = Vector2(7.30677, 21.9203)
 
@@ -35,7 +59,14 @@ script = ExtResource("1_gyerk")
 speed = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_meaxn")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_g8pm7")
 animation = &"idle"
 autoplay = "idle"
 
