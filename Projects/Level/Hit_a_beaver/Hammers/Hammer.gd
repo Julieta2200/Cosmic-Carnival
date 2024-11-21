@@ -3,7 +3,8 @@ class_name Hammer extends Node2D
 @export var speed : int
 @export var score : Control
 @export var player_number : String
-@export var animated_sprite : AnimatedSprite2D
+
+@onready var animated_sprite : Dictionary = {"1": $Hammer_1_animated_sprite, "2": $Hammer_2_animated_sprite}
 
 var score_num: int :
 	set(s):
@@ -17,7 +18,7 @@ var screen_bounds : Rect2
 var circle : Node2D
 
 func _ready():
-	animated_sprite.visible = true
+	animated_sprite[player_number].visible = true
 	screen_bounds = get_viewport_rect()
 
 func _physics_process(_delta):
@@ -49,4 +50,4 @@ func _on_area_2d_area_exited(area):
 		circle = null
 
 func animation():
-	animated_sprite.play("hit")
+	animated_sprite[player_number].play("hit")

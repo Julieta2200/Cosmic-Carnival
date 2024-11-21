@@ -70,20 +70,16 @@ position = Vector2(670, 768)
 
 [node name="Monsters" type="Node2D" parent="."]
 
-[node name="Hammer_1" parent="." node_paths=PackedStringArray("score", "animated_sprite") instance=ExtResource("3_tgkmh")]
+[node name="Hammer_1" parent="." node_paths=PackedStringArray("score") instance=ExtResource("3_tgkmh")]
 position = Vector2(179, 502)
 score = NodePath("../CanvasLayer/ui/hammers/1/score")
 player_number = "1"
-animated_sprite = NodePath("Hammer_1_animated_sprite")
 
-[node name="Hammer_2" parent="." node_paths=PackedStringArray("score", "animated_sprite") instance=ExtResource("3_tgkmh")]
+[node name="Hammer_2" parent="." node_paths=PackedStringArray("score") instance=ExtResource("3_tgkmh")]
 position = Vector2(505, 503)
 score = NodePath("../CanvasLayer/ui/hammers/2/score")
 player_number = "2"
-animated_sprite = NodePath("Hammer_2_animated_sprite")
 
 [connection signal="timeout" from="Monster_create_timer" to="." method="_on_monster_create_timer_timeout"]
 
 [editable path="CanvasLayer/ui"]
-[editable path="Hammer_1"]
-[editable path="Hammer_2"]
