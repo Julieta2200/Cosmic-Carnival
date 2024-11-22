@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://dd1ms0342jnn1"]
 
 [ext_resource type="Script" path="res://Projects/Level/Whac_a_mole/Wam_ui/Wam_ui.gd" id="1_ooee0"]
-[ext_resource type="Texture2D" uid="uid://f2vc6w0r0tr1" path="res://Assets/Details/Hit_a_beaver/UI/Game name.png" id="2_uxs7i"]
-[ext_resource type="Texture2D" uid="uid://k2dmlxkusthf" path="res://Assets/Details/Hit_a_beaver/UI/Cell.png" id="3_w2x5t"]
+[ext_resource type="Texture2D" uid="uid://f2vc6w0r0tr1" path="res://Assets/Details/Whac_a_mole/UI/Game name.png" id="2_4gcb4"]
+[ext_resource type="Texture2D" uid="uid://k2dmlxkusthf" path="res://Assets/Details/Whac_a_mole/UI/Cell.png" id="3_u7p7t"]
 [ext_resource type="FontFile" uid="uid://dxl2upmlmfr51" path="res://Assets/Fonts/8-bit-fortress (1).ttf" id="4_s8g1h"]
-[ext_resource type="Texture2D" uid="uid://dqya478r8iteh" path="res://Assets/Details/Hit_a_beaver/UI/Mini hammer/Mini hammer1.png" id="5_o3ua3"]
-[ext_resource type="Texture2D" uid="uid://bd6tb72vpkpfc" path="res://Assets/Details/Hit_a_beaver/UI/Mini hammer/Mini hammer2.png" id="6_sec7r"]
-[ext_resource type="Texture2D" uid="uid://3hq3ug5dj1v4" path="res://Assets/Details/Hit_a_beaver/UI/Mini hammer/Mini hammer3.png" id="7_7iafn"]
-[ext_resource type="Texture2D" uid="uid://jjv30rn7hwjj" path="res://Assets/Details/Hit_a_beaver/UI/Mini hammer/Mini hammer4.png" id="8_s8vvp"]
+[ext_resource type="Texture2D" uid="uid://dqya478r8iteh" path="res://Assets/Details/Whac_a_mole/UI/Mini hammer/Mini hammer1.png" id="5_opk8e"]
+[ext_resource type="Texture2D" uid="uid://bd6tb72vpkpfc" path="res://Assets/Details/Whac_a_mole/UI/Mini hammer/Mini hammer2.png" id="6_b1unh"]
+[ext_resource type="Texture2D" uid="uid://3hq3ug5dj1v4" path="res://Assets/Details/Whac_a_mole/UI/Mini hammer/Mini hammer3.png" id="7_sd88o"]
+[ext_resource type="Texture2D" uid="uid://jjv30rn7hwjj" path="res://Assets/Details/Whac_a_mole/UI/Mini hammer/Mini hammer4.png" id="8_hwsj8"]
 
 [node name="Ui" type="Control"]
 layout_mode = 3
@@ -29,7 +29,7 @@ offset_right = -233.0
 offset_bottom = 171.0
 grow_horizontal = 2
 scale = Vector2(4, 4)
-texture = ExtResource("2_uxs7i")
+texture = ExtResource("2_4gcb4")
 stretch_mode = 2
 
 [node name="Time" type="TextureRect" parent="."]
@@ -46,7 +46,7 @@ offset_bottom = -365.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(4, 4)
-texture = ExtResource("3_w2x5t")
+texture = ExtResource("3_u7p7t")
 stretch_mode = 2
 
 [node name="Label" type="Label" parent="Time"]
@@ -121,7 +121,7 @@ offset_top = 380.0
 offset_right = 122.0
 offset_bottom = 393.0
 scale = Vector2(4, 4)
-texture = ExtResource("3_w2x5t")
+texture = ExtResource("3_u7p7t")
 stretch_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Hammers/1"]
@@ -130,7 +130,7 @@ offset_left = 7.0
 offset_top = -18.5
 offset_right = 26.0
 offset_bottom = -1.5
-texture = ExtResource("5_o3ua3")
+texture = ExtResource("5_opk8e")
 
 [node name="Score" type="Control" parent="Hammers/1"]
 layout_mode = 3
@@ -184,7 +184,7 @@ offset_top = 380.0
 offset_right = 362.0
 offset_bottom = 393.0
 scale = Vector2(4, 4)
-texture = ExtResource("3_w2x5t")
+texture = ExtResource("3_u7p7t")
 stretch_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Hammers/2"]
@@ -193,7 +193,7 @@ offset_left = 7.0
 offset_top = -18.5
 offset_right = 26.0
 offset_bottom = -1.5
-texture = ExtResource("6_sec7r")
+texture = ExtResource("6_b1unh")
 
 [node name="Score" type="Control" parent="Hammers/2"]
 layout_mode = 3
@@ -247,7 +247,7 @@ offset_top = 380.0
 offset_right = 602.0
 offset_bottom = 393.0
 scale = Vector2(4, 4)
-texture = ExtResource("3_w2x5t")
+texture = ExtResource("3_u7p7t")
 stretch_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Hammers/3"]
@@ -256,7 +256,7 @@ offset_left = 7.0
 offset_top = -18.5
 offset_right = 26.0
 offset_bottom = -1.5
-texture = ExtResource("7_7iafn")
+texture = ExtResource("7_sd88o")
 
 [node name="Score" type="Control" parent="Hammers/3"]
 layout_mode = 3
@@ -310,7 +310,7 @@ offset_top = 380.0
 offset_right = 842.0
 offset_bottom = 393.0
 scale = Vector2(4, 4)
-texture = ExtResource("3_w2x5t")
+texture = ExtResource("3_u7p7t")
 stretch_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Hammers/4"]
@@ -319,7 +319,7 @@ offset_left = 7.0
 offset_top = -18.5
 offset_right = 26.0
 offset_bottom = -1.5
-texture = ExtResource("8_s8vvp")
+texture = ExtResource("8_hwsj8")
 
 [node name="Score" type="Control" parent="Hammers/4"]
 layout_mode = 3

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmnmrrxboew07"]
 
 [ext_resource type="Script" path="res://Projects/Level/Whac_a_mole/Wam_circles/Wam_circle.gd" id="1_b3rhd"]
-[ext_resource type="Texture2D" uid="uid://cx04xwtyv4u7h" path="res://Assets/Details/Hit_a_beaver/highlight.png" id="2_uee6e"]
+[ext_resource type="Texture2D" uid="uid://cx04xwtyv4u7h" path="res://Assets/Details/Whac_a_mole/highlight.png" id="2_s2usu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oyump"]
 radius = 14.0
@@ -13,7 +13,7 @@ script = ExtResource("1_b3rhd")
 
 [node name="Highlight" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("2_uee6e")
+texture = ExtResource("2_s2usu")
 
 [node name="Area2D" type="Area2D" parent="."]
 

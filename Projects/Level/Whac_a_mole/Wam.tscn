@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://lvw1mf1g0x1w"]
 
 [ext_resource type="Script" path="res://Projects/Level/Whac_a_mole/Wam.gd" id="1_lupyk"]
-[ext_resource type="Texture2D" uid="uid://dpcxaum5c6rmh" path="res://Assets/Details/Hit_a_beaver/Background.png" id="2_ln4mc"]
-[ext_resource type="Texture2D" uid="uid://c8wn5b51tjikl" path="res://Assets/Details/Hit_a_beaver/Game Machine.png" id="3_k5nuw"]
+[ext_resource type="Texture2D" uid="uid://dpcxaum5c6rmh" path="res://Assets/Details/Whac_a_mole/Background.png" id="2_16fai"]
+[ext_resource type="Texture2D" uid="uid://c8wn5b51tjikl" path="res://Assets/Details/Whac_a_mole/Game Machine.png" id="3_xfsgw"]
 [ext_resource type="PackedScene" uid="uid://dmnmrrxboew07" path="res://Projects/Level/Whac_a_mole/Wam_circles/Wam_circle.tscn" id="4_wo3s8"]
 [ext_resource type="PackedScene" uid="uid://dd1ms0342jnn1" path="res://Projects/Level/Whac_a_mole/Wam_ui/Wam_ui.tscn" id="5_de6dh"]
 [ext_resource type="PackedScene" uid="uid://bocslnbv4sk6n" path="res://Projects/Level/Whac_a_mole/Wam_hammers/Wam_hammer.tscn" id="6_w0ri5"]
@@ -19,12 +19,12 @@ monster_count = 100
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(512, 448)
 scale = Vector2(4, 4)
-texture = ExtResource("2_ln4mc")
+texture = ExtResource("2_16fai")
 
 [node name="Board" type="Sprite2D" parent="."]
 position = Vector2(512, 448)
 scale = Vector2(4, 4)
-texture = ExtResource("3_k5nuw")
+texture = ExtResource("3_xfsgw")
 
 [node name="Circles" type="Node2D" parent="."]
 
