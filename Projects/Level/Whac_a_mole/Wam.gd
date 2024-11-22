@@ -1,8 +1,8 @@
 extends Node2D
 
-@onready var monster_1 = preload("res://Projects/Level/Whac_a_mole/Monsters/Monster_1/Wam_monster_1.tscn")
-@onready var monster_2 = preload("res://Projects/Level/Whac_a_mole/Monsters/Monster_2/Wam_monster_2.tscn")
-@onready var monster_3 = preload("res://Projects/Level/Whac_a_mole/Monsters/Monster_3/Wam_monster_3.tscn")
+@onready var monster_1 = preload("res://Projects/Level/Whac_a_mole/Wam_monsters/Monster_1/Wam_monster_1.tscn")
+@onready var monster_2 = preload("res://Projects/Level/Whac_a_mole/Wam_monsters/Monster_2/Wam_monster_2.tscn")
+@onready var monster_3 = preload("res://Projects/Level/Whac_a_mole/Wam_monsters/Monster_3/Wam_monster_3.tscn")
 
 @export var monster_probabilities : Dictionary = {"blue": 0,"orange": 0,"pink": 0}
 @export var monster_count : int

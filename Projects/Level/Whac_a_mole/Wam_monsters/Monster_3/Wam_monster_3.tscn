@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://dau6i4q68tq0k"]
 
-[ext_resource type="Script" path="res://Projects/Level/Whac_a_mole/Monsters/Wam_monster.gd" id="1_gxupl"]
+[ext_resource type="Script" path="res://Projects/Level/Whac_a_mole/Wam_monsters/Wam_monster.gd" id="1_gxupl"]
 [ext_resource type="Texture2D" uid="uid://b5hn0sw8b8kid" path="res://Assets/Details/Hit_a_beaver/Monsters/Pink Monster/Appear.png" id="2_4brnq"]
 [ext_resource type="Texture2D" uid="uid://jryuel80alg1" path="res://Assets/Details/Hit_a_beaver/Monsters/Pink Monster/Idle/Pink monster idle(1).png" id="3_ljp7o"]
 [ext_resource type="Texture2D" uid="uid://dbd68rklwggj7" path="res://Assets/Details/Hit_a_beaver/Monsters/Pink Monster/Idle/Pink monster idle(2).png" id="4_40lt1"]
