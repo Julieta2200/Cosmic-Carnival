@@ -1,9 +1,7 @@
-class_name Hammer extends Node2D
+class_name Hammer extends Controller
 
 @export var speed : int
 @export var score : Control
-@export var player_number : String
-
 @onready var animated_sprite : Dictionary = {"1": $Hammer_1_animated_sprite, "2": $Hammer_2_animated_sprite}
 
 var score_num: int :
@@ -16,24 +14,35 @@ var score_num: int :
 
 var screen_bounds : Rect2
 var circle : Node2D
+var controller : Dictionary
 
 func _ready():
+	controller = player_controller
 	animated_sprite[player_number].visible = true
 	screen_bounds = get_viewport_rect()
 
 func _physics_process(_delta):
+	input_action_pressed(controller)
 	move()
-	if Input.is_action_just_pressed("player_"+ player_number + "_hit"):
-		hit()
+	if controller["hit"]:
+		hit_monster()
 
 func move():
-	var direction = Input.get_vector("player_"+ player_number + "_left", "player_"+ player_number + "_right", "player_"+ player_number + "_up", "player_"+ player_number + "_down").normalized()
+	var direction = Vector2.ZERO
+	if controller["left"]:
+		direction += Vector2(-0.5,0).normalized()
+	if controller["right"]:
+		direction += Vector2(0.5,0).normalized()
+	if controller["up"]:
+		direction += Vector2(0,-0.5).normalized()
+	if controller["down"]:
+		direction += Vector2(0,0.5).normalized()
 	position += direction * speed
 	if not screen_bounds.has_point(position):
 		position.x = clamp(position.x, 0, screen_bounds.size.x)
 		position.y = clamp(position.y, 0, screen_bounds.size.y)
 
-func hit():
+func hit_monster():
 	if circle != null:
 		var monster = circle.monster
 		if monster != null && !monster.delete:
