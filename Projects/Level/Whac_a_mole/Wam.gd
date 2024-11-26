@@ -51,7 +51,7 @@ func monster_delete(monster):
 			break
 
 func _on_monster_create_timer_timeout():
-	monster_create_time = randf_range(0.5,1.5)
+	monster_create_time = randf_range(0.5,1)
 	$Monster_create_timer.wait_time = monster_create_time
 	if monster_count > 0:
 		select_monster()

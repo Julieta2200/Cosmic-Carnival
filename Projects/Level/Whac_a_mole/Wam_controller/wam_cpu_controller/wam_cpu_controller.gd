@@ -3,7 +3,7 @@ extends Controller
 var target
 const reach_distance: float = 100
 const delta: float = 5
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	hit = false
 	if target != null:
@@ -11,7 +11,7 @@ func _process(delta):
 
 
 func _on_reaction_timer_timeout():
-	$reaction_timer.wait_time = randf_range(0.3, 0.5)
+	$reaction_timer.wait_time = randf_range(0.5, 1)
 	react()
 
 func react():
@@ -31,14 +31,7 @@ func react():
 
 
 func find_closest(monster_circles):
-	var dist: float = 100000000
-	var closest 
-	for circle in monster_circles:
-		var tmp_dist = hammer.global_position.distance_squared_to(circle.global_position)
-		if dist > tmp_dist:
-			dist = tmp_dist
-			closest = circle
-	
+	var closest = monster_circles[randi_range(0, monster_circles.size() - 1)]
 	return closest
 
 func move_to_target():

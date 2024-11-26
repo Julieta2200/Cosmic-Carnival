@@ -118,7 +118,7 @@ height = 29.5
 [node name="Monster_1" type="Node2D"]
 scale = Vector2(4, 4)
 script = ExtResource("1_7rrc7")
-stay_time = 4.0
+stay_time = 2.0
 score = 1
 
 [node name="appear_animated" type="AnimatedSprite2D" parent="."]
