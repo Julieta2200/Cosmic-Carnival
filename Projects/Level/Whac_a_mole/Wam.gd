@@ -9,13 +9,14 @@ extends Node2D
 
 var monster_create_time : float
 var spawn_points: Array
-var monsters: Dictionary 
-
+var monsters: Dictionary
 
 func _ready():
-	$Monster_create_timer.start()
 	spawn_points = $Points.get_children()
 
+func _on_countdown_ui_hidden():
+	$Monster_create_timer.start()
+	
 func select_monster():
 	var random_number = randf_range(0, 100)
 	var cumulative_probability = 0
@@ -58,3 +59,5 @@ func _on_monster_create_timer_timeout():
 		monster_count -= 1
 	else:
 		$Monster_create_timer.stop()
+
+

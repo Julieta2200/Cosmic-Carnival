@@ -1,0 +1,118 @@
+[gd_scene load_steps=18 format=3 uid="uid://xt0kcrvbxgx2"]
+
+[ext_resource type="Texture2D" uid="uid://dh0xjpk6hog8l" path="res://Assets/Details/Countdown/Shadow.png" id="1_0lfoi"]
+[ext_resource type="Script" path="res://Projects/Level/Countdown_ui/countdown_ui.gd" id="1_jr4fh"]
+[ext_resource type="Texture2D" uid="uid://bbdno3hvy3e4o" path="res://Assets/Details/Countdown/Countdown1.png" id="2_5bgut"]
+[ext_resource type="Texture2D" uid="uid://dn2iapl3wmhi2" path="res://Assets/Details/Countdown/Countdown3.png" id="3_omiav"]
+[ext_resource type="Texture2D" uid="uid://colxywt8quu3y" path="res://Assets/Details/Countdown/Countdown2.png" id="4_jd6sk"]
+[ext_resource type="Texture2D" uid="uid://bk7nf0x8alsjt" path="res://Assets/Details/Countdown/Countdown4.png" id="5_5cglf"]
+[ext_resource type="Texture2D" uid="uid://cxn50ttlkrxxb" path="res://Assets/Details/Countdown/Countdown5.png" id="6_b0ftm"]
+[ext_resource type="Texture2D" uid="uid://bh2ayatex4vpk" path="res://Assets/Details/Countdown/Countdown6.png" id="7_3q4v4"]
+[ext_resource type="Texture2D" uid="uid://bnal263gutvvp" path="res://Assets/Details/Countdown/Countdown7.png" id="8_bybkd"]
+[ext_resource type="Texture2D" uid="uid://cor4en6ubrynw" path="res://Assets/Details/Countdown/Countdown8.png" id="9_lff75"]
+[ext_resource type="Texture2D" uid="uid://c5qbcdqjy77ct" path="res://Assets/Details/Countdown/Countdown9.png" id="10_roca1"]
+[ext_resource type="Texture2D" uid="uid://dratnf3ekilgj" path="res://Assets/Details/Countdown/Countdown10.png" id="11_ko1oi"]
+[ext_resource type="Texture2D" uid="uid://cmy4ogya38c3r" path="res://Assets/Details/Countdown/Countdown11.png" id="12_s0la6"]
+[ext_resource type="Texture2D" uid="uid://bkpin3u06ik2g" path="res://Assets/Details/Countdown/Countdown12.png" id="13_e318l"]
+[ext_resource type="Texture2D" uid="uid://3on3x5ucvbfa" path="res://Assets/Details/Countdown/Countdown13.png" id="14_hrmgx"]
+[ext_resource type="Texture2D" uid="uid://cw2oayjhudty4" path="res://Assets/Details/Countdown/Countdown14.png" id="15_i21t2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_03sxx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5bgut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5bgut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5bgut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5bgut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_omiav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jd6sk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5cglf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b0ftm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3q4v4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bybkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bybkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bybkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lff75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_roca1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ko1oi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_s0la6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_e318l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_hrmgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_i21t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_i21t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_i21t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_i21t2")
+}],
+"loop": false,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Countdown_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jr4fh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0lfoi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(512, 448)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_03sxx")
+autoplay = "default"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

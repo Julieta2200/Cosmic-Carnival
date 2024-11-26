@@ -4,7 +4,7 @@ var target
 const reach_distance: float = 100
 const delta: float = 5
 
-func _process(delta):
+func _process(_delta):
 	hit = false
 	if target != null:
 		move_to_target()

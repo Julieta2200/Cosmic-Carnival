@@ -3,6 +3,7 @@ class_name Monster extends Node
 @export var stay_time : float
 @export var score : int
 
+var disapear_color : Color
 var delete : bool = true
 
 func _ready():
@@ -36,7 +37,8 @@ func _on_dizzy_animated_animation_finished():
 	$idle_animated.visible = false
 	$dizzy_animated.visible = false
 	$disappear_animated.visible = true
-	$disappear_animated.play("disappear")
+	$disappear_animated.modulate = disapear_color
+	$disappear_animated.play("disappear") 
 
 func _on_disappear_animated_animation_finished():
 	$"../..".monster_delete(self)

@@ -8,5 +8,6 @@ func input_action_pressed():
 	down = Input.is_action_pressed("player_"+ player_number  + "_down")
 	hit = Input.is_action_just_pressed("player_"+ player_number + "_hit")
 
-func _process(delta):
+func _process(_delta):
 	input_action_pressed()
+	

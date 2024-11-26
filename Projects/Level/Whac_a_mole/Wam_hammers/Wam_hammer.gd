@@ -4,9 +4,12 @@ class_name Hammer extends Node2D
 @export var score : Control
 @export var controller : Controller
 
+
 @onready var animated_sprite : Dictionary = {"1": $Hammer_1_animated_sprite, "2": $Hammer_2_animated_sprite,
 											"3": $Hammer_3_animated_sprite, "4": $Hammer_4_animated_sprite}
 
+var colors = {"1" : Color(0.965,0.6,0.533), "2" : Color(0.447,0.835,0.447),"3" : Color(0.686,0.749,1),"4" : Color(1,0.878,0.51) }
+var can_click = false
 var score_num: int :
 	set(s):
 		score_num = s
@@ -51,6 +54,7 @@ func hit_monster():
 		if monster != null && !monster.delete:
 			score_num += monster.score
 			monster.dizzy_animation()
+			monster.disapear_color = colors[controller.player_number]
 			animation()
 
 func _on_area_2d_area_entered(area):
