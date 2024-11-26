@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://lvw1mf1g0x1w"]
+[gd_scene load_steps=9 format=3 uid="uid://lvw1mf1g0x1w"]
 
 [ext_resource type="Script" path="res://Projects/Level/Whac_a_mole/Wam.gd" id="1_lupyk"]
 [ext_resource type="Texture2D" uid="uid://dpcxaum5c6rmh" path="res://Assets/Details/Whac_a_mole/Background.png" id="2_16fai"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dd1ms0342jnn1" path="res://Projects/Level/Whac_a_mole/Wam_ui/Wam_ui.tscn" id="5_de6dh"]
 [ext_resource type="PackedScene" uid="uid://piltfxwktg0t" path="res://Projects/Level/Whac_a_mole/Wam_controller/Wam_player_controller/Wam_player_controller.tscn" id="6_17htq"]
 [ext_resource type="PackedScene" uid="uid://bocslnbv4sk6n" path="res://Projects/Level/Whac_a_mole/Wam_hammers/Wam_hammer.tscn" id="6_w0ri5"]
+[ext_resource type="PackedScene" uid="uid://bsm05pxeltvkj" path="res://Projects/Level/Whac_a_mole/Wam_controller/wam_cpu_controller/wam_cpu_controller.tscn" id="8_frqx5"]
 
 [node name="Wam" type="Node2D"]
 script = ExtResource("1_lupyk")
@@ -28,6 +29,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("3_xfsgw")
 
 [node name="Circles" type="Node2D" parent="."]
+unique_name_in_owner = true
 
 [node name="Circle" parent="Circles" instance=ExtResource("4_wo3s8")]
 position = Vector2(188, 610)
@@ -82,13 +84,19 @@ player_number = "2"
 
 [node name="Hammer" parent="." node_paths=PackedStringArray("score", "controller") instance=ExtResource("6_w0ri5")]
 position = Vector2(274, 461)
-score = NodePath("../CanvasLayer/Ui/Hammers/2/Score")
-controller = NodePath("../Player_controller")
+score = NodePath("../CanvasLayer/Ui/Hammers/1/Score")
+controller = NodePath("../wam_cpu_controller2")
 
 [node name="Hammer2" parent="." node_paths=PackedStringArray("score", "controller") instance=ExtResource("6_w0ri5")]
 position = Vector2(646, 481)
 score = NodePath("../CanvasLayer/Ui/Hammers/2/Score")
-controller = NodePath("../Player_controller2")
+controller = NodePath("../wam_cpu_controller")
+
+[node name="wam_cpu_controller" parent="." instance=ExtResource("8_frqx5")]
+player_number = "2"
+
+[node name="wam_cpu_controller2" parent="." instance=ExtResource("8_frqx5")]
+player_number = "1"
 
 [connection signal="timeout" from="Monster_create_timer" to="." method="_on_monster_create_timer_timeout"]
 

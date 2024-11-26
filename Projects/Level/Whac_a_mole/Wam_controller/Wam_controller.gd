@@ -7,3 +7,5 @@ var right : bool
 var up : bool
 var down : bool
 var hit : bool
+
+var hammer: Hammer

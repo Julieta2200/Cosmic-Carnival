@@ -20,10 +20,12 @@ var circle : Node2D
 func _ready():
 	animated_sprite[controller.player_number].visible = true
 	screen_bounds = get_viewport_rect()
+	controller.hammer = self
 
 func _physics_process(_delta):
-	controller.input_action_pressed()
 	move()
+
+func _process(_delta):
 	if controller.hit:
 		hit_monster()
 
