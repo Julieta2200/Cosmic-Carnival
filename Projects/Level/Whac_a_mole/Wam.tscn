@@ -73,30 +73,36 @@ position = Vector2(670, 768)
 [node name="Monsters" type="Node2D" parent="."]
 
 [node name="Player_controller" parent="." instance=ExtResource("6_17htq")]
-position = Vector2(274, 461)
-scale = Vector2(3, 3)
 player_number = "1"
 
 [node name="Player_controller2" parent="." instance=ExtResource("6_17htq")]
-position = Vector2(646, 481)
-scale = Vector2(3, 3)
 player_number = "2"
-
-[node name="Hammer" parent="." node_paths=PackedStringArray("score", "controller") instance=ExtResource("6_w0ri5")]
-position = Vector2(274, 461)
-score = NodePath("../CanvasLayer/Ui/Hammers/1/Score")
-controller = NodePath("../wam_cpu_controller2")
-
-[node name="Hammer2" parent="." node_paths=PackedStringArray("score", "controller") instance=ExtResource("6_w0ri5")]
-position = Vector2(646, 481)
-score = NodePath("../CanvasLayer/Ui/Hammers/2/Score")
-controller = NodePath("../wam_cpu_controller")
 
 [node name="wam_cpu_controller" parent="." instance=ExtResource("8_frqx5")]
-player_number = "2"
+player_number = "3"
 
 [node name="wam_cpu_controller2" parent="." instance=ExtResource("8_frqx5")]
-player_number = "1"
+player_number = "4"
+
+[node name="Hammer" parent="." node_paths=PackedStringArray("score", "controller") instance=ExtResource("6_w0ri5")]
+position = Vector2(158, 468)
+score = NodePath("../CanvasLayer/Ui/Hammers/1/Score")
+controller = NodePath("../Player_controller")
+
+[node name="Hammer2" parent="." node_paths=PackedStringArray("score", "controller") instance=ExtResource("6_w0ri5")]
+position = Vector2(395, 470)
+score = NodePath("../CanvasLayer/Ui/Hammers/2/Score")
+controller = NodePath("../Player_controller2")
+
+[node name="Hammer3" parent="." node_paths=PackedStringArray("score", "controller") instance=ExtResource("6_w0ri5")]
+position = Vector2(636, 464)
+score = NodePath("../CanvasLayer/Ui/Hammers/3/Score")
+controller = NodePath("../wam_cpu_controller")
+
+[node name="Hammer4" parent="." node_paths=PackedStringArray("score", "controller") instance=ExtResource("6_w0ri5")]
+position = Vector2(871, 469)
+score = NodePath("../CanvasLayer/Ui/Hammers/4/Score")
+controller = NodePath("../wam_cpu_controller2")
 
 [connection signal="timeout" from="Monster_create_timer" to="." method="_on_monster_create_timer_timeout"]
 

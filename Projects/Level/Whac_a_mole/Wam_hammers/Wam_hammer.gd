@@ -4,7 +4,8 @@ class_name Hammer extends Node2D
 @export var score : Control
 @export var controller : Controller
 
-@onready var animated_sprite : Dictionary = {"1": $Hammer_1_animated_sprite, "2": $Hammer_2_animated_sprite}
+@onready var animated_sprite : Dictionary = {"1": $Hammer_1_animated_sprite, "2": $Hammer_2_animated_sprite,
+											"3": $Hammer_3_animated_sprite, "4": $Hammer_4_animated_sprite}
 
 var score_num: int :
 	set(s):
