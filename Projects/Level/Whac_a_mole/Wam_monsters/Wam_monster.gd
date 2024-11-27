@@ -14,11 +14,14 @@ func create():
 	$appear_animated.visible = true
 	$appear_animated.play("appear")
 
-func _on_disappear_timer_timeout():
+func disappear():
 	delete = true
 	$disappear_animated2.visible = true
 	$idle_animated.visible = false
 	$disappear_animated2.play("disappear")
+	
+func _on_disappear_timer_timeout():
+	disappear()
 
 func dizzy_animation():
 	delete = true

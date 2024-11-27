@@ -16,6 +16,7 @@ func _ready():
 
 func _on_countdown_ui_hidden():
 	$Monster_create_timer.start()
+	%Ui.timer.start()
 	
 func select_monster():
 	var random_number = randf_range(0, 100)
@@ -52,7 +53,7 @@ func monster_delete(monster):
 			break
 
 func _on_monster_create_timer_timeout():
-	monster_create_time = randf_range(0.5,1)
+	monster_create_time = randf_range(0.3,0.8)
 	$Monster_create_timer.wait_time = monster_create_time
 	if monster_count > 0:
 		select_monster()
@@ -60,4 +61,8 @@ func _on_monster_create_timer_timeout():
 	else:
 		$Monster_create_timer.stop()
 
-
+func game_stop():
+	$Monster_create_timer.stop()
+	for i in monsters.keys():
+		monsters[i].disappear()
+	monsters.clear()
