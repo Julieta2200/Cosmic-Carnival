@@ -33,13 +33,8 @@ func highlight_game(new_index: int):
 			games_bord[i].frame.visible = false
 
 func change_index(new_index: int):
-	if new_index < 0:
-		new_index = 0
-	elif new_index > games.size() - 1:
-		new_index = games.size() - 1
-	else:
-		index = new_index
-		highlight_game(index)
+	index = clamp(new_index, 0, games.size() - 1)
+	highlight_game(index)
 
 func open_selected_game():
 	var selected_game = games[index]
