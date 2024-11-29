@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://btyknifu3emef"]
+
+[ext_resource type="Texture2D" uid="uid://c8sudmii4smyk" path="res://Assets/Details/Select the Game/Background.png" id="1_lni6d"]
+[ext_resource type="Script" path="res://Projects/Level/UI/Select_game_ui/Select_game_ui.gd" id="1_utbwy"]
+[ext_resource type="Texture2D" uid="uid://8uvgyi481t2s" path="res://Assets/Details/Select the Game/Board.png" id="2_wkju6"]
+[ext_resource type="Texture2D" uid="uid://dqnepc0q0fglo" path="res://Assets/Details/Select the Game/Select the game.png" id="7_u7nnd"]
+[ext_resource type="PackedScene" uid="uid://bmwiwc222j12k" path="res://Projects/Level/UI/Select_game_ui/Game_board/game_board.tscn" id="9_ar26b"]
+
+[node name="Select_game_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_utbwy")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(4, 4)
+texture = ExtResource("1_lni6d")
+
+[node name="Board" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = -245.0
+offset_top = -15.0
+offset_right = 132.0
+offset_bottom = 238.0
+scale = Vector2(4, 4)
+texture = ExtResource("2_wkju6")
+
+[node name="Select_the_game" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 264.0
+offset_top = 64.0
+offset_right = 388.0
+offset_bottom = 93.0
+scale = Vector2(4, 4)
+texture = ExtResource("7_u7nnd")
+
+[node name="Games" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 350.0
+offset_right = -719.0
+offset_bottom = -483.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+theme_override_constants/separation = 8
+
+[node name="Game_board1" parent="Games" instance=ExtResource("9_ar26b")]
+layout_mode = 2
+
+[node name="Game_board2" parent="Games" instance=ExtResource("9_ar26b")]
+layout_mode = 2
+game_name = "-"
+
+[node name="Game_board3" parent="Games" instance=ExtResource("9_ar26b")]
+layout_mode = 2
+game_name = "-"
