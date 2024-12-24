@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://baypml3k2yhli"]
+
+[ext_resource type="PackedScene" uid="uid://blrbxjtugqm50" path="res://Projects/Level/UI/Boonyboo_3d.tscn" id="1_r6y7u"]
+[ext_resource type="PackedScene" uid="uid://co6ut82r08eju" path="res://Projects/Level/UI/player_info_ui.tscn" id="2_aulxi"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Boonyboo" parent="." instance=ExtResource("1_r6y7u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 0)
+
+[node name="Player_info_ui" parent="." instance=ExtResource("2_aulxi")]

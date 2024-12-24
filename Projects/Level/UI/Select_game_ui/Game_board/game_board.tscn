@@ -1,15 +1,15 @@
 [gd_scene load_steps=6 format=3 uid="uid://bmwiwc222j12k"]
 
-[ext_resource type="Texture2D" uid="uid://bsb2b0arp1gf3" path="res://Assets/Details/Select the Game/Game board.png" id="1_krr5y"]
-[ext_resource type="Texture2D" uid="uid://bw71e2xmhqdx1" path="res://Assets/Details/Select the Game/Frame.png" id="2_ivhla"]
+[ext_resource type="Texture2D" uid="uid://dn8b6cphvmlbp" path="res://Assets/UI/Select the Game/Game board.png" id="1_nhv5a"]
 [ext_resource type="Script" path="res://Projects/Level/UI/Select_game_ui/Game_board/game_board.gd" id="2_krau1"]
+[ext_resource type="Texture2D" uid="uid://irvloxede2e6" path="res://Assets/UI/Select the Game/Frame.png" id="3_ugkbq"]
 [ext_resource type="FontFile" uid="uid://dxl2upmlmfr51" path="res://Assets/Fonts/8-bit-fortress (1).ttf" id="3_v20v1"]
-[ext_resource type="Texture2D" uid="uid://gp28hf8lqvtu" path="res://Assets/Details/Select the Game/Lock.png" id="4_1ohoh"]
+[ext_resource type="Texture2D" uid="uid://b6unrus22emu2" path="res://Assets/UI/Select the Game/Lock.png" id="5_c01fe"]
 
 [node name="Game_board" type="TextureRect"]
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("1_krr5y")
+texture = ExtResource("1_nhv5a")
 script = ExtResource("2_krau1")
 
 [node name="Frame" type="TextureRect" parent="."]
@@ -18,7 +18,7 @@ offset_left = -16.0
 offset_top = -16.0
 offset_right = 79.0
 offset_bottom = 79.0
-texture = ExtResource("2_ivhla")
+texture = ExtResource("3_ugkbq")
 
 [node name="Name" type="Label" parent="."]
 layout_mode = 1
@@ -53,4 +53,4 @@ offset_right = 16.0
 offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_1ohoh")
+texture = ExtResource("5_c01fe")

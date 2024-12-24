@@ -1,0 +1,165 @@
+[gd_scene load_steps=23 format=3 uid="uid://co6ut82r08eju"]
+
+[ext_resource type="Texture2D" uid="uid://cfpyn65bdn183" path="res://Assets/UI/Select the Game/Background.png" id="1_h8lxl"]
+[ext_resource type="Texture2D" uid="uid://ceddnpoy8opjf" path="res://Assets/UI/Player info/Board.png" id="2_eqohi"]
+[ext_resource type="FontFile" uid="uid://dxl2upmlmfr51" path="res://Assets/Fonts/8-bit-fortress (1).ttf" id="3_4dwd1"]
+[ext_resource type="Texture2D" uid="uid://fvsj4fpad5ih" path="res://Assets/UI/Player info/Play Button/Button1.png" id="4_ncm3y"]
+[ext_resource type="Texture2D" uid="uid://bmnqqpg740vq" path="res://Assets/UI/Player info/Play Button/Button2.png" id="5_flm05"]
+[ext_resource type="Texture2D" uid="uid://db8ii30tqi7hy" path="res://Assets/UI/Player info/Confirm button/Confirm_normal.png" id="6_avusv"]
+[ext_resource type="Texture2D" uid="uid://beiiacsvf08p7" path="res://Assets/UI/Player info/Cell (1).png" id="6_yd203"]
+[ext_resource type="Texture2D" uid="uid://dw3ofepos315x" path="res://Assets/UI/Player info/Confirm button/Confirm_hover.png" id="7_rmuwe"]
+[ext_resource type="Texture2D" uid="uid://ksp2bmyhprc1" path="res://Assets/UI/Player info/Leave button/Leave_normal.png" id="8_rnbgc"]
+[ext_resource type="Texture2D" uid="uid://c1ho0ycx3k7mg" path="res://Assets/UI/Player info/Leave button/Leave_hover.png" id="9_h6gaa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qbnur"]
+texture = ExtResource("4_ncm3y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h8yh5"]
+texture = ExtResource("5_flm05")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x1mq8"]
+texture = ExtResource("6_avusv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fk3na"]
+texture = ExtResource("7_rmuwe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7b7xx"]
+texture = ExtResource("6_avusv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k1nv1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jmrcs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_syn8y"]
+texture = ExtResource("8_rnbgc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hdtuy"]
+texture = ExtResource("9_h6gaa")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_had7u"]
+texture = ExtResource("8_rnbgc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wft07"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yxa4h"]
+
+[node name="Player_info_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(4, 4)
+texture = ExtResource("1_h8lxl")
+
+[node name="Board" type="TextureRect" parent="."]
+offset_right = 256.0
+offset_bottom = 224.0
+scale = Vector2(4, 4)
+texture = ExtResource("2_eqohi")
+
+[node name="Play_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 696.0
+offset_right = 410.0
+offset_bottom = 723.0
+scale = Vector2(4, 4)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxTexture_qbnur")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_h8yh5")
+text = "PLAY"
+
+[node name="Player_1" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(4, 4)
+
+[node name="Player" type="Label" parent="Player_1"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 22.0
+offset_right = 107.0
+offset_bottom = 45.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+text = "Player 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Player_1"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 71.0
+offset_bottom = 91.0
+texture = ExtResource("6_yd203")
+
+[node name="Name" type="Label" parent="Player_1"]
+layout_mode = 0
+offset_left = 24.5
+offset_top = 94.0
+offset_right = 105.5
+offset_bottom = 117.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Confirm_button" type="Button" parent="Player_1"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 102.0
+offset_right = 86.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_x1mq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fk3na")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7b7xx")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_k1nv1")
+theme_override_styles/focus = SubResource("StyleBoxTexture_jmrcs")
+
+[node name="Label" type="Label" parent="Player_1/Confirm_button"]
+offset_left = 28.75
+offset_top = 18.75
+offset_right = 109.75
+offset_bottom = 41.75
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+text = "Confirm"
+
+[node name="Leave_button" type="Button" parent="Player_1"]
+offset_left = 12.0
+offset_top = 120.0
+offset_right = 86.0
+offset_bottom = 162.0
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_syn8y")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hdtuy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_had7u")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_wft07")
+theme_override_styles/focus = SubResource("StyleBoxTexture_yxa4h")
+keep_pressed_outside = true
+
+[node name="Label" type="Label" parent="Player_1/Leave_button"]
+offset_left = 28.75
+offset_top = 18.75
+offset_right = 109.75
+offset_bottom = 41.75
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+text = "Leave"
