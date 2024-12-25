@@ -1,0 +1,254 @@
+[gd_scene load_steps=12 format=3 uid="uid://t573garpaufq"]
+
+[ext_resource type="Texture2D" uid="uid://cfpyn65bdn183" path="res://Assets/UI/Select the Game/Background.png" id="1_lx38c"]
+[ext_resource type="Script" path="res://Players_number_ui.gd" id="1_xjss6"]
+[ext_resource type="Texture2D" uid="uid://8ykcw2ehekcc" path="res://Assets/UI/Number of players/Board.png" id="2_ik1on"]
+[ext_resource type="Texture2D" uid="uid://d1ud45j3x7vth" path="res://Assets/UI/Number of players/Number of players.png" id="3_qhgev"]
+[ext_resource type="Texture2D" uid="uid://2n2q5450u8no" path="res://Assets/UI/Number of players/Cell.png" id="4_paqvx"]
+[ext_resource type="Texture2D" uid="uid://rrpkcyf5cscp" path="res://Assets/UI/Number of players/Frame.png" id="5_dp6gp"]
+[ext_resource type="Texture2D" uid="uid://ctrh0hal6jcwo" path="res://Assets/UI/Number of players/2d characters/Twilight1.png" id="6_1wgxi"]
+[ext_resource type="FontFile" uid="uid://dxl2upmlmfr51" path="res://Assets/Fonts/8-bit-fortress (1).ttf" id="7_lqyl7"]
+[ext_resource type="Texture2D" uid="uid://dte3vh4nxrvdb" path="res://Assets/UI/Number of players/2d characters/Hopper.png" id="8_af3nl"]
+[ext_resource type="Texture2D" uid="uid://bxo3yxsvynlnv" path="res://Assets/UI/Number of players/2d characters/Boonyboo.png" id="9_nrlub"]
+[ext_resource type="Texture2D" uid="uid://c08e18m0fovcd" path="res://Assets/UI/Number of players/2d characters/Morsel.png" id="10_nkckj"]
+
+[node name="Players_number_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xjss6")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(4, 4)
+texture = ExtResource("1_lx38c")
+
+[node name="Board" type="TextureRect" parent="."]
+offset_right = 256.0
+offset_bottom = 224.0
+scale = Vector2(4, 4)
+texture = ExtResource("2_ik1on")
+
+[node name="Select_the_game" type="TextureRect" parent="."]
+offset_left = 264.0
+offset_top = 64.0
+offset_right = 388.0
+offset_bottom = 93.0
+scale = Vector2(4, 4)
+texture = ExtResource("3_qhgev")
+
+[node name="Players_number" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="1" type="TextureButton" parent="Players_number"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 288.0
+offset_right = 293.0
+offset_bottom = 337.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("4_paqvx")
+
+[node name="Frame" type="TextureRect" parent="Players_number/1"]
+visible = false
+layout_mode = 0
+offset_left = -15.5
+offset_top = -15.0
+offset_right = 84.5
+offset_bottom = 65.0
+texture = ExtResource("5_dp6gp")
+
+[node name="Character" type="TextureRect" parent="Players_number/1"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 28.0
+offset_right = 42.0
+offset_bottom = 44.0
+texture = ExtResource("6_1wgxi")
+
+[node name="Number" type="Label" parent="Players_number/1"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 2.0
+offset_right = 56.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0.360784, 0.572549, 1, 1)
+theme_override_fonts/font = ExtResource("7_lqyl7")
+theme_override_font_sizes/font_size = 21
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="2" type="TextureButton" parent="Players_number"]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 288.0
+offset_right = 605.0
+offset_bottom = 337.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("4_paqvx")
+
+[node name="Frame" type="TextureRect" parent="Players_number/2"]
+visible = false
+layout_mode = 0
+offset_left = -15.5
+offset_top = -15.0
+offset_right = 84.5
+offset_bottom = 65.0
+texture = ExtResource("5_dp6gp")
+
+[node name="Character" type="TextureRect" parent="Players_number/2"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 28.0
+offset_right = 36.0
+offset_bottom = 44.0
+texture = ExtResource("6_1wgxi")
+
+[node name="Character2" type="TextureRect" parent="Players_number/2"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 28.0
+offset_right = 51.0
+offset_bottom = 44.0
+texture = ExtResource("8_af3nl")
+
+[node name="Number" type="Label" parent="Players_number/2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 2.0
+offset_right = 56.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0.360784, 0.572549, 1, 1)
+theme_override_fonts/font = ExtResource("7_lqyl7")
+theme_override_font_sizes/font_size = 21
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3" type="TextureButton" parent="Players_number"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 520.0
+offset_right = 293.0
+offset_bottom = 569.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("4_paqvx")
+
+[node name="Frame" type="TextureRect" parent="Players_number/3"]
+visible = false
+layout_mode = 0
+offset_left = -15.5
+offset_top = -15.0
+offset_right = 84.5
+offset_bottom = 65.0
+texture = ExtResource("5_dp6gp")
+
+[node name="Character" type="TextureRect" parent="Players_number/3"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 28.0
+offset_right = 26.0
+offset_bottom = 44.0
+texture = ExtResource("6_1wgxi")
+
+[node name="Character2" type="TextureRect" parent="Players_number/3"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 28.0
+offset_right = 41.0
+offset_bottom = 44.0
+texture = ExtResource("8_af3nl")
+
+[node name="Character3" type="TextureRect" parent="Players_number/3"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 28.0
+offset_right = 56.0
+offset_bottom = 44.0
+texture = ExtResource("9_nrlub")
+
+[node name="Number" type="Label" parent="Players_number/3"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 2.0
+offset_right = 56.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0.360784, 0.572549, 1, 1)
+theme_override_fonts/font = ExtResource("7_lqyl7")
+theme_override_font_sizes/font_size = 21
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="4" type="TextureButton" parent="Players_number"]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 520.0
+offset_right = 605.0
+offset_bottom = 569.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("4_paqvx")
+
+[node name="Frame" type="TextureRect" parent="Players_number/4"]
+visible = false
+layout_mode = 0
+offset_left = -15.5
+offset_top = -15.0
+offset_right = 84.5
+offset_bottom = 65.0
+texture = ExtResource("5_dp6gp")
+
+[node name="Character" type="TextureRect" parent="Players_number/4"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 28.0
+offset_right = 20.0
+offset_bottom = 44.0
+texture = ExtResource("6_1wgxi")
+
+[node name="Character2" type="TextureRect" parent="Players_number/4"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 28.0
+offset_right = 35.0
+offset_bottom = 44.0
+texture = ExtResource("8_af3nl")
+
+[node name="Character3" type="TextureRect" parent="Players_number/4"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 28.0
+offset_right = 50.0
+offset_bottom = 44.0
+texture = ExtResource("9_nrlub")
+
+[node name="Character4" type="TextureRect" parent="Players_number/4"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 28.0
+offset_right = 65.0
+offset_bottom = 44.0
+texture = ExtResource("10_nkckj")
+
+[node name="Number" type="Label" parent="Players_number/4"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 2.0
+offset_right = 56.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0.360784, 0.572549, 1, 1)
+theme_override_fonts/font = ExtResource("7_lqyl7")
+theme_override_font_sizes/font_size = 21
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1

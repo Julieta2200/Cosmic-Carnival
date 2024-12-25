@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5lib8dbobiyp"]
+
+[ext_resource type="PackedScene" uid="uid://co6ut82r08eju" path="res://Projects/Level/UI/Player_info_ui.tscn" id="1_ikwvg"]
+[ext_resource type="PackedScene" uid="uid://blrbxjtugqm50" path="res://Projects/Level/UI/Characters_3d/Boonyboo.tscn" id="2_4jhtl"]
+[ext_resource type="PackedScene" uid="uid://cgkeweor7cbjl" path="res://Projects/Level/UI/Characters_3d/Hopper.tscn" id="3_k5ro6"]
+[ext_resource type="PackedScene" uid="uid://b2804clb8g8oi" path="res://Projects/Level/UI/Characters_3d/Morsel.tscn" id="4_yaloj"]
+[ext_resource type="PackedScene" uid="uid://3qvv0d6gl286" path="res://Projects/Level/UI/Characters_3d/Twilght.tscn" id="5_cprqu"]
+
+[node name="Player_info" type="CanvasLayer"]
+
+[node name="Player_info_ui" parent="." instance=ExtResource("1_ikwvg")]
+
+[node name="Characters_3d" type="Node3D" parent="."]
+
+[node name="Boonyboo" parent="Characters_3d" instance=ExtResource("2_4jhtl")]
+
+[node name="SubViewportContainer3" type="SubViewportContainer" parent="Characters_3d/Boonyboo"]
+offset_left = 298.0
+offset_top = 177.0
+offset_right = 502.0
+offset_bottom = 381.0
+
+[node name="SubViewport" type="SubViewport" parent="Characters_3d/Boonyboo/SubViewportContainer3"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(204, 204)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Characters_3d/Boonyboo/SubViewportContainer3/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 2.5)
+current = true
+
+[node name="Hopper" parent="Characters_3d" instance=ExtResource("3_k5ro6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.34766, 0, 0)
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="Characters_3d/Hopper"]
+offset_left = 77.0
+offset_top = 177.0
+offset_right = 281.0
+offset_bottom = 381.0
+
+[node name="SubViewport" type="SubViewport" parent="Characters_3d/Hopper/SubViewportContainer2"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(204, 204)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Characters_3d/Hopper/SubViewportContainer2/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.379, 0.75, 2.5)
+current = true
+
+[node name="Morsel" parent="Characters_3d" instance=ExtResource("4_yaloj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="Characters_3d/Morsel"]
+offset_left = 510.0
+offset_top = 189.0
+offset_right = 714.0
+offset_bottom = 393.0
+
+[node name="SubViewport" type="SubViewport" parent="Characters_3d/Morsel/SubViewportContainer2"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(204, 204)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Characters_3d/Morsel/SubViewportContainer2/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.778, 0.75, 2.5)
+current = true
+
+[node name="Twilght" parent="Characters_3d" instance=ExtResource("5_cprqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5425, 0, 0)
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="Characters_3d/Twilght"]
+offset_left = 749.0
+offset_top = 183.0
+offset_right = 953.0
+offset_bottom = 387.0
+
+[node name="SubViewport" type="SubViewport" parent="Characters_3d/Twilght/SubViewportContainer2"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(204, 204)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Characters_3d/Twilght/SubViewportContainer2/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.476, 0.75, 2.5)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Characters_3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6219, 0, 4.00321)
+light_color = Color(0.890196, 0.737255, 0.772549, 1)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjge25jf4ddik"
-path="res://.godot/imported/Confirm_hover.png-fe5673bb966c4f89ec703c6cd0d4124b.ctex"
+uid="uid://h6avw58vwc2q"
+path="res://.godot/imported/Cell.png-11db9491be534db8a785057a16c21645.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Player info/Confirm button/Confirm_hover.png"
-dest_files=["res://.godot/imported/Confirm_hover.png-fe5673bb966c4f89ec703c6cd0d4124b.ctex"]
+source_file="res://Assets/UI/Player info/Cell.png"
+dest_files=["res://.godot/imported/Cell.png-11db9491be534db8a785057a16c21645.ctex"]
 
 [params]
 
