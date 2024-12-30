@@ -1,6 +1,7 @@
 extends Control
 
 @onready var timer = $Timer
+@onready var scores = [$"Hammers/1/Score",$"Hammers/2/Score",$"Hammers/3/Score",$"Hammers/4/Score"]
 
 var time: int = 60:
 	set(t):

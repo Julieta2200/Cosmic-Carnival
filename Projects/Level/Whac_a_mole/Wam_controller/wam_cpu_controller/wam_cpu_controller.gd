@@ -19,7 +19,7 @@ func react():
 		if target.monster == null || target.monster.delete:
 			target = null
 		return
-	var circles: Array = %Circles.get_children()
+	var circles: Array = $"../%Circles".get_children()
 	var monster_circles: Array = []
 	for circle in circles:
 		if circle.monster == null || circle.monster.delete:

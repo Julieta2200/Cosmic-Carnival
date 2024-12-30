@@ -3,6 +3,9 @@ extends Node2D
 @onready var monster_1 = preload("res://Projects/Level/Whac_a_mole/Wam_monsters/Monster_1/Wam_monster_1.tscn")
 @onready var monster_2 = preload("res://Projects/Level/Whac_a_mole/Wam_monsters/Monster_2/Wam_monster_2.tscn")
 @onready var monster_3 = preload("res://Projects/Level/Whac_a_mole/Wam_monsters/Monster_3/Wam_monster_3.tscn")
+@onready var hammer_scene = preload("res://Projects/Level/Whac_a_mole/Wam_hammers/Wam_hammer.tscn")
+@onready var player_controller = preload("res://Projects/Level/Whac_a_mole/Wam_controller/Wam_player_controller/Wam_player_controller.tscn")
+@onready var cpu_controller = preload("res://Projects/Level/Whac_a_mole/Wam_controller/wam_cpu_controller/wam_cpu_controller.tscn")
 
 @export var monster_probabilities : Dictionary = {"blue": 0,"orange": 0,"pink": 0}
 @export var monster_count : int
@@ -12,7 +15,24 @@ var spawn_points: Array
 var monsters: Dictionary
 
 func _ready():
+	hammers_insert()
 	spawn_points = $Points.get_children()
+
+func hammers_insert():
+	var base_pos = Vector2(150, 500)
+	for i in range(GameInfo.player_count):
+		var hammer = hammer_scene.instantiate()
+		hammer.global_position = base_pos + Vector2(150 * i, 0)
+		hammer.score = %Ui.scores[i]
+		%Ui.scores[i].show()
+		
+		var controller = cpu_controller.instantiate()
+		controller.player_number = str(i + 1)
+		hammer.controller = controller
+		
+		$Hammers.add_child(hammer)
+		$Controllers.add_child(controller)
+
 
 func _on_countdown_ui_hidden():
 	$Monster_create_timer.start()

@@ -4,7 +4,6 @@ class_name Hammer extends Node2D
 @export var score : Control
 @export var controller : Controller
 
-
 @onready var animated_sprite : Dictionary = {"1": $Hammer_1_animated_sprite, "2": $Hammer_2_animated_sprite,
 											"3": $Hammer_3_animated_sprite, "4": $Hammer_4_animated_sprite}
 
@@ -16,7 +15,7 @@ var score_num: int :
 		if score_num < 0:
 			score_num += 1
 		elif score_num < 1000 :
-			%Ui.set_number(score,score_num)
+			$"../%Ui".set_number(score,score_num)
 
 var screen_bounds : Rect2
 var circle : Node2D
@@ -25,6 +24,7 @@ func _ready():
 	animated_sprite[controller.player_number].visible = true
 	screen_bounds = get_viewport_rect()
 	controller.hammer = self
+	
 
 func _physics_process(_delta):
 	move()

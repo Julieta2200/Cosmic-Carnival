@@ -22,18 +22,21 @@ grow_vertical = 2
 script = ExtResource("1_xjss6")
 
 [node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(4, 4)
 texture = ExtResource("1_lx38c")
 
 [node name="Board" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 256.0
 offset_bottom = 224.0
 scale = Vector2(4, 4)
 texture = ExtResource("2_ik1on")
 
 [node name="Select_the_game" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 264.0
 offset_top = 64.0
 offset_right = 388.0

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cosmic Carnival"
-run/main_scene="res://Players_number_ui.tscn"
+run/main_scene="res://Projects/Level/UI/Select_game_ui/Select_game_ui.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SaveManager="*res://Projects/Singletones/SaveManager.gd"
 TicketManager="*res://Projects/Singletones/ticket_manager.tscn"
+GameInfo="*res://Projects/Singletones/Game_info.gd"
 
 [display]
 

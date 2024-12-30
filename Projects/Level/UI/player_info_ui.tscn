@@ -469,5 +469,3 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_0536s")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_h8yh5")
 theme_override_styles/focus = SubResource("StyleBoxTexture_wn8gf")
 text = "PLAY"
-
-[connection signal="pressed" from="Play_button" to="." method="_on_play_button_pressed"]

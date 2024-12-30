@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://lvw1mf1g0x1w"]
+[gd_scene load_steps=10 format=3 uid="uid://lvw1mf1g0x1w"]
 
 [ext_resource type="Script" path="res://Projects/Level/Whac_a_mole/Wam.gd" id="1_lupyk"]
 [ext_resource type="Texture2D" uid="uid://dpcxaum5c6rmh" path="res://Assets/Details/Whac_a_mole/Background.png" id="2_16fai"]
 [ext_resource type="Texture2D" uid="uid://c8wn5b51tjikl" path="res://Assets/Details/Whac_a_mole/Game Machine.png" id="3_xfsgw"]
 [ext_resource type="PackedScene" uid="uid://dmnmrrxboew07" path="res://Projects/Level/Whac_a_mole/Wam_circles/Wam_circle.tscn" id="4_wo3s8"]
 [ext_resource type="PackedScene" uid="uid://dd1ms0342jnn1" path="res://Projects/Level/Whac_a_mole/Wam_ui/Wam_ui.tscn" id="5_de6dh"]
+[ext_resource type="PackedScene" uid="uid://piltfxwktg0t" path="res://Projects/Level/Whac_a_mole/Wam_controller/Wam_player_controller/Wam_player_controller.tscn" id="6_17htq"]
 [ext_resource type="PackedScene" uid="uid://xt0kcrvbxgx2" path="res://Projects/Level/Countdown_ui/countdown_ui.tscn" id="6_fakic"]
+[ext_resource type="PackedScene" uid="uid://bocslnbv4sk6n" path="res://Projects/Level/Whac_a_mole/Wam_hammers/Wam_hammer.tscn" id="6_w0ri5"]
+[ext_resource type="PackedScene" uid="uid://bsm05pxeltvkj" path="res://Projects/Level/Whac_a_mole/Wam_controller/wam_cpu_controller/wam_cpu_controller.tscn" id="8_frqx5"]
 
 [node name="Wam" type="Node2D"]
 script = ExtResource("1_lupyk")
@@ -51,18 +54,6 @@ position = Vector2(668, 786)
 [node name="Ui" parent="CanvasLayer" instance=ExtResource("5_de6dh")]
 unique_name_in_owner = true
 
-[node name="Score" parent="CanvasLayer/Ui/Hammers/1" index="1"]
-visible = false
-
-[node name="Score" parent="CanvasLayer/Ui/Hammers/2" index="1"]
-visible = false
-
-[node name="Score" parent="CanvasLayer/Ui/Hammers/3" index="1"]
-visible = false
-
-[node name="Score" parent="CanvasLayer/Ui/Hammers/4" index="1"]
-visible = false
-
 [node name="Countdown_ui" parent="CanvasLayer" instance=ExtResource("6_fakic")]
 unique_name_in_owner = true
 
@@ -85,9 +76,46 @@ position = Vector2(670, 768)
 
 [node name="Monsters" type="Node2D" parent="."]
 
+[node name="Player_controller" parent="." instance=ExtResource("6_17htq")]
+player_number = "1"
+
+[node name="Player_controller2" parent="." instance=ExtResource("6_17htq")]
+player_number = "2"
+
+[node name="wam_cpu_controller" parent="." instance=ExtResource("8_frqx5")]
+player_number = "2"
+
+[node name="wam_cpu_controller2" parent="." instance=ExtResource("8_frqx5")]
+player_number = "3"
+
+[node name="wam_cpu_controller3" parent="." instance=ExtResource("8_frqx5")]
+player_number = "4"
+
 [node name="Hammers" type="Node2D" parent="."]
 
-[node name="Controllers" type="Node2D" parent="."]
+[node name="Hammer" parent="Hammers" node_paths=PackedStringArray("score", "controller") instance=ExtResource("6_w0ri5")]
+visible = false
+position = Vector2(147, 465)
+score = NodePath("../../CanvasLayer/Ui/Hammers/1/Score")
+controller = NodePath("../../Player_controller")
+
+[node name="Hammer2" parent="Hammers" node_paths=PackedStringArray("score", "controller") instance=ExtResource("6_w0ri5")]
+visible = false
+position = Vector2(327, 465)
+score = NodePath("../../CanvasLayer/Ui/Hammers/1/Score")
+controller = NodePath("../../wam_cpu_controller2")
+
+[node name="Hammer3" parent="Hammers" node_paths=PackedStringArray("score", "controller") instance=ExtResource("6_w0ri5")]
+visible = false
+position = Vector2(542, 464)
+score = NodePath("../../CanvasLayer/Ui/Hammers/3/Score")
+controller = NodePath("../../wam_cpu_controller2")
+
+[node name="Hammer4" parent="Hammers" node_paths=PackedStringArray("score", "controller") instance=ExtResource("6_w0ri5")]
+visible = false
+position = Vector2(781, 464)
+score = NodePath("../../CanvasLayer/Ui/Hammers/4/Score")
+controller = NodePath("../../wam_cpu_controller3")
 
 [connection signal="timeout" from="Monster_create_timer" to="." method="_on_monster_create_timer_timeout"]
 [connection signal="hidden" from="CanvasLayer/Countdown_ui" to="." method="_on_countdown_ui_hidden"]
