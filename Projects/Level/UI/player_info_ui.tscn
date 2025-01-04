@@ -1,0 +1,471 @@
+[gd_scene load_steps=33 format=3 uid="uid://co6ut82r08eju"]
+
+[ext_resource type="Texture2D" uid="uid://cfpyn65bdn183" path="res://Assets/UI/Select the Game/Background.png" id="1_h8lxl"]
+[ext_resource type="Script" path="res://Projects/Level/UI/Player_info_ui.gd" id="1_vlq8r"]
+[ext_resource type="Texture2D" uid="uid://ceddnpoy8opjf" path="res://Assets/UI/Player info/Board.png" id="2_eqohi"]
+[ext_resource type="FontFile" uid="uid://dxl2upmlmfr51" path="res://Assets/Fonts/8-bit-fortress (1).ttf" id="3_4dwd1"]
+[ext_resource type="Texture2D" uid="uid://fvsj4fpad5ih" path="res://Assets/UI/Player info/Play Button/Button1.png" id="4_ncm3y"]
+[ext_resource type="Texture2D" uid="uid://bmnqqpg740vq" path="res://Assets/UI/Player info/Play Button/Button2.png" id="5_flm05"]
+[ext_resource type="Texture2D" uid="uid://d4gwk8dnbof8n" path="res://Assets/UI/Player info/Confirm button/Confirm_normal.png" id="6_avusv"]
+[ext_resource type="Texture2D" uid="uid://beiiacsvf08p7" path="res://Assets/UI/Player info/Cell (1).png" id="6_yd203"]
+[ext_resource type="Texture2D" uid="uid://bjge25jf4ddik" path="res://Assets/UI/Player info/Confirm button/Confirm_hover.png" id="7_rmuwe"]
+[ext_resource type="Texture2D" uid="uid://cqan13rwpomsv" path="res://Assets/UI/Player info/Leave button/Leave_normal.png" id="8_rnbgc"]
+[ext_resource type="Texture2D" uid="uid://b50k6qqy3b807" path="res://Assets/UI/Player info/Leave button/Leave_hover.png" id="9_h6gaa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x1mq8"]
+texture = ExtResource("6_avusv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2wefw"]
+texture = ExtResource("7_rmuwe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7b7xx"]
+texture = ExtResource("6_avusv")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7w4hd"]
+load_path = "res://.godot/imported/Confirm_normal.png-2920ae0388ebc7f093ad9fa59da82bae.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k1nv1"]
+texture = SubResource("CompressedTexture2D_7w4hd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v8id7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_syn8y"]
+texture = ExtResource("8_rnbgc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hdtuy"]
+texture = ExtResource("9_h6gaa")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_had7u"]
+texture = ExtResource("8_rnbgc")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_isibg"]
+load_path = "res://.godot/imported/Leave_normal.png-3c7ef31817db717450688f14fe48766a.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wft07"]
+texture = SubResource("CompressedTexture2D_isibg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yxa4h"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_snm7t"]
+load_path = "res://.godot/imported/Confirm_hover.png-fe5673bb966c4f89ec703c6cd0d4124b.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fk3na"]
+texture = SubResource("CompressedTexture2D_snm7t")
+texture_margin_left = 11.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jmrcs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_01mb3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jlrsx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qbnur"]
+texture = ExtResource("4_ncm3y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0536s"]
+texture = ExtResource("5_flm05")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h8yh5"]
+texture = ExtResource("4_ncm3y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wn8gf"]
+
+[node name="Player_info_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vlq8r")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(4, 4)
+texture = ExtResource("1_h8lxl")
+
+[node name="Board" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 224.0
+scale = Vector2(4, 4)
+texture = ExtResource("2_eqohi")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_left = -8.0
+offset_right = 248.0
+offset_bottom = 217.0
+scale = Vector2(4, 4)
+theme_override_constants/separation = 56
+
+[node name="Player_1" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Player" type="Label" parent="HBoxContainer/Player_1"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 25.0
+offset_right = 111.0
+offset_bottom = 48.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+text = "Player 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Player_1"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 71.0
+offset_bottom = 91.0
+texture = ExtResource("6_yd203")
+
+[node name="Name" type="Label" parent="HBoxContainer/Player_1"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 95.0
+offset_right = 111.0
+offset_bottom = 118.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Confirm_button" type="Button" parent="HBoxContainer/Player_1"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 115.0
+offset_right = 71.0
+offset_bottom = 127.0
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_x1mq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2wefw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7b7xx")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_k1nv1")
+theme_override_styles/focus = SubResource("StyleBoxTexture_v8id7")
+
+[node name="Label" type="Label" parent="HBoxContainer/Player_1/Confirm_button"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 3.0
+offset_right = 95.0
+offset_bottom = 22.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+text = "Confirm"
+
+[node name="Leave_button" type="Button" parent="HBoxContainer/Player_1"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 130.0
+offset_right = 71.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_syn8y")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hdtuy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_had7u")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_wft07")
+theme_override_styles/focus = SubResource("StyleBoxTexture_yxa4h")
+keep_pressed_outside = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Player_1/Leave_button"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 4.0
+offset_right = 77.0
+offset_bottom = 23.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+text = "Leave"
+
+[node name="Player_2" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Player" type="Label" parent="HBoxContainer/Player_2"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 25.0
+offset_right = 111.0
+offset_bottom = 48.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+text = "Player 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Player_2"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 71.0
+offset_bottom = 91.0
+texture = ExtResource("6_yd203")
+
+[node name="Name" type="Label" parent="HBoxContainer/Player_2"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 95.0
+offset_right = 111.0
+offset_bottom = 118.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Confirm_button" type="Button" parent="HBoxContainer/Player_2"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 115.0
+offset_right = 71.0
+offset_bottom = 127.0
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_x1mq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fk3na")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7b7xx")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_k1nv1")
+theme_override_styles/focus = SubResource("StyleBoxTexture_jmrcs")
+
+[node name="Label" type="Label" parent="HBoxContainer/Player_2/Confirm_button"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 3.0
+offset_right = 95.0
+offset_bottom = 22.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+text = "Confirm"
+
+[node name="Leave_button" type="Button" parent="HBoxContainer/Player_2"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 130.0
+offset_right = 71.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_syn8y")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hdtuy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_had7u")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_wft07")
+theme_override_styles/focus = SubResource("StyleBoxTexture_yxa4h")
+keep_pressed_outside = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Player_2/Leave_button"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 4.0
+offset_right = 77.0
+offset_bottom = 23.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+text = "Leave"
+
+[node name="Player_3" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Player" type="Label" parent="HBoxContainer/Player_3"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 25.0
+offset_right = 111.0
+offset_bottom = 48.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+text = "Player 3
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Player_3"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 71.0
+offset_bottom = 91.0
+texture = ExtResource("6_yd203")
+
+[node name="Name" type="Label" parent="HBoxContainer/Player_3"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 95.0
+offset_right = 111.0
+offset_bottom = 118.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Confirm_button" type="Button" parent="HBoxContainer/Player_3"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 115.0
+offset_right = 71.0
+offset_bottom = 127.0
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_x1mq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fk3na")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7b7xx")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_k1nv1")
+theme_override_styles/focus = SubResource("StyleBoxTexture_01mb3")
+
+[node name="Label" type="Label" parent="HBoxContainer/Player_3/Confirm_button"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 3.0
+offset_right = 95.0
+offset_bottom = 22.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+text = "Confirm"
+
+[node name="Leave_button" type="Button" parent="HBoxContainer/Player_3"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 130.0
+offset_right = 71.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_syn8y")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hdtuy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_had7u")
+theme_override_styles/focus = SubResource("StyleBoxTexture_jlrsx")
+
+[node name="Label" type="Label" parent="HBoxContainer/Player_3/Leave_button"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 4.0
+offset_right = 77.0
+offset_bottom = 23.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+text = "Leave"
+
+[node name="Player_4" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Player" type="Label" parent="HBoxContainer/Player_4"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 25.0
+offset_right = 111.0
+offset_bottom = 48.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+text = "Player 4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Player_4"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 71.0
+offset_bottom = 91.0
+texture = ExtResource("6_yd203")
+
+[node name="Name" type="Label" parent="HBoxContainer/Player_4"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 95.0
+offset_right = 111.0
+offset_bottom = 118.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Confirm_button" type="Button" parent="HBoxContainer/Player_4"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 115.0
+offset_right = 71.0
+offset_bottom = 127.0
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_x1mq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fk3na")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7b7xx")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_k1nv1")
+theme_override_styles/focus = SubResource("StyleBoxTexture_jmrcs")
+
+[node name="Label" type="Label" parent="HBoxContainer/Player_4/Confirm_button"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 3.0
+offset_right = 95.0
+offset_bottom = 22.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+text = "Confirm"
+
+[node name="Leave_button" type="Button" parent="HBoxContainer/Player_4"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 130.0
+offset_right = 71.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_syn8y")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hdtuy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_had7u")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_wft07")
+theme_override_styles/focus = SubResource("StyleBoxTexture_yxa4h")
+keep_pressed_outside = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Player_4/Leave_button"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 4.0
+offset_right = 77.0
+offset_bottom = 23.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+text = "Leave"
+
+[node name="Play_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 696.0
+offset_right = 410.0
+offset_bottom = 723.0
+scale = Vector2(4, 4)
+theme_override_fonts/font = ExtResource("3_4dwd1")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_qbnur")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0536s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_h8yh5")
+theme_override_styles/focus = SubResource("StyleBoxTexture_wn8gf")
+text = "PLAY"

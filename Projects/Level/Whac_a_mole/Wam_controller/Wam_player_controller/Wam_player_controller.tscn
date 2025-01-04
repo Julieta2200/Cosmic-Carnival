@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://piltfxwktg0t"]
+
+[ext_resource type="Script" path="res://Projects/Level/Whac_a_mole/Wam_controller/Wam_player_controller/Wam_player_controller.gd" id="1_12cut"]
+
+[node name="Player_controller" type="Node2D"]
+script = ExtResource("1_12cut")

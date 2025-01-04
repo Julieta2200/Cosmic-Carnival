@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://blrbxjtugqm50"]
+
+[ext_resource type="ArrayMesh" uid="uid://c8u7fxg8qug6r" path="res://Assets/UI/Player info/3D character/Boonyboo/Boonyboo.obj" id="1_2nh0c"]
+[ext_resource type="Texture2D" uid="uid://hqw55n0n81ki" path="res://Assets/UI/Player info/3D character/Boonyboo/Boonyboo.png" id="2_tn3yx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7jnn"]
+albedo_texture = ExtResource("2_tn3yx")
+
+[sub_resource type="Animation" id="Animation_losb3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_knb1q"]
+resource_name = "rotation"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o4giu"]
+_data = {
+"RESET": SubResource("Animation_losb3"),
+"rotation": SubResource("Animation_knb1q")
+}
+
+[node name="Boonyboo" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, -0.5, 0, -0.7)
+mesh = ExtResource("1_2nh0c")
+surface_material_override/0 = SubResource("StandardMaterial3D_w7jnn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "rotation"
+libraries = {
+"": SubResource("AnimationLibrary_o4giu")
+}

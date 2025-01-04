@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://lvw1mf1g0x1w"]
+
+[ext_resource type="Script" path="res://Projects/Level/Whac_a_mole/Wam.gd" id="1_lupyk"]
+[ext_resource type="Texture2D" uid="uid://dpcxaum5c6rmh" path="res://Assets/Details/Hit_a_beaver/Background.png" id="2_ln4mc"]
+[ext_resource type="Texture2D" uid="uid://c8wn5b51tjikl" path="res://Assets/Details/Hit_a_beaver/Game Machine.png" id="3_k5nuw"]
+[ext_resource type="PackedScene" uid="uid://dmnmrrxboew07" path="res://Projects/Level/Whac_a_mole/Circles/Wam_circle.tscn" id="4_ed7ds"]
+[ext_resource type="PackedScene" uid="uid://dd1ms0342jnn1" path="res://Projects/Level/Whac_a_mole/Ui/Wam_ui.tscn" id="5_x5row"]
+[ext_resource type="PackedScene" uid="uid://bocslnbv4sk6n" path="res://Projects/Level/Whac_a_mole/Hammers/Wam_hammer.tscn" id="6_yhrk3"]
+
+[node name="Wam" type="Node2D"]
+script = ExtResource("1_lupyk")
+monster_probabilities = {
+"blue": 80,
+"orange": 10,
+"pink": 10
+}
+monster_count = 100
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(512, 448)
+scale = Vector2(4, 4)
+texture = ExtResource("2_ln4mc")
+
+[node name="Board" type="Sprite2D" parent="."]
+position = Vector2(512, 448)
+scale = Vector2(4, 4)
+texture = ExtResource("3_k5nuw")
+
+[node name="Circles" type="Node2D" parent="."]
+
+[node name="Circle6" parent="Circles" instance=ExtResource("4_ed7ds")]
+position = Vector2(188, 610)
+
+[node name="Circle7" parent="Circles" instance=ExtResource("4_ed7ds")]
+position = Vector2(512, 610)
+
+[node name="Circle8" parent="Circles" instance=ExtResource("4_ed7ds")]
+position = Vector2(832, 610)
+
+[node name="Circle9" parent="Circles" instance=ExtResource("4_ed7ds")]
+position = Vector2(348, 786)
+
+[node name="Circle10" parent="Circles" instance=ExtResource("4_ed7ds")]
+position = Vector2(668, 786)
+
+[node name="Monster_create_timer" type="Timer" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Ui" parent="CanvasLayer" instance=ExtResource("5_x5row")]
+unique_name_in_owner = true
+
+[node name="Points" type="Node2D" parent="."]
+
+[node name="point" type="Marker2D" parent="Points"]
+position = Vector2(190, 592)
+
+[node name="point2" type="Marker2D" parent="Points"]
+position = Vector2(514, 592)
+
+[node name="point3" type="Marker2D" parent="Points"]
+position = Vector2(834, 592)
+
+[node name="point4" type="Marker2D" parent="Points"]
+position = Vector2(350, 768)
+
+[node name="point5" type="Marker2D" parent="Points"]
+position = Vector2(670, 768)
+
+[node name="Monsters" type="Node2D" parent="."]
+
+[node name="Hammer" parent="." node_paths=PackedStringArray("score") instance=ExtResource("6_yhrk3")]
+position = Vector2(702, 478)
+score = NodePath("../CanvasLayer/Ui/Hammers/1/Score")
+player_number = "1"
+
+[node name="Hammer2" parent="." node_paths=PackedStringArray("score") instance=ExtResource("6_yhrk3")]
+position = Vector2(283, 482)
+score = NodePath("../CanvasLayer/Ui/Hammers/2/Score")
+player_number = "2"
+
+[connection signal="timeout" from="Monster_create_timer" to="." method="_on_monster_create_timer_timeout"]
+
+[editable path="CanvasLayer/Ui"]
