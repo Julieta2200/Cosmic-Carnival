@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0bobnskyeben"]
 
 [ext_resource type="Script" path="res://Projects/Level/Smash/smash_button/smash_button.gd" id="1_acyin"]
-[ext_resource type="Texture2D" uid="uid://dxes21l1rfmhi" path="res://Details/a.png" id="2_ajyc6"]
+[ext_resource type="Texture2D" uid="uid://dxes21l1rfmhi" path="res://Assets/Details/a.png" id="2_ajyc6"]
 
 [node name="smash_button" type="Node2D"]
 script = ExtResource("1_acyin")

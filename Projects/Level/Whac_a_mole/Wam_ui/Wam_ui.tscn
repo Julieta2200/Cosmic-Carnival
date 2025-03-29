@@ -1,0 +1,368 @@
+[gd_scene load_steps=9 format=3 uid="uid://dd1ms0342jnn1"]
+
+[ext_resource type="Script" path="res://Projects/Level/Whac_a_mole/Wam_ui/Wam_ui.gd" id="1_ooee0"]
+[ext_resource type="Texture2D" uid="uid://f2vc6w0r0tr1" path="res://Assets/Details/Whac_a_mole/UI/Game name.png" id="2_4gcb4"]
+[ext_resource type="Texture2D" uid="uid://k2dmlxkusthf" path="res://Assets/Details/Whac_a_mole/UI/Cell.png" id="3_u7p7t"]
+[ext_resource type="FontFile" uid="uid://dxl2upmlmfr51" path="res://Assets/Fonts/8-bit-fortress (1).ttf" id="4_s8g1h"]
+[ext_resource type="Texture2D" uid="uid://dqya478r8iteh" path="res://Assets/Details/Whac_a_mole/UI/Mini hammer/Mini hammer1.png" id="5_opk8e"]
+[ext_resource type="Texture2D" uid="uid://bd6tb72vpkpfc" path="res://Assets/Details/Whac_a_mole/UI/Mini hammer/Mini hammer2.png" id="6_b1unh"]
+[ext_resource type="Texture2D" uid="uid://3hq3ug5dj1v4" path="res://Assets/Details/Whac_a_mole/UI/Mini hammer/Mini hammer3.png" id="7_sd88o"]
+[ext_resource type="Texture2D" uid="uid://jjv30rn7hwjj" path="res://Assets/Details/Whac_a_mole/UI/Mini hammer/Mini hammer4.png" id="8_hwsj8"]
+
+[node name="Ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ooee0")
+
+[node name="Game_name" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -467.0
+offset_top = 130.0
+offset_right = -233.0
+offset_bottom = 171.0
+grow_horizontal = 2
+scale = Vector2(4, 4)
+texture = ExtResource("2_4gcb4")
+stretch_mode = 2
+
+[node name="Time" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -378.0
+offset_right = -6.0
+offset_bottom = -365.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+texture = ExtResource("3_u7p7t")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="Time"]
+layout_mode = 0
+offset_left = -1.49998
+offset_top = -7.5
+offset_right = 108.5
+offset_bottom = 14.5
+scale = Vector2(0.35, 0.35)
+theme_override_fonts/font = ExtResource("4_s8g1h")
+theme_override_font_sizes/font_size = 14
+text = "Time"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Number" type="Control" parent="Time"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 34.0
+offset_bottom = 13.0
+
+[node name="Hundreds" type="Label" parent="Time/Number"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.75
+offset_right = 18.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("4_s8g1h")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tens" type="Label" parent="Time/Number"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -1.75
+offset_right = 29.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("4_s8g1h")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Units" type="Label" parent="Time/Number"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = -1.75
+offset_right = 40.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("4_s8g1h")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Hammers" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="1" type="TextureRect" parent="Hammers"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 380.0
+offset_right = 122.0
+offset_bottom = 393.0
+scale = Vector2(4, 4)
+texture = ExtResource("3_u7p7t")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Hammers/1"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -18.5
+offset_right = 26.0
+offset_bottom = -1.5
+texture = ExtResource("5_opk8e")
+
+[node name="Score" type="Control" parent="Hammers/1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 34.0
+offset_bottom = 13.0
+
+[node name="Hundreds" type="Label" parent="Hammers/1/Score"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.75
+offset_right = 18.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("4_s8g1h")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tens" type="Label" parent="Hammers/1/Score"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -1.75
+offset_right = 29.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("4_s8g1h")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Units" type="Label" parent="Hammers/1/Score"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = -1.75
+offset_right = 40.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("4_s8g1h")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="2" type="TextureRect" parent="Hammers"]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 380.0
+offset_right = 362.0
+offset_bottom = 393.0
+scale = Vector2(4, 4)
+texture = ExtResource("3_u7p7t")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Hammers/2"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -18.5
+offset_right = 26.0
+offset_bottom = -1.5
+texture = ExtResource("6_b1unh")
+
+[node name="Score" type="Control" parent="Hammers/2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 34.0
+offset_bottom = 13.0
+
+[node name="Hundreds" type="Label" parent="Hammers/2/Score"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.75
+offset_right = 18.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("4_s8g1h")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tens" type="Label" parent="Hammers/2/Score"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -1.75
+offset_right = 29.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("4_s8g1h")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Units" type="Label" parent="Hammers/2/Score"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = -1.75
+offset_right = 40.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("4_s8g1h")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3" type="TextureRect" parent="Hammers"]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 380.0
+offset_right = 602.0
+offset_bottom = 393.0
+scale = Vector2(4, 4)
+texture = ExtResource("3_u7p7t")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Hammers/3"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -18.5
+offset_right = 26.0
+offset_bottom = -1.5
+texture = ExtResource("7_sd88o")
+
+[node name="Score" type="Control" parent="Hammers/3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 34.0
+offset_bottom = 13.0
+
+[node name="Hundreds" type="Label" parent="Hammers/3/Score"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.75
+offset_right = 18.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("4_s8g1h")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tens" type="Label" parent="Hammers/3/Score"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -1.75
+offset_right = 29.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("4_s8g1h")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Units" type="Label" parent="Hammers/3/Score"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = -1.75
+offset_right = 40.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("4_s8g1h")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="4" type="TextureRect" parent="Hammers"]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 380.0
+offset_right = 842.0
+offset_bottom = 393.0
+scale = Vector2(4, 4)
+texture = ExtResource("3_u7p7t")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Hammers/4"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -18.5
+offset_right = 26.0
+offset_bottom = -1.5
+texture = ExtResource("8_hwsj8")
+
+[node name="Score" type="Control" parent="Hammers/4"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 34.0
+offset_bottom = 13.0
+
+[node name="Hundreds" type="Label" parent="Hammers/4/Score"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.75
+offset_right = 18.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("4_s8g1h")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tens" type="Label" parent="Hammers/4/Score"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -1.75
+offset_right = 29.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("4_s8g1h")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Units" type="Label" parent="Hammers/4/Score"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = -1.75
+offset_right = 40.0
+offset_bottom = 23.25
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("4_s8g1h")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
